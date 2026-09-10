@@ -28,11 +28,11 @@ body{
 body::before{
   content:"";position:fixed;inset:-2%;z-index:0;pointer-events:none;
   background:var(--bg-grain,url("grain.svg")) center/cover no-repeat;
-  opacity:.55;
+  opacity:.22;
 }
 body::after{
   content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:url("speckles.svg") repeat;background-size:1600px 1000px;opacity:.35;
+  background:url("speckles.svg") repeat;background-size:1600px 1000px;opacity:.18;
 }
 body > *{position:relative;z-index:1}
 a{color:inherit;text-decoration:none}

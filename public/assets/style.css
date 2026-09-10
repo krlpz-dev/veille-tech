@@ -152,15 +152,17 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;margin:0;let
 .cta i::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
 .cta:hover i{width:24px}
 
-/* dernière édition : photo pleine largeur, contenu dedans */
-.card-hero .media{aspect-ratio:16/8;min-height:420px;max-height:640px}
-.card-hero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,9,.82) 0%,rgba(11,10,9,.55) 42%,rgba(11,10,9,.12) 75%),linear-gradient(0deg,rgba(11,10,9,.7) 0%,rgba(11,10,9,0) 45%);pointer-events:none}
+/* dernière édition : photo pleine largeur, contenu dedans (la carte prend la hauteur du contenu ou de l'image) */
+.card-hero{display:grid}
+.card-hero .media{grid-area:1/1;min-height:clamp(440px,50vw,660px)}
+.card-hero .media img{position:absolute;inset:0}
+.card-hero .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,9,.82) 0%,rgba(11,10,9,.55) 42%,rgba(11,10,9,.12) 75%),linear-gradient(0deg,rgba(11,10,9,.72) 0%,rgba(11,10,9,0) 48%);pointer-events:none}
 .card-hero .content{
-  position:absolute;left:0;right:0;bottom:0;top:0;z-index:2;pointer-events:none;
-  padding:clamp(26px,3.6vw,52px);display:flex;flex-direction:column;justify-content:flex-end;gap:18px;
+  grid-area:1/1;position:relative;z-index:2;pointer-events:none;
+  padding:clamp(26px,3.6vw,52px);padding-top:clamp(120px,16vw,200px);display:flex;flex-direction:column;justify-content:flex-end;gap:18px;
 }
 .card-hero .content > *{pointer-events:auto}
-.card-hero .num{position:absolute;top:clamp(22px,3vw,44px);left:clamp(26px,3.6vw,52px);font-size:clamp(64px,8vw,132px)}
+.card-hero .num{position:absolute;top:clamp(22px,3vw,44px);left:clamp(26px,3.6vw,52px);font-size:clamp(64px,8vw,132px);pointer-events:none}
 .card-hero h3{font-size:clamp(40px,5.6vw,92px);max-width:14ch}
 .card-hero .tags{margin-top:4px;max-width:70%}
 .card-hero .cta{margin-top:10px}
@@ -175,7 +177,6 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;margin:0;let
 .card-past .cta{margin-top:8px}
 @media (max-width:900px){
   .card-past{grid-template-columns:1fr}
-  .card-hero .media{aspect-ratio:auto;min-height:520px}
   .card-hero .tags{max-width:100%}
 }
 

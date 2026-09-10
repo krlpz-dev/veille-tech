@@ -5,7 +5,7 @@
   'use strict';
   var root = document.getElementById('hero');
   if (!root) return;
-  var coarse = window.matchMedia('(pointer:coarse)').matches || window.innerWidth < 821;
+  var coarse = window.matchMedia('(pointer:coarse)').matches || window.innerWidth < 720;
   if (coarse) return;
 
   var INK = '#EDE7DC', RED = '#FF3B2F', BG = '#0B0A09';
@@ -321,7 +321,7 @@
   var last = performance.now();
   function frame(now) {
     var dt = Math.min(48, now - last); last = now;
-    var active = st.inside && visible && !st.over && st.engaged && document.hasFocus();
+    var active = st.inside && visible && !st.over && st.engaged;
     if (active) update(dt);
     else if (!st.over) { if (st.recoil > 0) st.recoil = Math.max(0, st.recoil - dt / 140); st.muzzle = Math.max(0, st.muzzle - dt); }
     draw(now);

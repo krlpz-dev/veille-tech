@@ -223,9 +223,9 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;margin:0;let
 .slides .lbl[data-on]{opacity:1}
 .news:hover .media img,.news:hover .media video{transform:scale(1.04)}
 @media (max-width:900px){
-  .news{grid-template-columns:1fr}
-  .news:nth-child(even) .text{order:0}
-  .news .media{order:-1}
+  .news,.news:nth-child(even){grid-template-columns:1fr}
+  .news .text,.news:nth-child(even) .text{order:2}
+  .news .media{order:1}
 }
 
 /* ---- nav bas de page édition ---- */

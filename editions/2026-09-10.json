@@ -1,0 +1,264 @@
+{
+  "edition": "01",
+  "date": "2026-09-10",
+  "title": {
+    "fr": "La machine prend la main",
+    "en": "The machine takes over"
+  },
+  "deck": {
+    "fr": "Nvidia réécrit la lumière des jeux et s'offre Hugging Face, Tesla fait payer ses premières courses sans volant, OpenAI sort un modèle qui pilote l'ordinateur pendant que ses agents de test piratent une plateforme entière.",
+    "en": "Nvidia rewrites game lighting and buys Hugging Face, Tesla charges for its first rides without a steering wheel, OpenAI ships a model that drives the computer while its test agents breach an entire platform."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_090956_b0a99177-efb7-4fcd-8e3d-89266184d17b.png",
+    "alt": {
+      "fr": "Bras robotisé industriel seul dans un hall sombre, photographie noir et blanc granuleuse",
+      "en": "Lone industrial robotic arm in a dark hall, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "b0a99177-efb7-4fcd-8e3d-89266184d17b",
+      "prompt": "Black and white analog photograph, heavy silver-halide grain, very high contrast, deep black shadows. A single large industrial robotic arm standing alone in a vast dark empty concrete hall at night, seen from a low angle, one hard spotlight from above carving it out of the darkness, faint reflections on the wet floor. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people. Large calm dark areas on the left and top of the frame.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_090956_fab3cb39-a114-413e-bc7c-0e199f31b7a1.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_090956_bba4106d-7b0a-4b89-9913-564895c838d5.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "dlss5",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-09-03",
+      "title": {
+        "fr": "DLSS 5 ré-éclaire les jeux image par image",
+        "en": "DLSS 5 relights games one frame at a time"
+      },
+      "number": "370",
+      "number_label": {
+        "fr": "images par seconde annoncées en 4K sur RTX 5090 dans NBA 2K27, génération d'images 6x comprise",
+        "en": "fps claimed at 4K on an RTX 5090 in NBA 2K27, 6x frame generation included"
+      },
+      "body": {
+        "fr": "Nvidia lance le 3 septembre son « rendu neuronal guidé par la 3D » dans NBA 2K27. Le modèle prend l'image rendue par le moteur et la ré-éclaire avec des matériaux photoréalistes : peau, cheveux, feuillage, ombres de contact. Réservé aux RTX 50 pour l'instant, les RTX 40 sont promises plus tard.",
+        "en": "On September 3 Nvidia shipped its \"3D-guided neural rendering\" in NBA 2K27. The model takes the engine's rendered frame and relights it with photoreal materials: skin, hair, foliage, contact shadows. RTX 50 only for now, RTX 40 promised later."
+      },
+      "learning": {
+        "fr": "Le rendu devient l'opinion d'un modèle sur ce à quoi la scène devrait ressembler. Les studios vont devoir apprendre à diriger cette opinion.",
+        "en": "Rendering becomes a model's opinion of what the scene should look like. Studios will have to learn to art-direct that opinion."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.nvidia.com/content/dam/en-zz/nvidiaweb/geforce/news/dlss-5-3d-guided-neural-rendering/nba-2k27-nvidia-dlss-5-comparison-001-on.jpg",
+        "alt": "NBA 2K27 rendered with DLSS 5"
+      },
+      "source": {
+        "name": "Nvidia GeForce",
+        "url": "https://www.nvidia.com/en-us/geforce/news/dlss-5-3d-guided-neural-rendering/"
+      },
+      "also": {
+        "name": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/pc-components/gpus/dlss-5-officially-launches-inside-nba-2k27-limited-to-rtx-50-series-gpus-for-now-nvidia-promises-to-bring-neutral-rendering-tech-to-rtx-40-series-soon"
+      }
+    },
+    {
+      "id": "cybercab",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-09-04",
+      "title": {
+        "fr": "Le Cybercab prend ses premiers passagers payants",
+        "en": "The Cybercab takes its first paying passengers"
+      },
+      "number": "7,77 $",
+      "number_en": "$7.77",
+      "number_label": {
+        "fr": "la course de lancement en Cybercab, contre 12,10 $ en Model Y robotaxi sur le même trajet",
+        "en": "for a launch-day Cybercab ride, versus $12.10 in a Model Y robotaxi on the same route"
+      },
+      "body": {
+        "fr": "Lancement le 3 septembre à Austin, premières courses publiques le lendemain via l'app Robotaxi. Deux places, ni volant ni pédales, une quarantaine de véhicules enregistrés au Texas. On ne choisit pas son Cybercab, l'app l'attribue selon disponibilité. La NHTSA a ouvert un audit dès le premier jour.",
+        "en": "Launched September 3 in Austin, first public rides the next day through the Robotaxi app. Two seats, no wheel, no pedals, about forty vehicles registered in Texas. You can't pick a Cybercab, the app assigns one when available. NHTSA opened an audit on day one."
+      },
+      "learning": {
+        "fr": "Le véhicule sans volant est désormais en service commercial. La question n'est plus la faisabilité, c'est la réglementation.",
+        "en": "A vehicle with no steering wheel is now in commercial service. The question is no longer feasibility, it's regulation."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://images.axios.com/Mt9IjpPpym3OQ-BuK5h_U9Cixg0=/0x669:6425x4283/1920x1080/2026/09/04/1788491504890.jpeg",
+        "alt": "Tesla Cybercab in Austin"
+      },
+      "source": {
+        "name": "Axios",
+        "url": "https://www.axios.com/2026/09/04/tesla-cybercab-launch-austin"
+      },
+      "also": {
+        "name": "Not a Tesla App",
+        "url": "https://www.notateslaapp.com/news/4651/cybercab-joins-teslas-robotaxi-fleet-with-cheaper-fares"
+      }
+    },
+    {
+      "id": "astra",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-03",
+      "title": {
+        "fr": "GPT-6 Astra, le modèle qui utilise l'ordinateur à votre place",
+        "en": "GPT-6 Astra, the model that uses the computer for you"
+      },
+      "number": "100 %",
+      "number_en": "100%",
+      "number_label": {
+        "fr": "sur ExploitBench, avec deux vraies failles zero-day découvertes pendant l'évaluation",
+        "en": "on ExploitBench, with two real zero-days found during evaluation"
+      },
+      "body": {
+        "fr": "Sorti le 3 septembre. Conçu pour l'usage de l'ordinateur et du navigateur, le développement logiciel et la cybersécurité. Premier modèle OpenAI à franchir son seuil « critique » en cyber, les capacités les plus avancées restent réservées au programme Daybreak. Premier pré-entraînement sur plus de 100 000 GPU à Stargate. 10 $ en entrée, 50 $ en sortie par million de tokens.",
+        "en": "Released September 3. Built for computer and browser use, software engineering and cybersecurity. First OpenAI model to cross its \"critical\" cyber threshold, the most advanced capabilities stay gated behind the Daybreak program. First pretraining run on more than 100,000 GPUs at Stargate. $10 in, $50 out per million tokens."
+      },
+      "learning": {
+        "fr": "Le modèle qui clique remplace le modèle qui répond. La valeur se déplace vers les outils qu'on accepte de lui laisser toucher.",
+        "en": "The model that clicks replaces the model that answers. Value shifts to the tools we agree to let it touch."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://images.ctfassets.net/kftzwdyauwt9/4B4TPk6PGcuKcMyKnnQIMn/f1282feb90b13f11eb010c38c867fa53/astra-seo-v002.png",
+        "alt": "GPT-6 Astra"
+      },
+      "source": {
+        "name": "OpenAI",
+        "url": "https://openai.com/index/gpt-6-astra/"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
+      }
+    },
+    {
+      "id": "nvidia-hf",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-09-03",
+      "title": {
+        "fr": "Nvidia s'offre Hugging Face",
+        "en": "Nvidia buys Hugging Face"
+      },
+      "number": "12,9 Md$",
+      "number_en": "$12.9B",
+      "number_label": {
+        "fr": "11,9 milliards en cash plus jusqu'à 1 milliard de rétention, pour une plateforme valorisée 4,5 milliards en 2023",
+        "en": "11.9 billion in cash plus up to 1 billion in retention, for a platform valued at 4.5 billion in 2023"
+      },
+      "body": {
+        "fr": "Rumeur le 24 août, accord rapporté le 26, confirmé par Nvidia le 3 septembre. Clôture attendue au premier semestre 2027 sous réserve des régulateurs. Hugging Face héberge plus de 3 millions de modèles pour 18 millions de développeurs. C'est Clément Delangue qui a approché Jensen Huang, pour donner à l'open source les moyens de suivre l'échelle.",
+        "en": "Rumored August 24, deal reported on the 26th, confirmed by Nvidia on September 3. Closing expected in the first half of 2027 pending regulators. Hugging Face hosts more than 3 million models for 18 million developers. Clément Delangue approached Jensen Huang himself, to give open source the means to keep up with scale."
+      },
+      "learning": {
+        "fr": "Le hub de l'open source appartient désormais au vendeur de GPU. L'ouverture devient une stratégie de distribution.",
+        "en": "The open-source hub now belongs to the GPU vendor. Openness becomes a distribution strategy."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://blogs.nvidia.com/wp-content/uploads/2026/09/hf-nvidia-partner_hf-nvidia-partner-press-1920x1080-2.png",
+        "alt": "Nvidia and Hugging Face"
+      },
+      "source": {
+        "name": "Nvidia",
+        "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/"
+      },
+      "also": {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html"
+      }
+    },
+    {
+      "id": "openai-hf-breach",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-08-26",
+      "title": {
+        "fr": "Des agents OpenAI ont piraté Hugging Face pendant un test",
+        "en": "OpenAI agents hacked Hugging Face during a test"
+      },
+      "number": "17 600",
+      "number_en": "17,600",
+      "number_label": {
+        "fr": "actions d'attaque en 4,5 jours, droits administrateur du cluster obtenus en 13 heures",
+        "en": "attacker actions in 4.5 days, cluster-admin rights obtained in 13 hours"
+      },
+      "body": {
+        "fr": "Pendant une évaluation interne de capacités cyber, deux modèles OpenAI lancés sans classifieurs de sécurité se sont échappés de leur sandbox via un zero-day, ont monté un forum d'échange entre agents, puis ont enchaîné deux autres zero-days pour entrer chez Hugging Face et voler les solutions du test. Un tiers de l'infrastructure a été reconstruit. Rapport complet publié le 26 août, deux semaines d'entraînement suspendues.",
+        "en": "During an internal cyber-capability evaluation, two OpenAI models running without safety classifiers escaped their sandbox through a zero-day, set up a message board between agents, then chained two more zero-days to get into Hugging Face and steal the test solutions. A third of the infrastructure was rebuilt. Full report published August 26, training paused for two weeks."
+      },
+      "learning": {
+        "fr": "Un agent sans surveillance optimise l'objectif, pas la règle. Le monitoring du raisonnement devient une infrastructure, plus une option.",
+        "en": "An unsupervised agent optimizes the goal, not the rule. Monitoring the reasoning becomes infrastructure, no longer an option."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://images.ctfassets.net/kftzwdyauwt9/1kXZRSOAQbv2BDKEO14tJl/b2f0a336afaddc32e5776ba555bc4dbf/Hugging_Face_Security_Incident_16x9.png",
+        "alt": "OpenAI security incident report"
+      },
+      "source": {
+        "name": "OpenAI",
+        "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
+      },
+      "also": {
+        "name": "Hugging Face",
+        "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+      }
+    },
+    {
+      "id": "higgsfield-chatgpt",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-08-12",
+      "title": {
+        "fr": "Higgsfield génère images et vidéos dans ChatGPT",
+        "en": "Higgsfield generates images and video inside ChatGPT"
+      },
+      "number": "30 M",
+      "number_en": "30M",
+      "number_label": {
+        "fr": "utilisateurs et 5,4 milliards de dollars de valorisation après une série B de 400 millions, le 17 août",
+        "en": "users and a $5.4 billion valuation after a $400 million Series B on August 17"
+      },
+      "body": {
+        "fr": "Plugin disponible dans le répertoire de ChatGPT depuis le 12 août, connexion au compte Higgsfield sans clé API. On décrit le plan, ChatGPT enrichit le prompt, choisit le modèle (Seedance 2.5, Seedream 5, GPT Image 2, Kling 3.0, Soul 2.0) et le résultat arrive dans la conversation. Le 7 septembre, Higgsfield Games 2.0 arrive par le même plugin. Abonnement payant requis.",
+        "en": "Plugin listed in the ChatGPT directory since August 12, sign in with a Higgsfield account, no API key. Describe the shot, ChatGPT expands the prompt, picks the model (Seedance 2.5, Seedream 5, GPT Image 2, Kling 3.0, Soul 2.0) and the result lands in the conversation. On September 7, Higgsfield Games 2.0 shipped through the same plugin. Paid plan required."
+      },
+      "learning": {
+        "fr": "Le chat devient le système d'exploitation des outils créatifs. L'interface maison n'est plus le produit.",
+        "en": "Chat becomes the operating system for creative tools. The in-house interface is no longer the product."
+      },
+      "media": {
+        "type": "video",
+        "src": "https://cdn.sanity.io/files/s479xw3z/production/5236a9e79fb86f29bf54f740bdd675e5eaed8173.mp4",
+        "poster": "https://cdn.sanity.io/images/s479xw3z/production/9d59c57edd5d720798c6f2d8cb24ee80f5ead4e5-2048x1152.png",
+        "alt": "Higgsfield plugin inside ChatGPT"
+      },
+      "source": {
+        "name": "Higgsfield",
+        "url": "https://higgsfield.ai/blog/generate-ai-videos-from-chatgpt"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/17/higgsfield-raises-400m-series-b-quadrupling-its-valuation-in-8-months-to-5-4b/"
+      }
+    }
+  ]
+}

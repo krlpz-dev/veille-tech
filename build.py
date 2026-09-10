@@ -1,0 +1,254 @@
+#!/usr/bin/env python3
+"""ARCHIVE — veille tech hebdo. Générateur statique (stdlib uniquement).
+
+Usage : python3 build.py
+Lit editions/*.json, écrit public/ (index.html, edition-AAAA-MM-JJ.html, assets/).
+Chaque édition : {edition, date, title{fr,en}, deck{fr,en}, hero{src,alt{fr,en}}, news[]}.
+Chaque news : {id, category{fr,en}, date, title{fr,en}, number, number_en?, number_label{fr,en},
+               body{fr,en}, learning{fr,en}, media{type:image|video|gif, src, poster?, alt}, source{name,url}, also?{name,url}}
+"""
+import json, os, re, shutil, random, html, glob, datetime
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(ROOT, 'public')
+ASSETS = os.path.join(ROOT, 'assets')
+SITE_URL = 'https://veille-tech.netlify.app'
+
+MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+MOIS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+def esc(s):
+    return html.escape(str(s), quote=True)
+
+def date_fr(iso):
+    d = datetime.date.fromisoformat(iso)
+    return f"{d.day} {MOIS_FR[d.month - 1]} {d.year}"
+
+def date_en(iso):
+    d = datetime.date.fromisoformat(iso)
+    return f"{MOIS_EN[d.month - 1]} {d.day}, {d.year}"
+
+def bi(obj, tag='span', cls=''):
+    """Rend un objet {fr,en} en deux spans commutés par CSS."""
+    c = f' class="{cls}"' if cls else ''
+    return (f'<{tag}{c} data-l="fr">{obj["fr"]}</{tag}>'
+            f'<{tag}{c} data-l="en">{obj["en"]}</{tag}>')
+
+def bi_esc(obj, tag='span', cls=''):
+    return bi({'fr': esc(obj['fr']), 'en': esc(obj['en'])}, tag, cls)
+
+def logo_svg(cls=''):
+    raw = open(os.path.join(ASSETS, 'logo.svg'), encoding='utf-8').read()
+    raw = re.sub(r'<\?xml.*?\?>', '', raw, flags=re.S)
+    raw = re.sub(r'<metadata>.*?</metadata>', '', raw, flags=re.S)
+    raw = re.sub(r'<!--.*?-->', '', raw, flags=re.S)
+    raw = re.sub(r'<defs>.*?</defs>', '', raw, flags=re.S)
+    raw = raw.replace('class="st0"', '')
+    raw = re.sub(r'<svg[^>]*>', lambda m: re.sub(r'\s(id|version|xmlns)="[^"]*"', '', m.group(0)).replace('<svg', f'<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ARCHIVE"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}', 1), raw, count=1)
+    return raw.strip()
+
+def speckles_svg(seed=1745, w=1400, h=1000, n=130):
+    """Petits éclats clairs, façon papier abîmé. Déterministe."""
+    rnd = random.Random(seed)
+    parts = []
+    for _ in range(n):
+        x, y = rnd.uniform(0, w), rnd.uniform(0, h)
+        kind = rnd.random()
+        if kind < 0.55:
+            r = rnd.uniform(0.5, 1.4)
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.2f}"/>')
+        elif kind < 0.85:
+            pts = []
+            k = rnd.randint(4, 7)
+            base = rnd.uniform(1.2, 3.2)
+            for i in range(k):
+                a = i / k * 6.2832
+                rr = base * rnd.uniform(0.5, 1.4)
+                pts.append(f'{x + rr * __import__("math").cos(a):.1f},{y + rr * __import__("math").sin(a):.1f}')
+            parts.append(f'<polygon points="{" ".join(pts)}"/>')
+        else:
+            # petit amas de 3 à 6 points
+            for _ in range(rnd.randint(3, 6)):
+                parts.append(f'<circle cx="{x + rnd.uniform(-9, 9):.1f}" cy="{y + rnd.uniform(-9, 9):.1f}" r="{rnd.uniform(0.4, 1.1):.2f}"/>')
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
+            f'<g fill="#EDE7DC" fill-opacity="0.82">{"".join(parts)}</g></svg>')
+
+def head(title, desc, canonical, og_image=''):
+    og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ''
+    return f'''<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc)}">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+{og}
+<link rel="canonical" href="{esc(canonical)}">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{{var l=localStorage.getItem('archive-lang');if(l==='en'||l==='fr'){{document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}}}catch(e){{}}</script>
+</head>
+<body>'''
+
+def topbar(home=True):
+    brand = '' if home else f'<a class="brand" href="index.html" aria-label="ARCHIVE, accueil">{logo_svg()}<span data-l="fr">Veille tech</span><span data-l="en">Tech watch</span></a>'
+    if home:
+        brand = '<div class="brand"><span data-l="fr">Veille tech hebdo</span><span data-l="en">Weekly tech watch</span></div>'
+    return f'''<div class="topbar">
+  {brand}
+  <div class="lang" role="group" aria-label="Langue">
+    <button type="button" data-set="fr" aria-pressed="true">FR</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </div>
+</div>'''
+
+def footer():
+    y = datetime.date.today().year
+    return f'''<footer class="foot">
+  <div><span data-l="fr">ARCHIVE · veille tech hebdomadaire · IA, gaming tech, robotique</span><span data-l="en">ARCHIVE · weekly tech watch · AI, gaming tech, robotics</span></div>
+  <div class="r"><a href="index.html"><span data-l="fr">Éditions</span><span data-l="en">Issues</span></a><span>Karl Petzold · {y}</span></div>
+</footer>
+<script src="assets/site.js"></script>'''
+
+def number_html(n):
+    fr = n.get('number', '')
+    en = n.get('number_en', fr)
+    return f'<span class="n"><span data-l="fr">{esc(fr)}</span><span data-l="en">{esc(en)}</span></span>'
+
+def media_html(m, alt=''):
+    t = m.get('type', 'image')
+    src = m.get('src', '')
+    if not src:
+        return '<div class="media"></div>'
+    cap = ''
+    if t == 'video':
+        poster = f' poster="{esc(m["poster"])}"' if m.get('poster') else ''
+        inner = f'<video data-auto muted loop playsinline preload="metadata"{poster} aria-label="{esc(alt)}"><source src="{esc(src)}" type="video/mp4"></video>'
+    else:
+        inner = f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" decoding="async">'
+    return f'<div class="media">{inner}{cap}</div>'
+
+def news_html(n, idx):
+    src = n['source']; also = n.get('also')
+    also_html = f' <span>·</span> <a href="{esc(also["url"])}" target="_blank" rel="noopener">{esc(also["name"])}</a>' if also else ''
+    return f'''<article class="news" id="{esc(n['id'])}">
+  <div class="text">
+    <div class="eyebrow">{bi_esc(n['category'])}<span class="sep">/</span><span class="date"><span data-l="fr">{date_fr(n['date'])}</span><span data-l="en">{date_en(n['date'])}</span></span></div>
+    <h2>{bi_esc(n['title'])}</h2>
+    <div class="big">{number_html(n)}<span class="l">{bi_esc(n['number_label'])}</span></div>
+    <p class="body">{bi_esc(n['body'])}</p>
+    <p class="learning">{bi_esc(n['learning'])}</p>
+    <div class="src"><span data-l="fr">Source</span><span data-l="en">Source</span> <a href="{esc(src['url'])}" target="_blank" rel="noopener">{esc(src['name'])}</a>{also_html}</div>
+  </div>
+  {media_html(n['media'], n['media'].get('alt', ''))}
+</article>'''
+
+def edition_page(ed, prev_ed, next_ed):
+    hero = ed.get('hero', {})
+    hero_img = f'<img src="{esc(hero["src"])}" alt="{esc(hero.get("alt", {}).get("fr", ""))}">' if hero.get('src') else ''
+    news = '\n'.join(news_html(n, i) for i, n in enumerate(ed['news']))
+    def nav(e, label_fr, label_en, cls):
+        if not e:
+            return f'<span class="dis"><span data-l="fr">{label_fr}</span><span data-l="en">{label_en}</span></span>'
+        return f'<a class="{cls}" href="edition-{e["date"]}.html"><span data-l="fr">{label_fr} · N° {e["edition"]}</span><span data-l="en">{label_en} · No. {e["edition"]}</span></a>'
+    title = f"ARCHIVE N° {ed['edition']} · {ed['title']['fr']}"
+    return f'''{head(title, ed['deck']['fr'], f"{SITE_URL}/edition-{ed['date']}.html", hero.get('src', ''))}
+{topbar(home=False)}
+<header class="hero-ed">
+  {hero_img}
+  <div class="inner">
+    <div class="n">N°{ed['edition']}</div>
+    <h1>{bi_esc(ed['title'])}</h1>
+    <p class="deck">{bi_esc(ed['deck'])}</p>
+    <div class="meta"><span><b data-l="fr">{date_fr(ed['date'])}</b><b data-l="en">{date_en(ed['date'])}</b></span><span>{len(ed['news'])} <span data-l="fr">news</span><span data-l="en">stories</span></span></div>
+  </div>
+</header>
+<main class="wrap news-list">
+{news}
+<nav class="ednav">
+  {nav(prev_ed, 'Édition précédente', 'Previous issue', 'prev')}
+  <a href="index.html"><span data-l="fr">Toutes les éditions</span><span data-l="en">All issues</span></a>
+  {nav(next_ed, 'Édition suivante', 'Next issue', 'next')}
+</nav>
+</main>
+{footer()}
+</body>
+</html>'''
+
+def index_page(eds):
+    latest = eds[0]
+    def block(ed, featured):
+        hero = ed.get('hero', {})
+        img = f'<img src="{esc(hero["src"])}" alt="" loading="{"eager" if featured else "lazy"}">' if hero.get('src') else ''
+        topics = ''.join(f'<li>{bi_esc(n["title"])}</li>' for n in ed['news'])
+        if featured:
+            return f'''<article class="ed">
+  <a class="media" href="edition-{ed['date']}.html" aria-label="N° {ed['edition']}">{img}<span class="num">N°{ed['edition']}</span></a>
+  <div class="text">
+    <div class="eyebrow"><span data-l="fr">Dernière édition</span><span data-l="en">Latest issue</span><span class="sep">/</span><span class="date"><span data-l="fr">{date_fr(ed['date'])}</span><span data-l="en">{date_en(ed['date'])}</span></span></div>
+    <h3><a href="edition-{ed['date']}.html">{bi_esc(ed['title'])}</a></h3>
+    <p class="deck">{bi_esc(ed['deck'])}</p>
+    <ul class="topics">{topics}</ul>
+    <a class="cta" href="edition-{ed['date']}.html"><span data-l="fr">Lire l'édition</span><span data-l="en">Read the issue</span></a>
+  </div>
+</article>'''
+        return f'''<article class="ed past">
+  <div class="num">N°{ed['edition']}</div>
+  <div class="text">
+    <div class="eyebrow"><span class="date"><span data-l="fr">{date_fr(ed['date'])}</span><span data-l="en">{date_en(ed['date'])}</span></span></div>
+    <h3><a href="edition-{ed['date']}.html">{bi_esc(ed['title'])}</a></h3>
+    <p class="deck">{bi_esc(ed['deck'])}</p>
+  </div>
+  <a class="media" href="edition-{ed['date']}.html" aria-label="N° {ed['edition']}">{img}</a>
+</article>'''
+    blocks = '\n'.join(block(e, i == 0) for i, e in enumerate(eds))
+    desc = 'ARCHIVE, veille tech hebdomadaire : IA, gaming tech, robotique. Quatre à six news par semaine, lues en trois minutes.'
+    return f'''{head('ARCHIVE · veille tech hebdo', desc, SITE_URL + '/', latest.get('hero', {}).get('src', ''))}
+{topbar(home=True)}
+<header class="hero-game" id="hero">
+  <canvas id="c-back" aria-hidden="true"></canvas>
+  <div class="logo">{logo_svg()}</div>
+  <canvas id="c-front" aria-hidden="true"></canvas>
+  <div class="flash" aria-hidden="true"></div>
+  <div class="gameover" aria-live="polite">
+    <div class="big">Game over</div>
+    <div class="sub">Score <b data-score>000</b> <span data-l="fr">· cliquer pour rejouer</span><span data-l="en">· click to play again</span></div>
+  </div>
+  <div class="tag"><b>IA · Gaming tech · Robotique</b><span data-l="fr">Chaque dimanche soir · lu en trois minutes</span><span data-l="en">Every Sunday night · read in three minutes</span></div>
+  <div class="scroll"><span data-l="fr">Clic pour tirer · R pour recharger · ↓ éditions</span><span data-l="en">Click to shoot · R to reload · ↓ issues</span></div>
+</header>
+<main class="wrap editions">
+  <div class="head"><h2><span data-l="fr">Éditions</span><span data-l="en">Issues</span></h2><span class="count">{len(eds)} <span data-l="fr">numéro{"s" if len(eds) > 1 else ""}</span><span data-l="en">issue{"s" if len(eds) > 1 else ""}</span></span></div>
+  {blocks}
+</main>
+{footer()}
+<script src="assets/game.js"></script>
+</body>
+</html>'''
+
+def main():
+    files = sorted(glob.glob(os.path.join(ROOT, 'editions', '*.json')))
+    eds = [json.load(open(f, encoding='utf-8')) for f in files]
+    eds.sort(key=lambda e: e['date'], reverse=True)
+    if not eds:
+        raise SystemExit('Aucune édition dans editions/')
+    os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
+    for name in ('style.css', 'game.js', 'site.js', 'logo.svg', 'favicon.svg'):
+        p = os.path.join(ASSETS, name)
+        if os.path.exists(p):
+            shutil.copy(p, os.path.join(OUT, 'assets', name))
+    open(os.path.join(OUT, 'assets', 'speckles.svg'), 'w', encoding='utf-8').write(speckles_svg())
+    open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index_page(eds))
+    for i, ed in enumerate(eds):
+        newer = eds[i - 1] if i > 0 else None
+        older = eds[i + 1] if i + 1 < len(eds) else None
+        open(os.path.join(OUT, f'edition-{ed["date"]}.html'), 'w', encoding='utf-8').write(edition_page(ed, older, newer))
+    print(f"OK · {len(eds)} édition(s) → public/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
+
+if __name__ == '__main__':
+    main()

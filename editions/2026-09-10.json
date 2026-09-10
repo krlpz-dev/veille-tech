@@ -53,12 +53,6 @@
           "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-002-off.jpg",
           "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-002-on.jpg"
         ],
-        "labels": [
-          "DLSS 5 off",
-          "DLSS 5 on",
-          "DLSS 5 off",
-          "DLSS 5 on"
-        ],
         "alt": "Démo Zorah, avant et après DLSS 5"
       },
       "source": {

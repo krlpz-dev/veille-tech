@@ -646,16 +646,16 @@
     /* alignés sur les bords du container des éditions */
     var gut = Math.min(72, Math.max(20, W * 0.045));
     var edge = Math.max(gut, (W - 1360) / 2 + gut);
-    var bw = 140, bh = 8, bx = edge, by = H - 34 - bh;
+    var bw = 140, bh = 8, bx = W - edge - bw, by = H - 34 - bh;
     fctx.fillStyle = INK;
     fctx.fillRect(bx - 2, by - 2, bw + 4, 1); fctx.fillRect(bx - 2, by + bh + 1, bw + 4, 1);
     fctx.fillRect(bx - 2, by - 2, 1, bh + 4); fctx.fillRect(bx + bw + 1, by - 2, 1, bh + 4);
     var blink = st.hurt > 0 && (Math.floor(st.hurt / 50) % 2);
     fctx.fillStyle = RED;
     if (!blink) fctx.fillRect(bx, by, Math.round(bw * st.life / MAXLIFE), bh);
-    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'right'; fctx.textBaseline = 'middle';
+    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle';
     fctx.letterSpacing = '3px';
-    fctx.fillText(String(st.score).padStart(3, '0'), W - edge + 3, by + bh / 2 + 1);
+    fctx.fillText(String(st.score).padStart(3, '0'), edge, by + bh / 2 + 1);
   }
   requestAnimationFrame(frame);
   }

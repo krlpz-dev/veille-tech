@@ -601,7 +601,7 @@
     if (!st.engaged) return;
 
     /* fusil au premier plan */
-    var gw = Math.max(96, Math.min(W * 0.1, 150)), gh = gw * (GUN_H / GUN_W), cell = gw / GUN_W;
+    var gw = Math.max(44, Math.min(W * 0.055, H * 0.1, 96)), gh = gw * (GUN_H / GUN_W), cell = gw / GUN_W;
     var ax = st.mx < 0 ? W / 2 : st.mx, ay = st.my < 0 ? H / 2 : st.my;
     var baseX = W / 2 + (ax - W / 2) * 0.16, baseY = H + gh * 0.04;
     var ang = Math.atan2(ax - baseX, baseY - ay);

@@ -9,9 +9,9 @@ Chaque news : {id, category{fr,en}, date, title{fr,en}, body{fr,en}, learning{fr
 import json, os, re, shutil, random, html, glob, datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, 'public')
+OUT = os.path.join(ROOT, 'docs')
 ASSETS = os.path.join(ROOT, 'assets')
-SITE_URL = 'https://veille-tech.netlify.app'
+SITE_URL = 'https://krlpz-dev.github.io/veille-tech'
 
 MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 MOIS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']

@@ -1,6 +1,6 @@
 # ARCHIVE · veille tech hebdo
 
-Site statique, généré par `build.py` (Python 3, stdlib uniquement), déployé par Netlify à chaque push sur `main`.
+Site statique, généré par `build.py` (Python 3, stdlib uniquement), publié par GitHub Pages à chaque push sur `main` (dossier `docs/`). URL : https://krlpz-dev.github.io/veille-tech/
 
 ## Structure
 
@@ -8,7 +8,7 @@ Site statique, généré par `build.py` (Python 3, stdlib uniquement), déployé
 editions/AAAA-MM-JJ.json   contenu d'une édition (FR + EN dans le même fichier)
 assets/                    logo.svg, style.css, game.js (mini jeu du header), site.js (bascule FR/EN), favicon.svg
 build.py                   génère public/ à partir de editions/*.json
-public/                    sortie commitée, publiée telle quelle par Netlify (netlify.toml → publish = "public")
+docs/                      sortie commitée, publiée telle quelle par GitHub Pages (Settings → Pages → main, /docs)
 ```
 
 ## Publier une édition
@@ -17,7 +17,7 @@ public/                    sortie commitée, publiée telle quelle par Netlify (
 2. `python3 build.py`
 3. `git add -A && git commit -m "Édition NN" && git push`
 
-Netlify redéploie en moins d'une minute.
+GitHub Pages republie en une à deux minutes.
 
 ## Schéma d'une édition
 

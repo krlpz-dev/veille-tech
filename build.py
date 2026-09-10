@@ -209,8 +209,9 @@ def index_page(eds):
   <canvas id="c-front" aria-hidden="true"></canvas>
   <div class="flash" aria-hidden="true"></div>
   <div class="gameover" aria-live="polite">
-    <div class="big">Game over</div>
-    <div class="sub">Score <b data-score>000</b> <span data-l="fr">· cliquer pour rejouer</span><span data-l="en">· click to play again</span></div>
+    <div class="line" data-line></div>
+    <div class="sub"><span data-l="fr">Score</span><span data-l="en">Score</span> <b data-score>000</b></div>
+    <button type="button" class="again"><span data-l="fr">Réessayer</span><span data-l="en">Try again</span></button>
   </div>
   <div class="tag"><b>IA · Gaming tech · Robotique</b><span data-l="fr">Chaque dimanche soir · lu en trois minutes</span><span data-l="en">Every Sunday night · read in three minutes</span></div>
   <div class="scroll"><span data-l="fr">Clic pour tirer · R pour recharger · ↓ éditions</span><span data-l="en">Click to shoot · R to reload · ↓ issues</span></div>

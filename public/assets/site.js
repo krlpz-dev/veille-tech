@@ -15,6 +15,14 @@
   document.querySelectorAll('.lang button').forEach(function (b) {
     b.addEventListener('click', function () { apply(b.getAttribute('data-set')); });
   });
+  /* apparition au scroll */
+  var rev = document.querySelectorAll('.reveal');
+  if (rev.length && 'IntersectionObserver' in window) {
+    var ro = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    rev.forEach(function (el, i) { el.style.transitionDelay = Math.min(i, 4) * 60 + 'ms'; ro.observe(el); });
+  } else { rev.forEach(function (el) { el.classList.add('in'); }); }
   /* vidéos : lecture uniquement quand visibles */
   var vids = document.querySelectorAll('video[data-auto]');
   if (vids.length && 'IntersectionObserver' in window) {

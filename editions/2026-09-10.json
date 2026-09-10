@@ -57,7 +57,8 @@
       "also": {
         "name": "Tom's Hardware",
         "url": "https://www.tomshardware.com/pc-components/gpus/dlss-5-officially-launches-inside-nba-2k27-limited-to-rtx-50-series-gpus-for-now-nvidia-promises-to-bring-neutral-rendering-tech-to-rtx-40-series-soon"
-      }
+      },
+      "tag": "DLSS 5"
     },
     {
       "id": "cybercab",
@@ -90,7 +91,8 @@
       "also": {
         "name": "Not a Tesla App",
         "url": "https://www.notateslaapp.com/news/4651/cybercab-joins-teslas-robotaxi-fleet-with-cheaper-fares"
-      }
+      },
+      "tag": "Cybercab"
     },
     {
       "id": "astra",
@@ -123,7 +125,8 @@
       "also": {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
-      }
+      },
+      "tag": "GPT-6 Astra"
     },
     {
       "id": "nvidia-hf",
@@ -156,7 +159,8 @@
       "also": {
         "name": "CNBC",
         "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html"
-      }
+      },
+      "tag": "Nvidia × Hugging Face"
     },
     {
       "id": "openai-hf-breach",
@@ -189,7 +193,8 @@
       "also": {
         "name": "Hugging Face",
         "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline"
-      }
+      },
+      "tag": "Agents OpenAI"
     },
     {
       "id": "higgsfield-chatgpt",
@@ -223,7 +228,8 @@
       "also": {
         "name": "TechCrunch",
         "url": "https://techcrunch.com/2026/08/17/higgsfield-raises-400m-series-b-quadrupling-its-valuation-in-8-months-to-5-4b/"
-      }
+      },
+      "tag": "Higgsfield"
     }
   ]
 }

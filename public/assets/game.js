@@ -265,8 +265,8 @@
 
   /* ---------- textes de fin ---------- */
   var ENDINGS = {
-    fr: ['Personne ne t’a entendu crier.', 'Les os se souviennent de toi.', 'Ta garde est terminée.', 'Poussière, tu redeviens poussière.', 'La nuit garde ce qu’elle prend.', 'Un de plus sur le tas.', 'C’était ton dernier souffle.', 'Les corbeaux ont déjà faim.'],
-    en: ['Nobody heard you scream.', 'The bones remember you.', 'Your watch has ended.', 'Dust to dust.', 'The dark keeps what it takes.', 'One more for the pile.', 'That was your last breath.', 'The crows are already hungry.']
+    fr: ['Tu es mort.', 'Ils t’ont eu.', 'C’est fini.', 'Dernier souffle.', 'Retour à la terre.', 'Personne ne t’a entendu.', 'Les os gagnent.', 'Un de plus.'],
+    en: ['You’re done.', 'They got you.', 'It’s over.', 'Last breath.', 'Back to the dirt.', 'Nobody heard you.', 'The bones win.', 'One more.']
   };
   var overLine = over.querySelector('[data-line]');
 
@@ -298,7 +298,7 @@
 
   /* ---------- squelettes ---------- */
   var HP = { sword: 3, shield: 4, axe: 3, mace: 4, boss: 9 };
-  function difficulty() { return Math.min(1, st.kills / 45 + st.t / 240000); } /* 0 → 1 en 45 kills ou 4 min */
+  function difficulty() { return Math.min(1, st.kills / 32 + st.t / 170000); } /* 0 → 1 en 32 kills ou 3 min */
   function spawn() {
     var side = Math.random() < .5 ? -1 : 1;
     var boss = st.kills >= 4 && st.sinceBoss >= 5 && Math.random() < 0.35;
@@ -309,7 +309,7 @@
       v: v, boss: boss, hp: HP[v], maxhp: HP[v],
       z: 1, dx: side * (0.35 + Math.random() * 0.65), vy: Math.random() * 0.2 - 0.1,
       speed: (boss ? 0.045 : 0.05) + Math.random() * 0.03 + d * 0.06,
-      state: 'walk', anim: Math.random() * 1000, atkT: 0, hitT: 0, struck: false, born: 0
+      state: 'walk', anim: Math.random() * 1000, atkT: 0, hitT: 0, critT: 0, struck: false, born: 0
     });
   }
   var ZSTOP = 0.28;
@@ -341,7 +341,7 @@
         var headTop = g.y + g.h * (8 / 30), headBottom = g.y + g.h * (14.5 / 30);
         var head = st.my <= headBottom && st.my >= headTop - g.h * 0.06 && Math.abs(st.mx - (g.x + g.s * 0.5)) < g.s * 0.2;
         var dmg = 1 + Math.floor(Math.random() * 3);   /* 1 à 3 */
-        if (head) { dmg *= 2; crit(st.mx, st.my, g.s); }
+        if (head) { dmg *= 2; crit(g.x + g.s / 2, g.y + g.h * 0.2, g.s); m.critT = 140; }
         m.hp -= dmg; m.hitT = 160;
         sparks(st.mx, st.my, g.s, 6 + dmg * 2, m.boss);
         if (m.hp <= 0) {
@@ -362,7 +362,16 @@
     st.parts.push({ kind: 'shell', x: x, y: y, vx: 260 + Math.random() * 160, vy: -(320 + Math.random() * 160), rot: gp.ang, vr: 12 + Math.random() * 10, life: 900, max: 900, sz: cell * 2.6 });
   }
   function crit(x, y, s) {
-    st.fx.push({ kind: 'ring', x: x, y: y, life: 260, max: 260, r: s * 0.16 });
+    st.fx.push({ kind: 'label', x: x, y: y - s * 0.1, life: 620, max: 620, text: 'CRIT' });
+  }
+  var tintC = document.createElement('canvas'), tintX = tintC.getContext('2d');
+  function drawTinted(ctx, img, x, y, w, h) {
+    tintC.width = img.width; tintC.height = img.height;
+    tintX.clearRect(0, 0, tintC.width, tintC.height);
+    tintX.drawImage(img, 0, 0);
+    tintX.globalCompositeOperation = 'source-atop'; tintX.fillStyle = RED; tintX.fillRect(0, 0, tintC.width, tintC.height);
+    tintX.globalCompositeOperation = 'source-over';
+    ctx.drawImage(tintC, x, y, w, h);
   }
   function sparks(x, y, s, n, red) {
     for (var i = 0; i < n; i++) {
@@ -444,6 +453,7 @@
       var m = st.mons[i];
       m.anim += dt; m.born += dt;
       if (m.hitT > 0) m.hitT -= dt;
+      if (m.critT > 0) m.critT -= dt;
       if (m.state === 'walk') {
         m.z -= m.speed * dt / 1000;
         if (m.z <= ZSTOP) { m.z = ZSTOP; m.state = 'attack'; m.atkT = 0; m.struck = false; }
@@ -482,12 +492,14 @@
       var kick = m.hitT > 0 ? (m.hitT / 160) * g.s * 0.05 : 0;
       var fade = Math.min(1, m.born / 700);
       ctx.globalAlpha = fade * (m.hitT > 0 && (Math.floor(m.hitT / 40) % 2) ? 0.55 : 1);
-      ctx.drawImage(img, Math.round(g.x + sx), Math.round(g.y + bob + kick + sy), Math.round(g.s), Math.round(g.h));
+      if (m.critT > 0) drawTinted(ctx, img, Math.round(g.x + sx), Math.round(g.y + bob + kick + sy), Math.round(g.s), Math.round(g.h));
+      else ctx.drawImage(img, Math.round(g.x + sx), Math.round(g.y + bob + kick + sy), Math.round(g.s), Math.round(g.h));
       ctx.globalAlpha = 1;
       if (m.hp < m.maxhp) {
         var bw = g.s * 0.5, bh = Math.max(3, g.s * 0.025), bx = g.x + g.s / 2 - bw / 2, by = g.y + g.h * 0.2;
+        ctx.fillStyle = INK; ctx.fillRect(Math.round(bx - 2), Math.round(by - 2), Math.round(bw + 4), Math.round(bh + 4));
         ctx.fillStyle = BG; ctx.fillRect(Math.round(bx - 1), Math.round(by - 1), Math.round(bw + 2), Math.round(bh + 2));
-        ctx.fillStyle = m.boss ? RED : INK; ctx.fillRect(Math.round(bx), Math.round(by), Math.round(bw * m.hp / m.maxhp), Math.round(bh));
+        ctx.fillStyle = RED; ctx.fillRect(Math.round(bx), Math.round(by), Math.round(bw * m.hp / m.maxhp), Math.round(bh));
       }
     }
     /* particules : éclats, os, douilles */
@@ -510,13 +522,14 @@
       }
     }
     fctx.globalAlpha = 1;
-    /* coup critique : anneau rouge qui s'ouvre */
+    /* coup critique : étiquette plate qui monte, façon dégâts de RPG */
     for (var k = 0; k < st.fx.length; k++) {
       var f = st.fx[k], q = 1 - f.life / f.max;
-      fctx.globalAlpha = 1 - q;
-      fctx.strokeStyle = RED; fctx.lineWidth = 3;
-      fctx.beginPath(); fctx.arc(f.x, f.y, f.r * (0.4 + q * 1.4), 0, 6.2832); fctx.stroke();
-      fctx.fillStyle = RED; fctx.fillRect(f.x - 2, f.y - 2, 4, 4);
+      fctx.globalAlpha = q < 0.7 ? 1 : 1 - (q - 0.7) / 0.3;
+      var ly = f.y - q * 34, lw = 46, lh = 18;
+      fctx.fillStyle = RED; fctx.fillRect(Math.round(f.x - lw / 2), Math.round(ly - lh / 2), lw, lh);
+      fctx.fillStyle = BG; fctx.font = '700 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'center'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '2px';
+      fctx.fillText(f.text, Math.round(f.x + 1), Math.round(ly + 1));
     }
     fctx.globalAlpha = 1;
 

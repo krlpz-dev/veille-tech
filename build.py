@@ -46,31 +46,40 @@ def logo_svg(cls=''):
     raw = re.sub(r'<svg[^>]*>', lambda m: re.sub(r'\s(id|version|xmlns)="[^"]*"', '', m.group(0)).replace('<svg', f'<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ARCHIVE"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}', 1), raw, count=1)
     return raw.strip()
 
-def speckles_svg(seed=1745, w=1400, h=1000, n=130):
-    """Petits éclats clairs, façon papier abîmé. Déterministe."""
+def speckles_svg(seed=1745, w=1600, h=1000):
+    """Usure de pellicule : rayures verticales fines, poussières, grain léger. Déterministe, discret."""
+    import math
     rnd = random.Random(seed)
     parts = []
-    for _ in range(n):
+    # rayures verticales (fines, longues, très légères)
+    for _ in range(9):
+        x = rnd.uniform(0, w); y0 = rnd.uniform(-100, h * 0.6); L = rnd.uniform(120, 620)
+        op = rnd.uniform(0.05, 0.14); sw = rnd.choice([0.5, 0.6, 0.8])
+        parts.append(f'<line x1="{x:.1f}" y1="{y0:.1f}" x2="{x + rnd.uniform(-1.5, 1.5):.1f}" y2="{y0 + L:.1f}" stroke="#EDE7DC" stroke-opacity="{op:.2f}" stroke-width="{sw}"/>')
+    # poussières et petits éclats
+    for _ in range(46):
         x, y = rnd.uniform(0, w), rnd.uniform(0, h)
-        kind = rnd.random()
-        if kind < 0.55:
-            r = rnd.uniform(0.5, 1.4)
-            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.2f}"/>')
-        elif kind < 0.85:
-            pts = []
-            k = rnd.randint(4, 7)
-            base = rnd.uniform(1.2, 3.2)
-            for i in range(k):
-                a = i / k * 6.2832
-                rr = base * rnd.uniform(0.5, 1.4)
-                pts.append(f'{x + rr * __import__("math").cos(a):.1f},{y + rr * __import__("math").sin(a):.1f}')
-            parts.append(f'<polygon points="{" ".join(pts)}"/>')
+        op = rnd.uniform(0.18, 0.5)
+        if rnd.random() < 0.7:
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rnd.uniform(0.4, 1.1):.2f}" fill="#EDE7DC" fill-opacity="{op:.2f}"/>')
         else:
-            # petit amas de 3 à 6 points
-            for _ in range(rnd.randint(3, 6)):
-                parts.append(f'<circle cx="{x + rnd.uniform(-9, 9):.1f}" cy="{y + rnd.uniform(-9, 9):.1f}" r="{rnd.uniform(0.4, 1.1):.2f}"/>')
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-            f'<g fill="#EDE7DC" fill-opacity="0.82">{"".join(parts)}</g></svg>')
+            k = rnd.randint(4, 6); base = rnd.uniform(1.0, 2.2); pts = []
+            for i in range(k):
+                a = i / k * 6.2832; rr = base * rnd.uniform(0.5, 1.4)
+                pts.append(f'{x + rr * math.cos(a):.1f},{y + rr * math.sin(a):.1f}')
+            parts.append(f'<polygon points="{" ".join(pts)}" fill="#EDE7DC" fill-opacity="{op:.2f}"/>')
+    # cheveux (courbes fines)
+    for _ in range(4):
+        x, y = rnd.uniform(0, w), rnd.uniform(0, h)
+        parts.append(f'<path d="M{x:.1f},{y:.1f} q{rnd.uniform(-14, 14):.1f},{rnd.uniform(-20, 20):.1f} {rnd.uniform(-30, 30):.1f},{rnd.uniform(-36, 36):.1f}" fill="none" stroke="#EDE7DC" stroke-opacity="0.22" stroke-width="0.6"/>')
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">{"".join(parts)}</svg>')
+
+def grain_svg():
+    """Tuile de grain (bruit) très légère, répétée en fond."""
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240">'
+            '<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>'
+            '<feColorMatrix values="0 0 0 0 0.93 0 0 0 0 0.9 0 0 0 0 0.86 0 0 0 0.06 0"/></filter>'
+            '<rect width="240" height="240" filter="url(#g)"/></svg>')
 
 def head(title, desc, canonical, og_image=''):
     og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ''
@@ -88,7 +97,7 @@ def head(title, desc, canonical, og_image=''):
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vina+Sans&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Astloch:wght@400;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script>try{{var l=localStorage.getItem('archive-lang');if(l==='en'||l==='fr'){{document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}}}catch(e){{}}</script>
 </head>
@@ -129,14 +138,14 @@ def media_html(m, alt=''):
 
 def news_html(n, idx):
     src = n['source']; also = n.get('also')
-    also_html = f' <span>·</span> <a href="{esc(also["url"])}" target="_blank" rel="noopener">{esc(also["name"])}</a>' if also else ''
-    return f'''<article class="news" id="{esc(n['id'])}">
+    also_html = f'<a href="{esc(also["url"])}" target="_blank" rel="noopener">{esc(also["name"])}</a>' if also else ''
+    return f'''<article class="news reveal" id="{esc(n['id'])}">
   <div class="text">
     <div class="eyebrow">{bi_esc(n['category'])}<span class="sep">/</span><span class="date"><span data-l="fr">{date_fr(n['date'])}</span><span data-l="en">{date_en(n['date'])}</span></span></div>
     <h2>{bi_esc(n['title'])}</h2>
     <p class="body">{bi_esc(n['body'])}</p>
     <p class="learning">{bi_esc(n['learning'])}</p>
-    <div class="src"><span data-l="fr">Source</span><span data-l="en">Source</span> <a href="{esc(src['url'])}" target="_blank" rel="noopener">{esc(src['name'])}</a>{also_html}</div>
+    <div class="src"><span class="lbl"><span data-l="fr">Source</span><span data-l="en">Source</span></span><a href="{esc(src['url'])}" target="_blank" rel="noopener">{esc(src['name'])}</a>{also_html}</div>
   </div>
   {media_html(n['media'], n['media'].get('alt', ''))}
 </article>'''
@@ -155,7 +164,7 @@ def edition_page(ed, prev_ed, next_ed):
 <header class="hero-ed">
   {hero_img}
   <div class="inner">
-    <div class="n">N°{ed['edition']}</div>
+    <div class="n">{num3(ed)}</div>
     <h1>{bi_esc(ed['title'])}</h1>
     <p class="deck">{bi_esc(ed['deck'])}</p>
     <div class="meta"><span><b data-l="fr">{date_fr(ed['date'])}</b><b data-l="en">{date_en(ed['date'])}</b></span><span>{len(ed['news'])} <span data-l="fr">news</span><span data-l="en">stories</span></span></div>
@@ -173,31 +182,39 @@ def edition_page(ed, prev_ed, next_ed):
 </body>
 </html>'''
 
+def num3(ed):
+    return str(int(ed['edition'])).zfill(3)
+
+def tags_html(ed):
+    return '<ul class="tags">' + ''.join(f'<li>{esc(n.get("tag") or n["category"]["fr"])}</li>' for n in ed['news']) + '</ul>'
+
 def index_page(eds):
     latest = eds[0]
     def block(ed, featured):
         hero = ed.get('hero', {})
-        img = f'<img src="{esc(hero["src"])}" alt="" loading="{"eager" if featured else "lazy"}">' if hero.get('src') else ''
-        topics = ''.join(f'<li>{bi_esc(n["title"])}</li>' for n in ed['news'])
+        img = f'<img src="{esc(hero["src"])}" alt="" loading="{"eager" if featured else "lazy"}" decoding="async">' if hero.get('src') else ''
+        href = f'edition-{ed["date"]}.html'
+        date = f'<span data-l="fr">{date_fr(ed["date"])}</span><span data-l="en">{date_en(ed["date"])}</span>'
         if featured:
-            return f'''<article class="ed">
-  <a class="media" href="edition-{ed['date']}.html" aria-label="N° {ed['edition']}">{img}<span class="num">N°{ed['edition']}</span></a>
-  <div class="text">
-    <div class="eyebrow"><span data-l="fr">Dernière édition</span><span data-l="en">Latest issue</span><span class="sep">/</span><span class="date"><span data-l="fr">{date_fr(ed['date'])}</span><span data-l="en">{date_en(ed['date'])}</span></span></div>
-    <h3><a href="edition-{ed['date']}.html">{bi_esc(ed['title'])}</a></h3>
-    <p class="deck">{bi_esc(ed['deck'])}</p>
-    <ul class="topics">{topics}</ul>
-    <a class="cta" href="edition-{ed['date']}.html"><span data-l="fr">Lire l'édition</span><span data-l="en">Read the issue</span></a>
+            return f'''<article class="card card-hero reveal">
+  <a class="media" href="{href}" aria-label="N° {ed['edition']}">{img}</a>
+  <div class="content">
+    <div class="num">{num3(ed)}</div>
+    <div class="eyebrow"><span data-l="fr">Dernière édition</span><span data-l="en">Latest issue</span><span class="sep">/</span><span class="date">{date}</span></div>
+    <h3><a href="{href}">{bi_esc(ed['title'])}</a></h3>
+    {tags_html(ed)}
+    <a class="cta" href="{href}"><span data-l="fr">Lire l'édition</span><span data-l="en">Read the issue</span><i aria-hidden="true"></i></a>
   </div>
 </article>'''
-        return f'''<article class="ed past">
-  <div class="num">N°{ed['edition']}</div>
-  <div class="text">
-    <div class="eyebrow"><span class="date"><span data-l="fr">{date_fr(ed['date'])}</span><span data-l="en">{date_en(ed['date'])}</span></span></div>
-    <h3><a href="edition-{ed['date']}.html">{bi_esc(ed['title'])}</a></h3>
-    <p class="deck">{bi_esc(ed['deck'])}</p>
+        return f'''<article class="card card-past reveal">
+  <a class="media" href="{href}" aria-label="N° {ed['edition']}">{img}</a>
+  <div class="content">
+    <div class="num">{num3(ed)}</div>
+    <div class="eyebrow"><span class="date">{date}</span></div>
+    <h3><a href="{href}">{bi_esc(ed['title'])}</a></h3>
+    {tags_html(ed)}
+    <a class="cta" href="{href}"><span data-l="fr">Lire l'édition</span><span data-l="en">Read the issue</span><i aria-hidden="true"></i></a>
   </div>
-  <a class="media" href="edition-{ed['date']}.html" aria-label="N° {ed['edition']}">{img}</a>
 </article>'''
     blocks = '\n'.join(block(e, i == 0) for i, e in enumerate(eds))
     desc = 'ARCHIVE, veille tech hebdomadaire : IA, gaming tech, robotique. Quatre à six news par semaine, lues en trois minutes.'
@@ -213,11 +230,9 @@ def index_page(eds):
     <div class="sub"><span data-l="fr">Score</span><span data-l="en">Score</span> <b data-score>000</b></div>
     <button type="button" class="again"><span data-l="fr">Réessayer</span><span data-l="en">Try again</span></button>
   </div>
-  <div class="tag"><b>IA · Gaming tech · Robotique</b><span data-l="fr">Chaque dimanche soir · lu en trois minutes</span><span data-l="en">Every Sunday night · read in three minutes</span></div>
-  <div class="scroll"><span data-l="fr">Clic pour tirer · R pour recharger · ↓ éditions</span><span data-l="en">Click to shoot · R to reload · ↓ issues</span></div>
 </header>
 <main class="wrap editions">
-  <div class="head"><h2><span data-l="fr">Éditions</span><span data-l="en">Issues</span></h2><span class="count">{len(eds)} <span data-l="fr">numéro{"s" if len(eds) > 1 else ""}</span><span data-l="en">issue{"s" if len(eds) > 1 else ""}</span></span></div>
+  <div class="head reveal"><h2><span data-l="fr">Éditions</span><span data-l="en">Issues</span></h2><span class="count">{len(eds)} <span data-l="fr">numéro{"s" if len(eds) > 1 else ""}</span><span data-l="en">issue{"s" if len(eds) > 1 else ""}</span></span></div>
   {blocks}
 </main>
 {footer()}
@@ -237,6 +252,7 @@ def main():
         if os.path.exists(p):
             shutil.copy(p, os.path.join(OUT, 'assets', name))
     open(os.path.join(OUT, 'assets', 'speckles.svg'), 'w', encoding='utf-8').write(speckles_svg())
+    open(os.path.join(OUT, 'assets', 'grain.svg'), 'w', encoding='utf-8').write(grain_svg())
     open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index_page(eds))
     for i, ed in enumerate(eds):
         newer = eds[i - 1] if i > 0 else None

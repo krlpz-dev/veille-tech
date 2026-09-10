@@ -142,7 +142,6 @@
   function block(x0, y0, x1, y1, c) { var o = []; for (var y = y0; y <= y1; y++) for (var x = x0; x <= x1; x++) o.push([x, y, c || '#']); return o; }
   var WEAPONS = {
     sword: {
-      /* poignée vers le bas, garde, lame de 2 px + ombre, pointe */
       walk: [[0, 1, '+'], [0, 2, '+'], [0, 3, '+'], [1, 1, '+'], [1, 2, '+'], [0, 0, '#'], [1, 0, '+']]
         .concat(line(-2, -1, 3, -1)).concat([[-2, 0, '+'], [3, 0, '+']])
         .concat(line(0, -2, 0, -14)).concat(line(1, -2, 1, -13, '+')).concat([[0, -15, '#'], [1, -14, '+'], [0, -16, '+']]),
@@ -163,7 +162,7 @@
     }
   };
   WEAPONS.shield = WEAPONS.sword;
-  /* bouclier rond, posé au bras gauche : cols -2..6, rows 11..20 */
+  /* bouclier rond, posé au bras gauche : cols -2..7, rows 11..20 */
   var SHIELD = [
     '...####...',
     '..#+##+#..',
@@ -197,7 +196,6 @@
     if (boss) {
       HORNS.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '#'); });
       HORNS_SHADE.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '+'); });
-      /* yeux blancs, mâchoire plus large */
       put(g, 9 + OX, 5 + OY, '@'); put(g, 14 + OX, 5 + OY, '@');
       put(g, 7 + OX, 9 + OY, '#'); put(g, 16 + OX, 9 + OY, '#');
     }
@@ -645,18 +643,19 @@
     drawHud();
   }
   function drawHud() {
-    var m = Math.max(18, Math.min(64, W * 0.04));
-    /* barre de vie rouge, contour clair, bas gauche, au-dessus de la ligne de tag */
-    var bw = 140, bh = 8, bx = m, by = H - 78 - bh;
+    /* alignés sur les bords du container des éditions */
+    var gut = Math.min(72, Math.max(20, W * 0.045));
+    var edge = Math.max(gut, (W - 1360) / 2 + gut);
+    var bw = 140, bh = 8, bx = edge, by = H - 34 - bh;
     fctx.fillStyle = INK;
     fctx.fillRect(bx - 2, by - 2, bw + 4, 1); fctx.fillRect(bx - 2, by + bh + 1, bw + 4, 1);
     fctx.fillRect(bx - 2, by - 2, 1, bh + 4); fctx.fillRect(bx + bw + 1, by - 2, 1, bh + 4);
     var blink = st.hurt > 0 && (Math.floor(st.hurt / 50) % 2);
     fctx.fillStyle = RED;
     if (!blink) fctx.fillRect(bx, by, Math.round(bw * st.life / MAXLIFE), bh);
-    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle';
+    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'right'; fctx.textBaseline = 'middle';
     fctx.letterSpacing = '3px';
-    fctx.fillText(String(st.score).padStart(3, '0'), bx + bw + 14, by + bh / 2 + 1);
+    fctx.fillText(String(st.score).padStart(3, '0'), W - edge + 3, by + bh / 2 + 1);
   }
   requestAnimationFrame(frame);
   }

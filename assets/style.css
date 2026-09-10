@@ -50,7 +50,7 @@ html[data-lang="en"] [data-l="fr"]{display:none !important}
 /* ---- typographie ---- */
 .eyebrow{
   font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.32em;word-spacing:1em;text-transform:uppercase;color:var(--accent);
-  display:flex;align-items:center;gap:12px;line-height:1.4;
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;line-height:1.4;
 }
 .eyebrow .sep{color:var(--muted);letter-spacing:0;word-spacing:0}
 .eyebrow .date{color:var(--ink-2)}

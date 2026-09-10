@@ -28,6 +28,7 @@ Netlify redéploie en moins d'une minute.
   "title": { "fr": "…", "en": "…" },
   "deck": { "fr": "…", "en": "…" },
   "hero": { "src": "https://…png", "alt": { "fr": "…", "en": "…" } },
+  "background": { "src": "https://… (optionnel : grain de fond du site, repris de la dernière édition qui en définit un)" },
   "news": [
     {
       "id": "slug",
@@ -36,7 +37,8 @@ Netlify redéploie en moins d'une minute.
       "title": { "fr": "…", "en": "…" },
       "body": { "fr": "2 à 4 phrases très brèves, le chiffre marquant inclus dans le texte", "en": "…" },
       "learning": { "fr": "1 phrase", "en": "…" },
-      "media": { "type": "image | video", "src": "https://…", "poster": "https://… (video)", "alt": "…" },
+      "tag": "DLSS 5",
+      "media": { "type": "image | video | slideshow", "src": "https://… (image, video)", "poster": "https://… (video)", "srcs": ["https://…", "https://…"], "labels": ["off", "on"], "alt": "…" },
       "source": { "name": "…", "url": "https://…" },
       "also": { "name": "…", "url": "https://…" }
     }
@@ -52,7 +54,7 @@ Catégories utilisées : IA / AI, Gaming tech, Robotique / Robotics, Business, S
 - Tech uniquement : IA, gaming côté technologie (jamais les jeux eux-mêmes), robotique.
 - Texte très bref, lisible en quelques secondes. Un chiffre marquant et vérifiable par news, dans le paragraphe (pas de chiffre géant).
 - Un learning ou un avis sur les implications en une phrase.
-- Image principale choisie dans les sources (gif ou mp4 quand ça montre mieux), image d'ouverture générée sur Higgsfield (Soul 2.0, 16:9, noir et blanc granuleux, sans texte).
+- Images choisies sur le web quand c'est possible (2 à 4 images en diaporama automatique de 2 s, par exemple avant/après pour une techno de rendu, jamais de jeu de sport) ; à défaut, image générée sur Higgsfield Soul 2.0 dans un esprit brut, organique, flou de mouvement. Image d'ouverture d'édition : Higgsfield, 16:9, noir et blanc granuleux, sans texte.
 - Écriture : pas de tiret cadratin, pas de point d'exclamation.
 
 ## Le mini jeu du header

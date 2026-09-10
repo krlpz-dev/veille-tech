@@ -23,6 +23,21 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     rev.forEach(function (el, i) { el.style.transitionDelay = Math.min(i, 4) * 60 + 'ms'; ro.observe(el); });
   } else { rev.forEach(function (el) { el.classList.add('in'); }); }
+  /* diaporamas automatiques, 2 s par image, sans contrôle, uniquement visibles */
+  document.querySelectorAll('[data-slides]').forEach(function (box) {
+    var imgs = box.querySelectorAll('img'), lbls = box.querySelectorAll('.lbl'), i = 0, timer = null;
+    if (imgs.length < 2) return;
+    function step() {
+      imgs[i].classList.remove('on'); if (lbls[i]) lbls[i].removeAttribute('data-on');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('on'); if (lbls[i]) lbls[i].setAttribute('data-on', '');
+    }
+    function start() { if (!timer) timer = setInterval(step, 2000); }
+    function stop() { clearInterval(timer); timer = null; }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { en[0].isIntersecting ? start() : stop(); }, { threshold: 0.2 }).observe(box);
+    } else start();
+  });
   /* vidéos : lecture uniquement quand visibles */
   var vids = document.querySelectorAll('video[data-auto]');
   if (vids.length && 'IntersectionObserver' in window) {

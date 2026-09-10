@@ -26,131 +26,196 @@
   var W = 0, H = 0, DPR = 1;
   var PX = 4;
 
-  /* ---------- squelette : corps 16 x 20, placé dans une case 28 x 30 (décalage 6, 8) ---------- */
+  /* ---------- squelette : corps 24 x 32, deux tons ('#' clair, '+' ombre, '*' rouge, '@' blanc), case 36 x 40 ---------- */
+  var SHADE = '#8A8276', RED2 = '#8E1E17';
   var BODY = {
     walk1: [
-      '.....######.....',
-      '....########....',
-      '....##.##.##....',
-      '....########....',
-      '.....#.##.#.....',
-      '......####......',
-      '.....#.##.#.....',
-      '..############..',
-      '..#..######..#..',
-      '..#.#.#..#.#.#..',
-      '..#..######..#..',
-      '..#.#.#..#.#.#..',
-      '..#..######..#..',
-      '.....#.##.#.....',
-      '....###..###....',
-      '....#.#..#.#....',
-      '....#.#..#.#....',
-      '....#.#..#.#....',
-      '....##....##....',
-      '...###....###...'
+      '........########........',
+      '.......##########.......',
+      '......############......',
+      '......###+####+###......',
+      '......##..####..##......',
+      '......#+.*+##+*.+#......',
+      '......###+####+###......',
+      '.......###+##+###.......',
+      '.......+#.#.#.#.#+......',
+      '........++#+#+#++.......',
+      '..........+##+..........',
+      '.....+###########+......',
+      '....##+..#####..+##.....',
+      '...##+..##+#+##..+##....',
+      '...#+..+#+###+#+..+#....',
+      '...#+..##+#+#+##...#....',
+      '..+#...+#+###+#+...#+...',
+      '..#+....##+#+##....+#...',
+      '..#.....+#+#+#+.....#...',
+      '.+#......+###+......#+..',
+      '.++.......+#+.......++..',
+      '.........+###+..........',
+      '........##+#+##.........',
+      '.......+#+...+#+........',
+      '.......##.....##........',
+      '.......#+.....+#........',
+      '......+#+.....+#+.......',
+      '......##.......##.......',
+      '......#+.......+#.......',
+      '......#+.......+#.......',
+      '.....+##.......##+......',
+      '.....###.......###......'
     ],
     walk2: [
-      '.....######.....',
-      '....########....',
-      '....##.##.##....',
-      '....########....',
-      '.....#.##.#.....',
-      '......####......',
-      '.....#.##.#.....',
-      '..############..',
-      '..#..######..#..',
-      '..#.#.#..#.#.#..',
-      '..#..######..#..',
-      '..#.#.#..#.#.#..',
-      '..#..######..#..',
-      '.....#.##.#.....',
-      '....###..###....',
-      '.....#.#.#.#....',
-      '.....#.#.#.#....',
-      '....#.#..#.#....',
-      '...##.....##....',
-      '..###.....###...'
+      '........########........',
+      '.......##########.......',
+      '......############......',
+      '......###+####+###......',
+      '......##..####..##......',
+      '......#+.*+##+*.+#......',
+      '......###+####+###......',
+      '.......###+##+###.......',
+      '.......+#.#.#.#.#+......',
+      '........++#+#+#++.......',
+      '..........+##+..........',
+      '.....+###########+......',
+      '....##+..#####..+##.....',
+      '...##+..##+#+##..+##....',
+      '...#+..+#+###+#+..+#....',
+      '...#+..##+#+#+##...#....',
+      '..+#...+#+###+#+...#+...',
+      '..#+....##+#+##....+#...',
+      '..#.....+#+#+#+.....#...',
+      '.+#......+###+......#+..',
+      '.++.......+#+.......++..',
+      '.........+###+..........',
+      '........##+#+##.........',
+      '........#+...+#+........',
+      '.......##.....##........',
+      '......+#......+#........',
+      '......##.......#+.......',
+      '.....+#........+#.......',
+      '.....##.........#+......',
+      '.....#+.........+#......',
+      '....+##.........##+.....',
+      '....###.........###.....'
     ],
     attack: [
-      '.....######...#.',
-      '....########..#.',
-      '....##.##.##..#.',
-      '....########..#.',
-      '.....#.##.#..#..',
-      '......####...#..',
-      '.....#.##.#..#..',
-      '..###########...',
-      '..#..######.....',
-      '..#.#.#..#.#....',
-      '..#..######.....',
-      '..#.#.#..#.#....',
-      '..#..######.....',
-      '.....#.##.#.....',
-      '....###..###....',
-      '....#.#..#.#....',
-      '....#.#..#.#....',
-      '....#.#..#.#....',
-      '....##....##....',
-      '...###....###...'
+      '........########.....+#.',
+      '.......##########....##.',
+      '......############...#+.',
+      '......###+####+###..+#..',
+      '......##..####..##..##..',
+      '......#+.*+##+*.+#..#+..',
+      '......###+####+###.+#...',
+      '.......###+##+###..##...',
+      '.......+#.#.#.#.#+.#+...',
+      '........++#+#+#++.+#....',
+      '..........+##+....##....',
+      '.....+###########+#.....',
+      '....##+..#####..+##.....',
+      '...##+..##+#+##.........',
+      '...#+..+#+###+#+........',
+      '...#+..##+#+#+##........',
+      '..+#...+#+###+#+........',
+      '..#+....##+#+##.........',
+      '..#.....+#+#+#+.........',
+      '.+#......+###+..........',
+      '.++.......+#+...........',
+      '.........+###+..........',
+      '........##+#+##.........',
+      '.......+#+...+#+........',
+      '.......##.....##........',
+      '.......#+.....+#........',
+      '......+#+.....+#+.......',
+      '......##.......##.......',
+      '......#+.......+#.......',
+      '......#+.......+#.......',
+      '.....+##.......##+......',
+      '.....###.......###......'
     ]
   };
   /* main droite (col, row) dans le repère du corps, par frame */
-  var HAND = { walk1: [14, 12], walk2: [14, 12], attack: [14, 0] };
-  /* armes, dessinées autour de la main : liste de [dx, dy, char] relatifs à la main */
+  var HAND = { walk1: [21, 19], walk2: [21, 19], attack: [22, 0] };
   function line(x0, y0, x1, y1, c) {
     var out = [], dx = Math.sign(x1 - x0), dy = Math.sign(y1 - y0), n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0));
     for (var i = 0; i <= n; i++) out.push([x0 + dx * i, y0 + dy * i, c || '#']);
     return out;
   }
-  function block(x0, y0, x1, y1) { var o = []; for (var y = y0; y <= y1; y++) for (var x = x0; x <= x1; x++) o.push([x, y, '#']); return o; }
+  function block(x0, y0, x1, y1, c) { var o = []; for (var y = y0; y <= y1; y++) for (var x = x0; x <= x1; x++) o.push([x, y, c || '#']); return o; }
   var WEAPONS = {
     sword: {
-      walk: line(0, 0, 0, 1).concat([[-1, -1, '#'], [0, -1, '#'], [1, -1, '#']]).concat(line(0, -2, 0, -10)),
-      attack: [[0, 0, '#'], [0, -1, '#'], [0, 1, '#']].concat(line(1, 0, 9, 0))
+      /* poignée vers le bas, garde, lame de 2 px + ombre, pointe */
+      walk: [[0, 1, '+'], [0, 2, '+'], [0, 3, '+'], [1, 1, '+'], [1, 2, '+'], [0, 0, '#'], [1, 0, '+']]
+        .concat(line(-2, -1, 3, -1)).concat([[-2, 0, '+'], [3, 0, '+']])
+        .concat(line(0, -2, 0, -14)).concat(line(1, -2, 1, -13, '+')).concat([[0, -15, '#'], [1, -14, '+'], [0, -16, '+']]),
+      attack: [[0, 0, '#'], [-1, 0, '+'], [-1, 1, '+'], [0, 1, '+'], [1, -2, '#'], [1, -1, '#'], [1, 0, '#'], [1, 1, '+'], [1, 2, '+']]
+        .concat(line(2, -1, 14, -1)).concat(line(2, 0, 14, 0)).concat(line(2, 1, 13, 1, '+')).concat([[15, 0, '#'], [16, 0, '+']])
     },
     axe: {
-      walk: line(0, 1, 0, -9).concat(block(1, -9, 3, -6)).concat([[3, -5, '#'], [3, -10, '#']]),
-      attack: line(0, 0, 6, 0).concat(block(7, -2, 9, 1)).concat([[10, -2, '#'], [10, 1, '#']])
+      walk: line(0, 2, 0, -13, '+').concat(line(0, 1, 0, -12)).concat(block(1, -13, 5, -6)).concat(block(4, -12, 5, -7, '+'))
+        .concat([[6, -12, '#'], [6, -11, '#'], [6, -10, '+'], [6, -9, '+'], [6, -8, '+'], [2, -14, '#'], [3, -14, '+'], [2, -5, '+'], [3, -5, '+'], [1, -12, '+'], [1, -7, '+']]),
+      attack: line(0, 0, 8, 0).concat(line(0, 1, 8, 1, '+')).concat(block(9, -4, 15, 3)).concat(block(9, 1, 15, 3, '+'))
+        .concat([[16, -3, '#'], [16, -2, '#'], [16, -1, '+'], [16, 0, '+'], [16, 1, '+'], [16, 2, '+'], [10, -5, '#'], [11, -5, '#'], [12, -5, '+'], [10, 4, '+'], [11, 4, '+'], [12, 4, '+']])
     },
     mace: {
-      walk: line(0, 1, 0, -6).concat(block(-1, -9, 1, -7)).concat([[0, -10, '#'], [-2, -8, '#'], [2, -8, '#']]),
-      attack: line(0, 0, 5, 0).concat(block(6, -1, 8, 1)).concat([[9, 0, '#'], [7, -2, '#'], [7, 2, '#']])
+      walk: line(0, 2, 0, -9, '+').concat(line(0, 1, 0, -8)).concat(block(-2, -15, 3, -10)).concat(block(1, -14, 3, -11, '+'))
+        .concat([[-1, -16, '#'], [0, -16, '#'], [2, -16, '+'], [-3, -14, '#'], [-3, -11, '#'], [4, -14, '+'], [4, -11, '+'], [-1, -9, '+'], [2, -9, '+'], [0, -17, '#'], [-4, -13, '#'], [5, -12, '+'], [-4, -12, '+'], [5, -13, '#']]),
+      attack: line(0, 0, 7, 0).concat(line(0, 1, 7, 1, '+')).concat(block(8, -3, 13, 2)).concat(block(8, 0, 13, 2, '+'))
+        .concat([[9, -4, '#'], [12, -4, '#'], [14, -2, '#'], [14, 1, '+'], [9, 3, '+'], [12, 3, '+'], [7, -2, '#'], [7, 2, '+'], [15, 0, '#'], [15, -1, '#'], [10, -5, '#'], [11, 4, '+'], [10, 4, '+']])
     }
   };
-  WEAPONS.shield = WEAPONS.sword; /* épée + bouclier : même épée, bouclier au bras gauche */
-  var SHIELD = ['.#####.', '##.#.##', '#..#..#', '#######', '#..#..#', '##...##', '.##.##.', '..###..']; /* posé cols -2..4, rows 6..13 */
+  WEAPONS.shield = WEAPONS.sword;
+  /* bouclier rond, posé au bras gauche : cols -2..6, rows 11..20 */
+  var SHIELD = [
+    '...####...',
+    '..#+##+#..',
+    '.#+#..#+#.',
+    '.#+#..#+#.',
+    '##+#..#+##',
+    '##+#..#+##',
+    '.#+#..#+#.',
+    '.#+#..#+#.',
+    '..#+##+#..',
+    '...+##+...'
+  ];
+  var SHIELD_AT = [-2, 11];
   /* dégradation : pixels effacés par stade (col, row) dans le repère du corps */
   var DAMAGE = [
     [],
-    [[6, 9], [9, 11], [5, 0], [6, 0], [3, 9], [12, 11]],
-    [[6, 9], [9, 11], [5, 0], [6, 0], [3, 9], [12, 11], [2, 8], [2, 9], [2, 10], [2, 11], [2, 12], [7, 0], [8, 0], [4, 1], [5, 1], [8, 11], [10, 9], [5, 3]]
+    [[9, 0], [10, 0], [9, 1], [10, 2], [8, 13], [9, 13], [14, 15], [15, 15], [7, 8], [8, 8], [8, 9]],
+    [[9, 0], [10, 0], [9, 1], [10, 2], [8, 13], [9, 13], [14, 15], [15, 15], [7, 8], [8, 8], [8, 9], [11, 8], [12, 8], [12, 9], [13, 9], [7, 16], [8, 16], [13, 17], [14, 17], [8, 3], [7, 3], [15, 0], [14, 1], [9, 12]]
   ];
+  var LEFT_ARM = block(1, 12, 5, 20);
+  var HORNS = [[6, -1], [5, -2], [4, -3], [4, -4], [3, -5], [17, -1], [18, -2], [19, -3], [19, -4], [20, -5], [7, 0], [16, 0], [5, -1], [18, -1], [3, -6], [20, -6]];
+  var HORNS_SHADE = [[6, 0], [17, 0], [5, -3], [18, -3], [4, -5], [19, -5]];
+  var CELL_W = 36, CELL_H = 40, OX = 6, OY = 7;
 
   function blank(w, h) { var g = []; for (var j = 0; j < h; j++) g.push(new Array(w).fill('.')); return g; }
   function put(g, x, y, c) { if (y >= 0 && y < g.length && x >= 0 && x < g[0].length) g[y][x] = c; }
-  var HORNS = [[3, -1], [2, -2], [2, -3], [12, -1], [13, -2], [13, -3], [4, 0], [11, 0]];
   function compose(variant, frame, stage, boss) {
-    var g = blank(28, 30), OX = 6, OY = 8;
+    var g = blank(CELL_W, CELL_H);
     var body = BODY[frame];
-    for (var j = 0; j < body.length; j++) for (var i = 0; i < body[j].length; i++) if (body[j][i] === '#') put(g, i + OX, j + OY, '#');
-    if (boss) HORNS.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '#'); });
-    DAMAGE[stage].forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '.'); });
-    if (stage === 2 && frame !== 'attack') { /* bras gauche perdu */
-      for (var r = 7; r <= 12; r++) put(g, 2 + OX, r + OY, '.');
+    for (var j = 0; j < body.length; j++) for (var i = 0; i < body[j].length; i++) if (body[j][i] !== '.') put(g, i + OX, j + OY, body[j][i]);
+    if (boss) {
+      HORNS.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '#'); });
+      HORNS_SHADE.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '+'); });
+      /* yeux blancs, mâchoire plus large */
+      put(g, 9 + OX, 5 + OY, '@'); put(g, 14 + OX, 5 + OY, '@');
+      put(g, 7 + OX, 9 + OY, '#'); put(g, 16 + OX, 9 + OY, '#');
     }
+    DAMAGE[stage].forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '.'); });
+    if (stage === 2 && frame !== 'attack') LEFT_ARM.forEach(function (p) { put(g, p[0] + OX, p[1] + OY, '.'); });
     var hand = HAND[frame];
     var w = WEAPONS[variant][frame === 'attack' ? 'attack' : 'walk'];
     w.forEach(function (p) { put(g, hand[0] + p[0] + OX, hand[1] + p[1] + OY, p[2]); });
     if (variant === 'shield' && stage === 0) {
       for (var sj = 0; sj < SHIELD.length; sj++) for (var si = 0; si < SHIELD[sj].length; si++) {
-        if (SHIELD[sj][si] === '#') put(g, si - 2 + OX, sj + 6 + OY, '#');
+        if (SHIELD[sj][si] !== '.') put(g, si + SHIELD_AT[0] + OX, sj + SHIELD_AT[1] + OY, SHIELD[sj][si]);
       }
     }
     return g.map(function (r) { return r.join(''); });
   }
-  function bake(rows, px, inkColor) {
+  function bake(rows, px, pal) {
     px = px || PX;
+    pal = pal || { '#': INK, '+': SHADE, '*': RED, '@': INK };
     var w = rows[0].length, h = rows.length;
     var c = document.createElement('canvas');
     c.width = w * px; c.height = h * px;
@@ -158,11 +223,13 @@
     for (var j = 0; j < h; j++) for (var i = 0; i < w; i++) {
       var ch = rows[j][i];
       if (ch === '.') continue;
-      x.fillStyle = ch === '*' ? RED : (inkColor || INK);
+      x.fillStyle = pal[ch] || INK;
       x.fillRect(i * px, j * px, px, px);
     }
     return c;
   }
+  var PAL_BOSS = { '#': RED, '+': RED2, '*': INK, '@': INK };
+  var PAL_RED = { '#': RED, '+': RED2, '*': RED, '@': RED };
   var VARIANTS = ['sword', 'shield', 'axe', 'mace'];
   var SPR = {};
   VARIANTS.forEach(function (v) {
@@ -174,13 +241,12 @@
   /* mini boss : squelette rouge, cornu, à la hache */
   SPR.boss = [];
   for (var bs = 0; bs < 3; bs++) {
-    SPR.boss[bs] = { walk1: bake(compose('axe', 'walk1', bs, true), PX, RED), walk2: bake(compose('axe', 'walk2', bs, true), PX, RED), attack: bake(compose('axe', 'attack', bs, true), PX, RED) };
+    SPR.boss[bs] = { walk1: bake(compose('axe', 'walk1', bs, true), PX, PAL_BOSS), walk2: bake(compose('axe', 'walk2', bs, true), PX, PAL_BOSS), attack: bake(compose('axe', 'attack', bs, true), PX, PAL_BOSS) };
   }
   window.__ARCHIVE_SPR = SPR;
-  var BONE = bake(['#....#', '######', '#....#'], PX);
-  var SKULL = bake(['.####.', '######', '#.##.#', '######', '.#.#..'], PX);
-  var BONE_R = bake(['#....#', '######', '#....#'], PX, RED);
-  var SKULL_R = bake(['.####.', '######', '#.##.#', '######', '.#.#..'], PX, RED);
+  var BONE_ROWS = ['##...+#', '.#####+', '#+...++'], SKULL_ROWS = ['.#####.', '#######', '#+.#.+#', '#######', '.+#+#+.', '..+.+..'];
+  var BONE = bake(BONE_ROWS, PX), SKULL = bake(SKULL_ROWS, PX);
+  var BONE_R = bake(BONE_ROWS, PX, PAL_RED), SKULL_R = bake(SKULL_ROWS, PX, PAL_RED);
 
   /* ---------- fusil à pompe vu du dessus, 20 x 48 (la pompe est un calque séparé) ---------- */
   var GUN = [
@@ -315,11 +381,11 @@
   var ZSTOP = 0.28;
   function geom(m) {
     var p = 1 - m.z;
-    var scale = (0.14 + Math.pow(p, 2.2) * 0.34) * (m.boss ? 1.3 : 1);      /* fraction de H */
+    var scale = (0.19 + Math.pow(p, 2.2) * 0.42) * (m.boss ? 1.3 : 1);      /* fraction de H */
     var size = scale * H;
     var cx = W / 2 + m.dx * W * (0.15 + 0.42 * p);
     var cy = H * 0.42 + m.vy * H * 0.1 + Math.pow(p, 1.6) * H * 0.4;
-    return { x: cx - size / 2, y: cy - size * 0.6, s: size, h: size * 30 / 28 };
+    return { x: cx - size / 2, y: cy - size * 0.62, s: size, h: size * CELL_H / CELL_W };
   }
   function stage(m) { return m.hp <= 1 ? 2 : (m.hp < m.maxhp ? 1 : 0); }
 
@@ -336,12 +402,12 @@
     for (var i = 0; i < order.length; i++) {
       var m = order[i];
       var g = geom(m);
-      var bx = g.x + g.s * 0.18, bw = g.s * 0.64, by = g.y + g.h * 0.24, bh = g.h * 0.72;
+      var bx = g.x + g.s * (OX / CELL_W), bw = g.s * (24 / CELL_W), by = g.y + g.h * (OY / CELL_H), bh = g.h * (32 / CELL_H);
       if (st.mx >= bx && st.mx <= bx + bw && st.my >= by && st.my <= by + bh) {
-        var headTop = g.y + g.h * (8 / 30), headBottom = g.y + g.h * (14.5 / 30);
-        var head = st.my <= headBottom && st.my >= headTop - g.h * 0.06 && Math.abs(st.mx - (g.x + g.s * 0.5)) < g.s * 0.2;
+        var headTop = g.y + g.h * (OY / CELL_H), headBottom = g.y + g.h * ((OY + 10) / CELL_H);
+        var head = st.my <= headBottom && st.my >= headTop - g.h * 0.05 && Math.abs(st.mx - (g.x + g.s * ((OX + 12) / CELL_W))) < g.s * 0.19;
         var dmg = 1 + Math.floor(Math.random() * 3);   /* 1 à 3 */
-        if (head) { dmg *= 2; crit(g.x + g.s / 2, g.y + g.h * 0.2, g.s); m.critT = 140; }
+        if (head) { dmg *= 2; crit(g.x + g.s * ((OX + 12) / CELL_W), g.y + g.h * (OY / CELL_H), g.s); m.critT = 140; }
         m.hp -= dmg; m.hitT = 160;
         sparks(st.mx, st.my, g.s, 6 + dmg * 2, m.boss);
         if (m.hp <= 0) {
@@ -496,7 +562,7 @@
       else ctx.drawImage(img, Math.round(g.x + sx), Math.round(g.y + bob + kick + sy), Math.round(g.s), Math.round(g.h));
       ctx.globalAlpha = 1;
       if (m.hp < m.maxhp) {
-        var bw = g.s * 0.5, bh = Math.max(3, g.s * 0.025), bx = g.x + g.s / 2 - bw / 2, by = g.y + g.h * 0.2;
+        var bw = g.s * 0.5, bh = Math.max(3, g.s * 0.025), bx = g.x + g.s * ((OX + 12) / CELL_W) - bw / 2, by = g.y + g.h * ((OY - 3) / CELL_H);
         ctx.fillStyle = INK; ctx.fillRect(Math.round(bx - 2), Math.round(by - 2), Math.round(bw + 4), Math.round(bh + 4));
         ctx.fillStyle = BG; ctx.fillRect(Math.round(bx - 1), Math.round(by - 1), Math.round(bw + 2), Math.round(bh + 2));
         ctx.fillStyle = RED; ctx.fillRect(Math.round(bx), Math.round(by), Math.round(bw * m.hp / m.maxhp), Math.round(bh));

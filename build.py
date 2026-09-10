@@ -81,8 +81,11 @@ def grain_svg():
             '<feColorMatrix values="0 0 0 0 0.93 0 0 0 0 0.9 0 0 0 0 0.86 0 0 0 0.06 0"/></filter>'
             '<rect width="240" height="240" filter="url(#g)"/></svg>')
 
+BG_IMAGE = ''
+
 def head(title, desc, canonical, og_image=''):
     og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ''
+    bgs = f'<style>:root{{--bg-grain:url("{esc(BG_IMAGE)}")}}</style>' if BG_IMAGE else ''
     return f'''<!DOCTYPE html>
 <html lang="fr" data-lang="fr">
 <head>
@@ -99,6 +102,7 @@ def head(title, desc, canonical, og_image=''):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Astloch:wght@400;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+{bgs}
 <script>try{{var l=localStorage.getItem('archive-lang');if(l==='en'||l==='fr'){{document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}}}catch(e){{}}</script>
 </head>
 <body>'''
@@ -125,16 +129,22 @@ def footer():
 
 def media_html(m, alt=''):
     t = m.get('type', 'image')
+    if t == 'slideshow' and m.get('srcs'):
+        labels = m.get('labels') or []
+        imgs = ''.join(
+            f'<img src="{esc(u)}" alt="{esc(alt)}" loading="lazy" decoding="async"{" class=on" if i == 0 else ""}>'
+            + (f'<span class="lbl"{" data-on" if i == 0 else ""}>{esc(labels[i])}</span>' if i < len(labels) else '')
+            for i, u in enumerate(m['srcs']))
+        return f'<div class="media slides" data-slides>{imgs}</div>'
     src = m.get('src', '')
     if not src:
         return '<div class="media"></div>'
-    cap = ''
     if t == 'video':
         poster = f' poster="{esc(m["poster"])}"' if m.get('poster') else ''
         inner = f'<video data-auto muted loop playsinline preload="metadata"{poster} aria-label="{esc(alt)}"><source src="{esc(src)}" type="video/mp4"></video>'
     else:
         inner = f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" decoding="async">'
-    return f'<div class="media">{inner}{cap}</div>'
+    return f'<div class="media">{inner}</div>'
 
 def news_html(n, idx):
     src = n['source']; also = n.get('also')
@@ -246,6 +256,10 @@ def main():
     eds.sort(key=lambda e: e['date'], reverse=True)
     if not eds:
         raise SystemExit('Aucune édition dans editions/')
+    global BG_IMAGE
+    for e in eds:
+        if e.get('background', {}).get('src'):
+            BG_IMAGE = e['background']['src']; break
     os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
     for name in ('style.css', 'game.js', 'site.js', 'logo.svg', 'favicon.svg'):
         p = os.path.join(ASSETS, name)

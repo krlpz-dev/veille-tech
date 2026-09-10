@@ -4,8 +4,7 @@
 Usage : python3 build.py
 Lit editions/*.json, écrit public/ (index.html, edition-AAAA-MM-JJ.html, assets/).
 Chaque édition : {edition, date, title{fr,en}, deck{fr,en}, hero{src,alt{fr,en}}, news[]}.
-Chaque news : {id, category{fr,en}, date, title{fr,en}, number, number_en?, number_label{fr,en},
-               body{fr,en}, learning{fr,en}, media{type:image|video|gif, src, poster?, alt}, source{name,url}, also?{name,url}}
+Chaque news : {id, category{fr,en}, date, title{fr,en}, body{fr,en}, learning{fr,en}, media{type:image|video|gif, src, poster?, alt}, source{name,url}, also?{name,url}}
 """
 import json, os, re, shutil, random, html, glob, datetime
 
@@ -89,7 +88,7 @@ def head(title, desc, canonical, og_image=''):
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500;0,9..144,900;1,9..144,500;1,9..144,900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vina+Sans&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script>try{{var l=localStorage.getItem('archive-lang');if(l==='en'||l==='fr'){{document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}}}catch(e){{}}</script>
 </head>
@@ -115,11 +114,6 @@ def footer():
 </footer>
 <script src="assets/site.js"></script>'''
 
-def number_html(n):
-    fr = n.get('number', '')
-    en = n.get('number_en', fr)
-    return f'<span class="n"><span data-l="fr">{esc(fr)}</span><span data-l="en">{esc(en)}</span></span>'
-
 def media_html(m, alt=''):
     t = m.get('type', 'image')
     src = m.get('src', '')
@@ -140,7 +134,6 @@ def news_html(n, idx):
   <div class="text">
     <div class="eyebrow">{bi_esc(n['category'])}<span class="sep">/</span><span class="date"><span data-l="fr">{date_fr(n['date'])}</span><span data-l="en">{date_en(n['date'])}</span></span></div>
     <h2>{bi_esc(n['title'])}</h2>
-    <div class="big">{number_html(n)}<span class="l">{bi_esc(n['number_label'])}</span></div>
     <p class="body">{bi_esc(n['body'])}</p>
     <p class="learning">{bi_esc(n['learning'])}</p>
     <div class="src"><span data-l="fr">Source</span><span data-l="en">Source</span> <a href="{esc(src['url'])}" target="_blank" rel="noopener">{esc(src['name'])}</a>{also_html}</div>

@@ -341,7 +341,7 @@
     st = {
       mons: [], parts: [], fx: [], life: MAXLIFE, ammo: 6, score: 0, kills: 0,
       reloading: 0, spawnT: 700, t: 0, mx: -1, my: -1, inside: false,
-      recoil: 0, muzzle: 0, pump: 0, over: false, engaged: false, hurt: 0, shake: 0, sinceBoss: 0
+      recoil: 0, muzzle: 0, pump: 0, over: false, engaged: false, hurt: 0, shake: 0, sinceBoss: 0, intro: [0, 600, 1300]
     };
     over.classList.remove('on');
     root.classList.add('playing'); root.classList.remove('over');
@@ -491,9 +491,8 @@
   var last = performance.now();
   function frame(now) {
     var dt = Math.min(48, now - last); last = now;
-    var active = st.inside && visible && !st.over && st.engaged;
+    var active = visible && !st.over;
     if (active) update(dt);
-    else if (!st.over) { if (st.recoil > 0) st.recoil = Math.max(0, st.recoil - dt / 140); st.muzzle = Math.max(0, st.muzzle - dt); if (st.pump > 0) st.pump = Math.max(0, st.pump - dt); }
     draw(now);
     requestAnimationFrame(frame);
   }
@@ -501,6 +500,7 @@
     st.t += dt;
     st.spawnT -= dt;
     var d = difficulty();
+    while (st.intro.length && st.t >= st.intro[0]) { st.intro.shift(); spawn(); st.spawnT = 2400; }
     var maxMons = 2 + Math.floor(d * 5);
     if (st.spawnT <= 0 && st.mons.length < maxMons) {
       spawn();
@@ -523,7 +523,7 @@
         if (m.z <= ZSTOP) { m.z = ZSTOP; m.state = 'attack'; m.atkT = 0; m.struck = false; }
       } else {
         m.atkT += dt;
-        if (m.atkT >= 420 && !m.struck) { m.struck = true; hurt(m); if (st.over) return; }
+        if (m.atkT >= 420 && !m.struck) { m.struck = true; if (st.inside) { hurt(m); if (st.over) return; } }
         if (m.atkT >= 2200 - d * 800) { m.atkT = 0; m.struck = false; }
       }
     }
@@ -598,7 +598,8 @@
     fctx.globalAlpha = 1;
 
     if (st.over) { drawHud(); return; }
-    if (!st.engaged) return;
+    var rise = Math.min(1, Math.max(0, (st.t - 2000) / 700)); rise = 1 - Math.pow(1 - rise, 3);
+    if (rise <= 0) { drawHud(); return; }
 
     /* fusil au premier plan */
     var gw = Math.max(44, Math.min(W * 0.055, H * 0.1, 96)), gh = gw * (GUN_H / GUN_W), cell = gw / GUN_W;
@@ -607,7 +608,7 @@
     var ang = Math.atan2(ax - baseX, baseY - ay);
     ang = Math.max(-0.35, Math.min(0.35, ang));
     var rec = Math.sin(st.recoil * Math.PI);
-    var gx = baseX + sx, gy = baseY + rec * gh * 0.1 + sy, gang = ang - rec * 0.06;
+    var gx = baseX + sx, gy = baseY + rec * gh * 0.1 + sy + (1 - rise) * gh * 1.1, gang = ang - rec * 0.06;
     gunPose = { x: gx, y: gy, ang: gang, gw: gw, gh: gh };
     fctx.save();
     fctx.translate(gx, gy);
@@ -633,7 +634,7 @@
     fctx.restore();
 
     /* viseur */
-    if (st.inside && st.mx >= 0) {
+    if (st.inside && st.mx >= 0 && rise >= 1) {
       var cx = st.mx, cy = st.my, r = 11, gap = 4, t = 2;
       fctx.fillStyle = RED;
       fctx.fillRect(cx - r, cy - t / 2, r - gap, t); fctx.fillRect(cx + gap, cy - t / 2, r - gap, t);
@@ -643,19 +644,30 @@
     drawHud();
   }
   function drawHud() {
-    /* alignés sur les bords du container des éditions */
+    /* alignés sur les bords du container des éditions ; apparition : contour qui se trace, puis jauge qui se remplit */
+    var p1 = Math.min(1, Math.max(0, (st.t - 2700) / 600));
+    var p2 = Math.min(1, Math.max(0, (st.t - 3300) / 800)); p2 = 1 - Math.pow(1 - p2, 3);
+    if (p1 <= 0) return;
     var gut = Math.min(72, Math.max(20, W * 0.045));
     var edge = Math.max(gut, (W - 1360) / 2 + gut);
     var bw = 140, bh = 8, bx = W - edge - bw, by = H - 34 - bh;
+    var per = 2 * (bw + 4) + 2 * (bh + 4), len = per * p1;
+    var segs = [[bx - 2, by - 2, bw + 4, 0], [bx + bw + 1, by - 2, 0, bh + 4], [bx + bw + 1, by + bh + 1, -(bw + 4), 0], [bx - 2, by + bh + 1, 0, -(bh + 4)]];
     fctx.fillStyle = INK;
-    fctx.fillRect(bx - 2, by - 2, bw + 4, 1); fctx.fillRect(bx - 2, by + bh + 1, bw + 4, 1);
-    fctx.fillRect(bx - 2, by - 2, 1, bh + 4); fctx.fillRect(bx + bw + 1, by - 2, 1, bh + 4);
+    for (var i = 0; i < segs.length && len > 0; i++) {
+      var sg = segs[i], L = Math.abs(sg[2]) + Math.abs(sg[3]), t = Math.min(1, len / L);
+      var w = sg[2] * t, h = sg[3] * t;
+      fctx.fillRect(Math.min(sg[0], sg[0] + w), Math.min(sg[1], sg[1] + h), Math.max(1, Math.abs(w)), Math.max(1, Math.abs(h)));
+      len -= L;
+    }
     var blink = st.hurt > 0 && (Math.floor(st.hurt / 50) % 2);
     fctx.fillStyle = RED;
-    if (!blink) fctx.fillRect(bx, by, Math.round(bw * st.life / MAXLIFE), bh);
+    if (!blink && p2 > 0) fctx.fillRect(bx, by, Math.round(bw * (st.life / MAXLIFE) * p2), bh);
+    fctx.globalAlpha = p2;
     fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle';
     fctx.letterSpacing = '3px';
     fctx.fillText(String(st.score).padStart(3, '0'), edge, by + bh / 2 + 1);
+    fctx.globalAlpha = 1;
   }
   requestAnimationFrame(frame);
   }

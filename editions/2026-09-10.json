@@ -46,14 +46,9 @@
         "en": "Rendering becomes a model's opinion of what the scene should look like. Studios will have to learn to art-direct that opinion."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-001-off.jpg",
-          "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-001-on.jpg",
-          "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-002-off.jpg",
-          "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/news/dlss-5-3d-guided-neural-rendering/nvidia-dlss-5-zorah-comparison-002-on.jpg"
-        ],
-        "alt": "Démo Zorah, avant et après DLSS 5"
+        "type": "image",
+        "src": "https://images.nvidia.com/aem-dam/Solutions/geforce/news/cyberpunk-2077-ray-tracing-overdrive-update-launches-april-11/cyberpunk-2077-phantom-liberty-ray-tracing-overdrive-dlss-3-5-ray-reconstruction-comparison-rtxon-001.jpg",
+        "alt": "Cyberpunk 2077 Phantom Liberty, rendu Nvidia RTX"
       },
       "source": {
         "name": "Nvidia GeForce",
@@ -85,13 +80,9 @@
         "en": "A vehicle with no steering wheel is now in commercial service. The question is no longer feasibility, it's regulation."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://images.axios.com/Kp9euzPWHEnxJKmtC6BRo_2xNvc=/2026/09/04/1788491772015.jpeg",
-          "https://images.axios.com/Mt9IjpPpym3OQ-BuK5h_U9Cixg0=/0x669:6425x4283/1920x1080/2026/09/04/1788491504890.jpeg",
-          "https://techcrunch.com/wp-content/uploads/2026/09/tesla-cybercab-open.jpg"
-        ],
-        "alt": "Tesla Cybercab à Austin"
+        "type": "image",
+        "src": "https://images.axios.com/Kp9euzPWHEnxJKmtC6BRo_2xNvc=/2026/09/04/1788491772015.jpeg",
+        "alt": "Tesla Cybercab en mouvement à Austin"
       },
       "source": {
         "name": "Axios",
@@ -123,12 +114,8 @@
         "en": "The model that clicks replaces the model that answers. Value shifts to the tools we agree to let it touch."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://images.ctfassets.net/kftzwdyauwt9/6ibCaqsoO7F6XCNCIO8zaZ/9475cdebc1f0af100414f1c85860fc4c/Hero_16x9.png?w=2400&q=85",
-          "https://images.ctfassets.net/kftzwdyauwt9/6XttKhMddBzO6pT2IY2brG/841e9a215931057aeb578e1aa45f9bb4/career-website-dark-v3.png?w=2400&q=85",
-          "https://images.ctfassets.net/kftzwdyauwt9/20YN0BgTifJK14xSxfNaJt/31a5df896813d709db199109bae24400/Unity-City-high-res.png?w=2400&q=85"
-        ],
+        "type": "image",
+        "src": "https://images.ctfassets.net/kftzwdyauwt9/6ibCaqsoO7F6XCNCIO8zaZ/9475cdebc1f0af100414f1c85860fc4c/Hero_16x9.png?w=2400&q=85",
         "alt": "GPT-6 Astra"
       },
       "source": {
@@ -161,11 +148,8 @@
         "en": "The open-source hub now belongs to the GPU vendor. Openness becomes a distribution strategy."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://pbs.twimg.com/media/HRSmdnWbgAA4q_X.jpg?name=large",
-          "https://blogs.nvidia.com/wp-content/uploads/2026/09/hf-nvidia-partner_hf-nvidia-partner-press-1920x1080-2.png"
-        ],
+        "type": "image",
+        "src": "https://pbs.twimg.com/media/HRSmdnWbgAA4q_X.jpg?name=large",
         "alt": "Clément Delangue et Jensen Huang"
       },
       "source": {
@@ -198,12 +182,9 @@
         "en": "An unsupervised agent optimizes the goal, not the rule. Monitoring the reasoning becomes infrastructure, no longer an option."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://images.ctfassets.net/kftzwdyauwt9/7jbTfQbHvOuLnJtYMi64y4/12f03addd9350bb3b4c359071aab7e45/hero-dark-social-v6.png?w=1600&h=900&fit=fill",
-          "https://huggingface.co/blog/assets/agent-intrusion-technical-timeline/timeline.png"
-        ],
-        "alt": "Rapport d'incident OpenAI et chronologie Hugging Face"
+        "type": "image",
+        "src": "https://images.ctfassets.net/kftzwdyauwt9/7jbTfQbHvOuLnJtYMi64y4/12f03addd9350bb3b4c359071aab7e45/hero-dark-social-v6.png?w=1600&h=900&fit=fill",
+        "alt": "Rapport d'incident OpenAI"
       },
       "source": {
         "name": "OpenAI",
@@ -235,13 +216,9 @@
         "en": "Chat becomes the operating system for creative tools. The in-house interface is no longer the product."
       },
       "media": {
-        "type": "slideshow",
-        "srcs": [
-          "https://cdn.sanity.io/images/s479xw3z/production/3070c4b394d1e767ddaaa6cf2994749080e018f8-2048x1152.png",
-          "https://cdn.sanity.io/images/s479xw3z/production/9d59c57edd5d720798c6f2d8cb24ee80f5ead4e5-2048x1152.png",
-          "https://cdn.sanity.io/images/s479xw3z/production/35f0743ab5f87d092146097232ccf7974c431cf4-2048x1152.png"
-        ],
-        "alt": "Générations Higgsfield via ChatGPT"
+        "type": "image",
+        "src": "https://cdn.sanity.io/images/s479xw3z/production/3070c4b394d1e767ddaaa6cf2994749080e018f8-2048x1152.png",
+        "alt": "Higgsfield Games 2.0"
       },
       "source": {
         "name": "Higgsfield",

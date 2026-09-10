@@ -5,8 +5,17 @@
   'use strict';
   var root = document.getElementById('hero');
   if (!root) return;
-  var coarse = window.matchMedia('(pointer:coarse)').matches || window.innerWidth < 720;
-  if (coarse) return;
+  if (window.matchMedia('(pointer:coarse)').matches) return;
+  /* fenêtre trop étroite au chargement : on attend qu'elle s'élargisse */
+  if (window.innerWidth < 720) {
+    var armed = false;
+    window.addEventListener('resize', function onr() {
+      if (window.innerWidth >= 720 && !armed) { armed = true; window.removeEventListener('resize', onr); boot(); }
+    });
+    return;
+  }
+  boot();
+  function boot() {
 
   var INK = '#EDE7DC', RED = '#FF3B2F', BG = '#0B0A09';
   var back = document.getElementById('c-back'), front = document.getElementById('c-front');
@@ -498,4 +507,5 @@
     fctx.fillText((document.documentElement.getAttribute('data-lang') === 'en' ? 'LIFE' : 'VIE') + '   ' + String(st.score).padStart(3, '0'), bx, by - 8);
   }
   requestAnimationFrame(frame);
+  }
 })();

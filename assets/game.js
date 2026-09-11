@@ -328,16 +328,14 @@
   var S = { gun: bake(GUN), pump: bake(PUMP), flash: bake(FLASH) };
   var FONT = '400 20px "Micro 5", "JetBrains Mono", monospace', FONT_S = '400 16px "Micro 5", "JetBrains Mono", monospace';
   if (document.fonts && document.fonts.load) { document.fonts.load(FONT).catch(function () {}); }
-  /* viseur pixel art : anneau, quatre encoches, point central */
+  /* viseur pixel art : quatre barres, vide au centre */
   var CROSS = (function () {
     var rows = [];
-    for (var y = -7; y <= 7; y++) {
+    for (var y = -9; y <= 9; y++) {
       var r = '';
-      for (var x = -7; x <= 7; x++) {
-        var d = Math.sqrt(x * x + y * y);
-        var ring = Math.abs(d - 5.6) < 0.55;
-        var tick = (x === 0 && Math.abs(y) >= 3 && Math.abs(y) <= 7) || (y === 0 && Math.abs(x) >= 3 && Math.abs(x) <= 7);
-        r += (ring || tick || (x === 0 && y === 0)) ? '*' : '.';
+      for (var x = -9; x <= 9; x++) {
+        var v = (Math.abs(x) <= 1 && Math.abs(y) >= 4 && Math.abs(y) <= 9) || (Math.abs(y) <= 1 && Math.abs(x) >= 4 && Math.abs(x) <= 9);
+        r += v ? '*' : '.';
       }
       rows.push(r);
     }
@@ -346,8 +344,8 @@
 
   /* ---------- textes de fin ---------- */
   var ENDINGS = {
-    fr: ['Tu es mort.', 'Ils t’ont eu.', 'C’est fini.', 'Dernier souffle.', 'Retour à la terre.', 'Personne ne t’a entendu.', 'Les os gagnent.', 'Un de plus.'],
-    en: ['You’re done.', 'They got you.', 'It’s over.', 'Last breath.', 'Back to the dirt.', 'Nobody heard you.', 'The bones win.', 'One more.']
+    fr: ['Tu rejoins la grande guerre squelette', 'Tué par Jean-Michel Squelette', 'Le reuf t’a donné l’heure', 'Le bourbier t’a rattrapé mon ami', 'Capturé par le gang', 'Pas terrible', 'Mort de chez mort', 'Va bosser plutôt'],
+    en: ['You join the great skeleton war', 'Killed by Jean-Michel Skeleton', 'Bro clocked you', 'The mire caught up with you, my friend', 'Captured by the gang', 'Not great', 'Dead as dead gets', 'Go do some work instead']
   };
   var overLine = over.querySelector('[data-line]');
 
@@ -675,7 +673,7 @@
 
     /* viseur */
     if (st.inside && st.mx >= 0 && rise >= 1) {
-      var cs = 34;
+      var cs = 48;
       fctx.drawImage(CROSS, Math.round(st.mx - cs / 2), Math.round(st.my - cs / 2), cs, cs);
     }
     drawHud();

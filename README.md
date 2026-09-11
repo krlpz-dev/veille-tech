@@ -7,7 +7,7 @@ Site statique, généré par `build.py` (Python 3, stdlib uniquement), publié p
 ```
 editions/AAAA-MM-JJ.json   contenu d'une édition (FR + EN dans le même fichier)
 assets/                    logo.svg, style.css, game.js (mini jeu du header), site.js (bascule FR/EN), favicon.svg
-build.py                   génère public/ à partir de editions/*.json
+build.py                   génère docs/ à partir de editions/*.json ; assets/img/ (images locales) est copié tel quel
 docs/                      sortie commitée, publiée telle quelle par GitHub Pages (Settings → Pages → main, /docs)
 ```
 

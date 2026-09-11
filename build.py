@@ -2,7 +2,7 @@
 """ARCHIVE — veille tech hebdo. Générateur statique (stdlib uniquement).
 
 Usage : python3 build.py
-Lit editions/*.json, écrit public/ (index.html, edition-AAAA-MM-JJ.html, assets/).
+Lit editions/*.json, écrit docs/ (index.html, edition-AAAA-MM-JJ.html, assets/).
 Chaque édition : {edition, date, title{fr,en}, deck{fr,en}, hero{src,alt{fr,en}}, news[]}.
 Chaque news : {id, category{fr,en}, date, title{fr,en}, body{fr,en}, learning{fr,en}, media{type:image|video|gif, src, poster?, alt}, source{name,url}, also?{name,url}}
 """
@@ -265,6 +265,11 @@ def main():
         p = os.path.join(ASSETS, name)
         if os.path.exists(p):
             shutil.copy(p, os.path.join(OUT, 'assets', name))
+    imgdir = os.path.join(ASSETS, 'img')
+    if os.path.isdir(imgdir):
+        os.makedirs(os.path.join(OUT, 'assets', 'img'), exist_ok=True)
+        for name in os.listdir(imgdir):
+            shutil.copy(os.path.join(imgdir, name), os.path.join(OUT, 'assets', 'img', name))
     open(os.path.join(OUT, 'assets', 'speckles.svg'), 'w', encoding='utf-8').write(speckles_svg())
     open(os.path.join(OUT, 'assets', 'grain.svg'), 'w', encoding='utf-8').write(grain_svg())
     open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index_page(eds))

@@ -42,13 +42,13 @@
       '........++#+#+#++.......',
       '..........+##+..........',
       '.....+###########+......',
-      '....##+..#####..+##.....',
-      '...##+..##+#+##..+##....',
-      '...#+..+#+###+#+..+#....',
-      '...#+..##+#+#+##...#....',
-      '..+#...+#+###+#+...#+...',
-      '..#+....##+#+##....+#...',
-      '..#.....+#+#+#+.....#...',
+      '....##....+##+....#.....',
+      '...##+####+##+######....',
+      '...#+.+...+##+...++#....',
+      '...#+.####+##+####.#....',
+      '..+#..+...+##+...+.#+...',
+      '..#+...###+##+###..+#...',
+      '..#.......+##+......#...',
       '.+#......+###+......#+..',
       '.++.......+#+.......++..',
       '.........+###+..........',
@@ -76,13 +76,13 @@
       '........++#+#+#++.......',
       '..........+##+..........',
       '.....+###########+......',
-      '....##+..#####..+##.....',
-      '...##+..##+#+##..+##....',
-      '...#+..+#+###+#+..+#....',
-      '...#+..##+#+#+##...#....',
-      '..+#...+#+###+#+...#+...',
-      '..#+....##+#+##....+#...',
-      '..#.....+#+#+#+.....#...',
+      '....##....+##+....#.....',
+      '...##+####+##+######....',
+      '...#+.+...+##+...++#....',
+      '...#+.####+##+####.#....',
+      '..+#..+...+##+...+.#+...',
+      '..#+...###+##+###..+#...',
+      '..#.......+##+......#...',
       '.+#......+###+......#+..',
       '.++.......+#+.......++..',
       '.........+###+..........',
@@ -110,13 +110,13 @@
       '........++#+#+#++.+#....',
       '..........+##+....##....',
       '.....+###########+#.....',
-      '....##+..#####..+##.....',
-      '...##+..##+#+##.........',
-      '...#+..+#+###+#+........',
-      '...#+..##+#+#+##........',
-      '..+#...+#+###+#+........',
-      '..#+....##+#+##.........',
-      '..#.....+#+#+#+.........',
+      '....##....+##+....#.....',
+      '...##+####+##+####......',
+      '...#+.+...+##+...+......',
+      '...#+.####+##+####......',
+      '..+#..+...+##+...+......',
+      '..#+...###+##+###.......',
+      '..#.......+##+..........',
       '.+#......+###+..........',
       '.++.......+#+...........',
       '.........+###+..........',
@@ -341,7 +341,7 @@
     st = {
       mons: [], parts: [], fx: [], life: MAXLIFE, ammo: 6, score: 0, kills: 0,
       reloading: 0, spawnT: 700, t: 0, mx: -1, my: -1, inside: false,
-      recoil: 0, muzzle: 0, pump: 0, over: false, engaged: false, hurt: 0, shake: 0, sinceBoss: 0, intro: [0, 600, 1300]
+      recoil: 0, muzzle: 0, pump: 0, over: false, engaged: false, hurt: 0, shake: 0, sinceBoss: 0, intro: [2000, 2600, 3300]
     };
     over.classList.remove('on');
     root.classList.add('playing'); root.classList.remove('over');
@@ -598,7 +598,7 @@
     fctx.globalAlpha = 1;
 
     if (st.over) { drawHud(); return; }
-    var rise = Math.min(1, Math.max(0, (st.t - 2000) / 700)); rise = 1 - Math.pow(1 - rise, 3);
+    var rise = Math.min(1, Math.max(0, (st.t - 4000) / 700)); rise = 1 - Math.pow(1 - rise, 3);
     if (rise <= 0) { drawHud(); return; }
 
     /* fusil au premier plan */
@@ -632,6 +632,21 @@
       fctx.drawImage(S.flash, Math.round(-fs / 2), Math.round(-gh - fs * 0.6), Math.round(fs), Math.round(fs));
     }
     fctx.restore();
+    /* indicateur munitions, à droite du fusil */
+    if (rise >= 1) {
+      var ix = Math.round(baseX + gw * 0.75), iy = Math.round(baseY - gh * 0.62);
+      var lang = document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr';
+      fctx.font = '500 10px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '3px';
+      if (st.reloading > 0) {
+        var q = 1 - st.reloading / RELOAD;
+        fctx.fillStyle = INK; fctx.fillText(lang === 'en' ? 'RELOADING' : 'RECHARGE', ix, iy);
+        var pw = 72, ph = 4, py = iy + 12;
+        fctx.fillStyle = INK; fctx.fillRect(ix - 1, py - 1, pw + 2, 1); fctx.fillRect(ix - 1, py + ph, pw + 2, 1); fctx.fillRect(ix - 1, py - 1, 1, ph + 2); fctx.fillRect(ix + pw, py - 1, 1, ph + 2);
+        fctx.fillStyle = RED; fctx.fillRect(ix, py, Math.round(pw * q), ph);
+      } else if (st.ammo <= 2 && (Math.floor(st.t / 260) % 2 === 0)) {
+        fctx.fillStyle = RED; fctx.fillText('LOW AMMO', ix, iy);
+      }
+    }
 
     /* viseur */
     if (st.inside && st.mx >= 0 && rise >= 1) {
@@ -644,13 +659,13 @@
     drawHud();
   }
   function drawHud() {
-    /* alignés sur les bords du container des éditions ; apparition : contour qui se trace, puis jauge qui se remplit */
-    var p1 = Math.min(1, Math.max(0, (st.t - 2700) / 600));
-    var p2 = Math.min(1, Math.max(0, (st.t - 3300) / 800)); p2 = 1 - Math.pow(1 - p2, 3);
+    /* score à gauche du fusil, vie à droite ; apparition : contour qui se trace, puis jauge qui se remplit */
+    var p1 = Math.min(1, Math.max(0, (st.t - 4700) / 600));
+    var p2 = Math.min(1, Math.max(0, (st.t - 5300) / 800)); p2 = 1 - Math.pow(1 - p2, 3);
     if (p1 <= 0) return;
-    var gut = Math.min(72, Math.max(20, W * 0.045));
-    var edge = Math.max(gut, (W - 1360) / 2 + gut);
-    var bw = 140, bh = 8, bx = W - edge - bw, by = H - 34 - bh;
+    var gw = Math.max(44, Math.min(W * 0.055, H * 0.1, 96));
+    var gap = Math.max(36, gw * 0.9);
+    var bw = 120, bh = 8, bx = Math.round(W / 2 + gw / 2 + gap), by = H - 42 - bh;
     var per = 2 * (bw + 4) + 2 * (bh + 4), len = per * p1;
     var segs = [[bx - 2, by - 2, bw + 4, 0], [bx + bw + 1, by - 2, 0, bh + 4], [bx + bw + 1, by + bh + 1, -(bw + 4), 0], [bx - 2, by + bh + 1, 0, -(bh + 4)]];
     fctx.fillStyle = INK;
@@ -664,9 +679,9 @@
     fctx.fillStyle = RED;
     if (!blink && p2 > 0) fctx.fillRect(bx, by, Math.round(bw * (st.life / MAXLIFE) * p2), bh);
     fctx.globalAlpha = p2;
-    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle';
+    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'right'; fctx.textBaseline = 'middle';
     fctx.letterSpacing = '3px';
-    fctx.fillText(String(st.score).padStart(3, '0'), edge, by + bh / 2 + 1);
+    fctx.fillText('SCORE  ' + String(st.score).padStart(3, '0'), Math.round(W / 2 - gw / 2 - gap), by + bh / 2 + 1);
     fctx.globalAlpha = 1;
   }
   requestAnimationFrame(frame);

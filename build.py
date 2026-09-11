@@ -277,7 +277,7 @@ def main():
         newer = eds[i - 1] if i > 0 else None
         older = eds[i + 1] if i + 1 < len(eds) else None
         open(os.path.join(OUT, f'edition-{ed["date"]}.html'), 'w', encoding='utf-8').write(edition_page(ed, older, newer))
-    print(f"OK · {len(eds)} édition(s) → public/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
+    print(f"OK · {len(eds)} édition(s) → docs/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
 
 if __name__ == '__main__':
     main()

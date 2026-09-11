@@ -326,6 +326,23 @@
     '...*....*...'
   ];
   var S = { gun: bake(GUN), pump: bake(PUMP), flash: bake(FLASH) };
+  var FONT = '400 20px "Micro 5", "JetBrains Mono", monospace', FONT_S = '400 16px "Micro 5", "JetBrains Mono", monospace';
+  if (document.fonts && document.fonts.load) { document.fonts.load(FONT).catch(function () {}); }
+  /* viseur pixel art : anneau, quatre encoches, point central */
+  var CROSS = (function () {
+    var rows = [];
+    for (var y = -7; y <= 7; y++) {
+      var r = '';
+      for (var x = -7; x <= 7; x++) {
+        var d = Math.sqrt(x * x + y * y);
+        var ring = Math.abs(d - 5.6) < 0.55;
+        var tick = (x === 0 && Math.abs(y) >= 3 && Math.abs(y) <= 7) || (y === 0 && Math.abs(x) >= 3 && Math.abs(x) <= 7);
+        r += (ring || tick || (x === 0 && y === 0)) ? '*' : '.';
+      }
+      rows.push(r);
+    }
+    return bake(rows, PX);
+  })();
 
   /* ---------- textes de fin ---------- */
   var ENDINGS = {
@@ -592,7 +609,7 @@
       fctx.globalAlpha = q < 0.7 ? 1 : 1 - (q - 0.7) / 0.3;
       var ly = f.y - q * 34, lw = 46, lh = 18;
       fctx.fillStyle = RED; fctx.fillRect(Math.round(f.x - lw / 2), Math.round(ly - lh / 2), lw, lh);
-      fctx.fillStyle = BG; fctx.font = '700 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'center'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '2px';
+      fctx.fillStyle = BG; fctx.font = FONT; fctx.textAlign = 'center'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '1px';
       fctx.fillText(f.text, Math.round(f.x + 1), Math.round(ly + 1));
     }
     fctx.globalAlpha = 1;
@@ -632,29 +649,34 @@
       fctx.drawImage(S.flash, Math.round(-fs / 2), Math.round(-gh - fs * 0.6), Math.round(fs), Math.round(fs));
     }
     fctx.restore();
-    /* indicateur munitions, à droite du fusil */
-    if (rise >= 1) {
-      var ix = Math.round(baseX + gw * 0.75), iy = Math.round(baseY - gh * 0.62);
+    /* indicateur munitions, à côté du curseur (là où l'œil regarde) */
+    if (rise >= 1 && st.inside && st.mx >= 0) {
       var lang = document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr';
-      fctx.font = '500 10px Inter, system-ui, sans-serif'; fctx.textAlign = 'left'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '3px';
+      var ix = Math.round(st.mx + 22), iy = Math.round(st.my - 22);
+      fctx.font = FONT; fctx.textAlign = 'left'; fctx.textBaseline = 'middle'; fctx.letterSpacing = '1px';
       if (st.reloading > 0) {
         var q = 1 - st.reloading / RELOAD;
-        fctx.fillStyle = INK; fctx.fillText(lang === 'en' ? 'RELOADING' : 'RECHARGE', ix, iy);
-        var pw = 72, ph = 4, py = iy + 12;
-        fctx.fillStyle = INK; fctx.fillRect(ix - 1, py - 1, pw + 2, 1); fctx.fillRect(ix - 1, py + ph, pw + 2, 1); fctx.fillRect(ix - 1, py - 1, 1, ph + 2); fctx.fillRect(ix + pw, py - 1, 1, ph + 2);
-        fctx.fillStyle = RED; fctx.fillRect(ix, py, Math.round(pw * q), ph);
+        var label = lang === 'en' ? 'RELOADING' : 'RECHARGE';
+        var tw = Math.ceil(fctx.measureText(label).width), bw2 = tw + 16, bh2 = 20;
+        fctx.fillStyle = INK; fctx.fillRect(ix - 1, iy - 1, bw2 + 2, bh2 + 2);
+        fctx.fillStyle = BG; fctx.fillRect(ix, iy, bw2, bh2);
+        var fw = Math.round(bw2 * q);
+        fctx.fillStyle = INK; fctx.fillRect(ix, iy, fw, bh2);
+        fctx.fillStyle = INK; fctx.fillText(label, ix + 8, iy + bh2 / 2 + 1);
+        fctx.save(); fctx.beginPath(); fctx.rect(ix, iy, fw, bh2); fctx.clip();
+        fctx.fillStyle = BG; fctx.fillText(label, ix + 8, iy + bh2 / 2 + 1);
+        fctx.restore();
       } else if (st.ammo <= 2 && (Math.floor(st.t / 260) % 2 === 0)) {
-        fctx.fillStyle = RED; fctx.fillText('LOW AMMO', ix, iy);
+        var tw2 = Math.ceil(fctx.measureText('LOW AMMO').width);
+        fctx.fillStyle = RED; fctx.fillRect(ix, iy, tw2 + 16, 20);
+        fctx.fillStyle = BG; fctx.fillText('LOW AMMO', ix + 8, iy + 11);
       }
     }
 
     /* viseur */
     if (st.inside && st.mx >= 0 && rise >= 1) {
-      var cx = st.mx, cy = st.my, r = 11, gap = 4, t = 2;
-      fctx.fillStyle = RED;
-      fctx.fillRect(cx - r, cy - t / 2, r - gap, t); fctx.fillRect(cx + gap, cy - t / 2, r - gap, t);
-      fctx.fillRect(cx - t / 2, cy - r, t, r - gap); fctx.fillRect(cx - t / 2, cy + gap, t, r - gap);
-      fctx.fillRect(cx - 1, cy - 1, 2, 2);
+      var cs = 34;
+      fctx.drawImage(CROSS, Math.round(st.mx - cs / 2), Math.round(st.my - cs / 2), cs, cs);
     }
     drawHud();
   }
@@ -679,8 +701,8 @@
     fctx.fillStyle = RED;
     if (!blink && p2 > 0) fctx.fillRect(bx, by, Math.round(bw * (st.life / MAXLIFE) * p2), bh);
     fctx.globalAlpha = p2;
-    fctx.fillStyle = INK; fctx.font = '400 11px Inter, system-ui, sans-serif'; fctx.textAlign = 'right'; fctx.textBaseline = 'middle';
-    fctx.letterSpacing = '3px';
+    fctx.fillStyle = INK; fctx.font = FONT; fctx.textAlign = 'right'; fctx.textBaseline = 'middle';
+    fctx.letterSpacing = '1px';
     fctx.fillText('SCORE  ' + String(st.score).padStart(3, '0'), Math.round(W / 2 - gw / 2 - gap), by + bh / 2 + 1);
     fctx.globalAlpha = 1;
   }

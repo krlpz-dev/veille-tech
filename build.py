@@ -100,7 +100,7 @@ def head(title, desc, canonical, og_image=''):
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Astloch:wght@400;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Astloch:wght@400;700&family=Micro+5&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 {bgs}
 <script>try{{var l=localStorage.getItem('archive-lang');if(l==='en'||l==='fr'){{document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}}}catch(e){{}}</script>

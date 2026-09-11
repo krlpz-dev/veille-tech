@@ -345,7 +345,7 @@
   /* ---------- textes de fin ---------- */
   var ENDINGS = {
     fr: ['Tu rejoins la grande guerre squelette', 'Tué par Jean-Michel Squelette', 'Le reuf t’a donné l’heure', 'Le bourbier t’a rattrapé mon ami', 'Capturé par le gang', 'Pas terrible', 'Mort de chez mort', 'Va bosser plutôt'],
-    en: ['You join the great skeleton war', 'Killed by Jean-Michel Skeleton', 'Bro clocked you', 'The mire caught up with you, my friend', 'Captured by the gang', 'Not great', 'Dead as dead gets', 'Go do some work instead']
+    en: ['You join the great skeleton war', 'Killed by Jean-Michel Skeleton', 'Bro clocked you', 'Caught my opps lackin', 'Captured by the gang', 'Not great', 'Dead as dead gets', 'Go do some work instead']
   };
   var overLine = over.querySelector('[data-line]');
 

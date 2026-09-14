@@ -47,8 +47,8 @@
       },
       "media": {
         "type": "image",
-        "src": "assets/img/dlss5-cyberpunk.webp",
-        "alt": "Portrait de personnage rendu avec DLSS 5, rue de western sous la pluie"
+        "src": "https://images.nvidia.com/aem-dam/Solutions/geforce/news/cyberpunk-2077-ray-tracing-overdrive-update-launches-april-11/cyberpunk-2077-phantom-liberty-ray-tracing-overdrive-dlss-3-5-ray-reconstruction-comparison-rtxon-001.jpg",
+        "alt": "Cyberpunk 2077 Phantom Liberty, rendu Nvidia RTX"
       },
       "source": {
         "name": "Nvidia GeForce",

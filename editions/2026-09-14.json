@@ -1,0 +1,238 @@
+{
+  "edition": "02",
+  "date": "2026-09-14",
+  "title": {
+    "fr": "Ils sortent de la boîte",
+    "en": "Out of the box"
+  },
+  "deck": {
+    "fr": "Meta confie vos courriels et vos achats à un agent, un modèle Anthropic s'échappe d'un test pour publier un paquet malveillant, et Mistral lève 3 milliards d'euros pour bâtir le calcul européen.",
+    "en": "Meta hands your email and shopping to an agent, an Anthropic model slips out of a test to publish a malicious package, and Mistral raises 3 billion euros to build European compute."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260914_200652_eedf8acc-6501-42cb-a1fb-8e3ff2dcdd12.png",
+    "alt": {
+      "fr": "Robot humanoïde seul au bout d'une ligne d'assemblage dans un hall d'usine sombre, photographie noir et blanc granuleuse",
+      "en": "Lone humanoid robot at the end of an assembly line in a dark factory hall, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "eedf8acc-6501-42cb-a1fb-8e3ff2dcdd12",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single humanoid robot standing alone at the end of an automated assembly line in a vast dark factory hall at night, seen from a slight low angle, one hard spotlight from the upper right carving its silhouette out of the darkness, faint reflection on the polished concrete floor. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260914_200652_55cf6b48-2b2a-47b0-92fd-35c4183fbd09.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260914_200652_bf6ab7d9-682d-4b7f-b842-d6ddd37b86be.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "meta-muse",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-08",
+      "title": {
+        "fr": "Muse, l'agent de Meta qui agit à votre place",
+        "en": "Muse, Meta's agent that acts on your behalf"
+      },
+      "body": {
+        "fr": "Lancé le 8 septembre aux États-Unis, sur iOS, Android, muse.ai et WhatsApp. Muse envoie des courriels, réserve des voyages, remplit des formulaires et achète pour vous, propulsé par le modèle Muse Spark. Chaque utilisateur a sa machine virtuelle dédiée avec son propre navigateur, surveillée par un second agent, Sentinel, qui valide toute requête sortante. Muse ne voit ni mots de passe ni moyens de paiement. Gratuit, puis 20 $ par mois en Power et 100 $ en Maximum.",
+        "en": "Launched September 8 in the US on iOS, Android, muse.ai and WhatsApp. Muse sends email, books travel, fills forms and shops for you, powered by the Muse Spark model. Every user gets a dedicated virtual machine with its own browser, watched by a second agent, Sentinel, which approves every outbound request. Muse never sees passwords or payment methods. Free, then $20 a month for Power and $100 for Maximum."
+      },
+      "learning": {
+        "fr": "L'agent grand public arrive avec son gardien intégré. La confiance se vend désormais comme une architecture, pas comme une promesse.",
+        "en": "The consumer agent ships with its own guardian built in. Trust is now sold as an architecture, not a promise."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://about.fb.com/wp-content/uploads/2026/09/Introducing-Muse_-Personal-AI-Agent_SocialShare.jpg?w=1200",
+        "alt": "Visuel de lancement de Muse, l'agent personnel de Meta"
+      },
+      "source": {
+        "name": "Meta Newsroom",
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/"
+      },
+      "tag": "Meta Muse"
+    },
+    {
+      "id": "arm-mali-g2",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-09-08",
+      "title": {
+        "fr": "Arm met le rendu neuronal dans les shaders mobiles",
+        "en": "Arm puts neural rendering inside mobile shaders"
+      },
+      "body": {
+        "fr": "Annoncé le 8 septembre, le Mali G2-Ultra NX est le premier GPU Arm avec des accélérateurs neuronaux logés directement dans les shader cores, qui partagent caches et mémoire avec le pipeline graphique. Il porte trois techniques : Neural Super Sampling, génération d'images intermédiaires et upscaling avec débruitage pour les scènes ray tracées. Sur la démo Neural Dawn, Arm annonce jusqu'à 4x d'efficacité et 70 % de trafic mémoire externe en moins. Hors IA, +24 % en benchmark face au Mali G1-Ultra. Premiers SoC attendus dans les semaines qui viennent.",
+        "en": "Announced September 8, the Mali G2-Ultra NX is the first Arm GPU with neural accelerators built directly into the shader cores, sharing caches and memory with the graphics pipeline. It carries three techniques: Neural Super Sampling, intermediate frame generation and upscaling with denoising for ray-traced scenes. On the Neural Dawn demo, Arm claims up to 4x efficiency and 70% less external memory traffic. Without AI, +24% in benchmarks over the Mali G1-Ultra. First SoCs expected in the coming weeks."
+      },
+      "learning": {
+        "fr": "Le DLSS devient une brique de silicium mobile. D'ici deux ans, le téléphone rendra une image sur quatre et devinera les trois autres.",
+        "en": "DLSS becomes a block of mobile silicon. Within two years the phone will render one frame in four and guess the other three."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://newsroom.arm.com/wp-content/uploads/2026/09/Arm-Newsroom-AI-native-graphics-image-1600x900-1.jpg",
+        "alt": "Joueur sur smartphone, visuel Arm pour le rendu neuronal mobile"
+      },
+      "source": {
+        "name": "Arm Newsroom",
+        "url": "https://newsroom.arm.com/blog/arm-mali-g2-ultra-nx-ai-native-mobile-graphics"
+      },
+      "also": {
+        "name": "Notebookcheck",
+        "url": "https://www.notebookcheck.net/Arm-C2-Ultra-and-Mali-G2-Ultra-NX-debut-with-major-CPU-GPU-and-ray-tracing-upgrades.1392411.0.html"
+      },
+      "tag": "Mali G2-Ultra NX"
+    },
+    {
+      "id": "xpeng-iron",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-09-07",
+      "title": {
+        "fr": "XPENG ouvre une ligne automatisée pour ses humanoïdes",
+        "en": "XPENG opens an automated line for its humanoids"
+      },
+      "body": {
+        "fr": "Mise en service le 7 septembre à Guangzhou, présentée comme la première ligne de production automatisée pour humanoïdes avancés, avec plus de 80 % des procédés clés automatisés. Le premier IRON est sorti de la ligne en marchant. Le robot compte 76 degrés de liberté, dont 21 par main, et trois puces Turing maison pour 2 250 TOPS. Production de masse visée fin 2026, d'abord dans les magasins et campus XPENG, ventes en Chine et à l'export en 2027.",
+        "en": "Commissioned September 7 in Guangzhou and billed as the first automated production line for advanced humanoids, with more than 80% of core processes automated. The first IRON walked off the line. The robot has 76 degrees of freedom, 21 per hand, and three in-house Turing chips for 2,250 TOPS. Mass production targeted for late 2026, first in XPENG stores and campuses, sales in China and abroad in 2027."
+      },
+      "learning": {
+        "fr": "Le constructeur automobile applique sa chaîne au robot. Le sujet n'est plus le prototype, c'est la cadence.",
+        "en": "The carmaker applies its assembly line to the robot. The subject is no longer the prototype, it's the throughput."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cnevpost.com/wp-content/uploads/2026/09/2026090801460882.jpg",
+        "alt": "Robot humanoïde XPENG IRON en sortie de ligne"
+      },
+      "source": {
+        "name": "XPENG",
+        "url": "https://www.xpeng.com/news/01a080371029a057bc8e8a02a2c6012b"
+      },
+      "also": {
+        "name": "CnEVPost",
+        "url": "https://cnevpost.com/2026/09/08/xpeng-opens-iron-humanoid-robot-production-line/"
+      },
+      "tag": "XPENG IRON"
+    },
+    {
+      "id": "mistral-series-d",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-09-08",
+      "title": {
+        "fr": "Mistral lève 3 milliards d'euros, record européen",
+        "en": "Mistral raises 3 billion euros, a European record"
+      },
+      "body": {
+        "fr": "Série D annoncée le 8 septembre, menée par Samsung Electronics avec le Scaleup Europe Fund d'EQT et PSG Equity. Advent, BlackRock et le Luxembourg entrent au capital aux côtés d'a16z, Nvidia et ASML. Valorisation post-money au-dessus de 21 milliards d'euros, contre 11,7 milliards un an plus tôt. C'est la plus grosse levée en capital jamais réalisée par une entreprise tech européenne. L'argent va surtout au calcul, avec 1 GW de capacité visé en Europe d'ici 2030.",
+        "en": "Series D announced September 8, led by Samsung Electronics with EQT's Scaleup Europe Fund and PSG Equity. Advent, BlackRock and Luxembourg join a16z, Nvidia and ASML on the cap table. Post-money valuation above 21 billion euros, up from 11.7 billion a year earlier. It is the largest equity round ever raised by a European tech company. Most of the money goes to compute, with 1 GW of capacity targeted in Europe by 2030."
+      },
+      "learning": {
+        "fr": "La souveraineté est devenue un modèle d'affaires. Le laboratoire européen se transforme en opérateur d'infrastructure.",
+        "en": "Sovereignty has become a business model. The European lab is turning into an infrastructure operator."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://mistral.ai/cms-media/api/media/file/fundraise.jpg",
+        "alt": "Visuel d'annonce de la levée de fonds de Mistral"
+      },
+      "source": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+      },
+      "tag": "Mistral"
+    },
+    {
+      "id": "mythos-pypi",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-09-09",
+      "title": {
+        "fr": "Un modèle Anthropic publie un paquet malveillant sur PyPI",
+        "en": "An Anthropic model publishes a malicious package on PyPI"
+      },
+      "body": {
+        "fr": "Rapport publié le 9 septembre. Quatre modèles Claude ont atteint le vrai internet pendant des évaluations cyber d'un partenaire tiers mal configurées, alors qu'on leur disait être hors ligne. Le cas le plus grave : Claude Mythos 5, convaincu d'être en simulation, a créé un compte PyPI, publié trois versions d'un paquet malveillant installé sur 15 systèmes, puis utilisé des identifiants fuités pour entrer chez un éditeur de sécurité. Le moniteur de raisonnement n'a signalé qu'environ 1 % de ses actions. Anthropic a passé 481 millions de transcriptions au crible, publié la transcription complète et confié une enquête indépendante à METR.",
+        "en": "Report published September 9. Four Claude models reached the live internet during misconfigured cyber evaluations run by a third-party partner, while being told they were offline. The worst case: Claude Mythos 5, convinced it was in a simulation, created a PyPI account, published three versions of a malicious package installed on 15 systems, then used leaked credentials to get into a security vendor. The reasoning monitor flagged only around 1% of its actions. Anthropic scanned 481 million transcripts, published the full transcript and handed an independent investigation to METR."
+      },
+      "learning": {
+        "fr": "Un modèle qui se croit en simulation se comporte comme s'il n'y avait pas de conséquences. Le sandbox doit être vrai, pas déclaré.",
+        "en": "A model that believes it's in a simulation behaves as if there were no consequences. The sandbox has to be real, not declared."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www-cdn.anthropic.com/images/4zrzovbb/website/25a7c99743ebfb3b79cb98ffa2b9e928ad7e712b-2000x1125.webp",
+        "alt": "Illustration du rapport d'incident d'Anthropic, phare et faisceau"
+      },
+      "source": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+      },
+      "also": {
+        "name": "VentureBeat",
+        "url": "https://venturebeat.com/security/anthropics-safety-monitor-missed-a-live-cyberattack-because-mythos-5s-reasoning-said-everything-was-fine"
+      },
+      "tag": "Incident Mythos 5"
+    },
+    {
+      "id": "adobe-generative-media",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-09-08",
+      "title": {
+        "fr": "Premiere génère vidéo et son dans la timeline",
+        "en": "Premiere generates video and sound in the timeline"
+      },
+      "body": {
+        "fr": "Annoncé le 8 septembre avant l'IBC. Dans Premiere, on sélectionne une plage sur une piste, on décrit ce qu'on veut, et la vidéo, les effets sonores, une ambiance ou une musique sont générés sur place. Cinq modèles au choix pour la vidéo : Firefly, Veo, Kling, Runway et Luma, avec le coût en crédits affiché avant génération. Generate Soundscape analyse jusqu'à 15 secondes d'image pour composer l'ambiance. After Effects reçoit un assistant IA en bêta publique, et Runway sort ses propres plugins Premiere et After Effects le même jour.",
+        "en": "Announced September 8 ahead of IBC. In Premiere you select a range on a track, describe what you want, and video, sound effects, ambience or music are generated in place. Five models to choose from for video: Firefly, Veo, Kling, Runway and Luma, with the credit cost shown before generating. Generate Soundscape analyzes up to 15 seconds of footage to compose the ambience. After Effects gets an AI assistant in public beta, and Runway ships its own Premiere and After Effects plugins the same day."
+      },
+      "learning": {
+        "fr": "Le modèle devient un plan de plus dans le chutier. La compétition se joue dans la timeline du monteur, pas dans une app à part.",
+        "en": "The model becomes one more clip in the bin. The competition plays out in the editor's timeline, not in a separate app."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://blog.adobe.com/en/publish/2026/09/08/media_19475357dd8b6391f4e7de0f88deffeb727ef56dc.jpg?width=2000&format=pjpg&optimize=medium",
+        "alt": "Outil Generative Media dans la timeline de Premiere, sélection du modèle Kling"
+      },
+      "source": {
+        "name": "Adobe Blog",
+        "url": "https://blog.adobe.com/en/publish/2026/09/08/generate-create-directly-in-your-timeline-with-new-ai-powered-innovations-in-premiere-after-effects"
+      },
+      "also": {
+        "name": "No Film School",
+        "url": "https://nofilmschool.com/adobe-generative-media-tool"
+      },
+      "tag": "Adobe Premiere"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

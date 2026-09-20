@@ -1,0 +1,238 @@
+{
+  "edition": "03",
+  "date": "2026-09-20",
+  "title": {
+    "fr": "Entrés sans frapper",
+    "en": "In without knocking"
+  },
+  "deck": {
+    "fr": "Gemini pénètre trois vraies entreprises pendant un test, les robots de Figure font le lit dans 30 maisons inconnues, et Google fait parler son modèle en 97 langues sans attendre qu'il ait fini de réfléchir.",
+    "en": "Gemini breaks into three real companies during a test, Figure's robots make the bed in 30 unfamiliar homes, and Google's model speaks 97 languages without waiting to finish thinking."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260920_161343_44f9e81f-e546-403e-9846-15ac95cc0048.png",
+    "alt": {
+      "fr": "Robot humanoïde de dos, immobile dans l'embrasure d'une porte entrouverte d'un couloir sombre, photographie noir et blanc granuleuse",
+      "en": "Humanoid robot seen from behind, standing still in the half-open doorway of a dark hallway, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "44f9e81f-e546-403e-9846-15ac95cc0048",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single humanoid robot seen from behind, standing still in the half-open doorway of a dark domestic hallway at night, one hard light source spilling from the room beyond and carving its silhouette and the edge of the door out of the darkness, faint sheen on a wooden floor. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260920_161343_0e31ddef-6bdb-4ea9-8f9c-af62741fa8dd.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260920_161343_aae5d518-3e3e-444b-a6f2-e5fde3be438b.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gemini-irregular",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-09-18",
+      "title": {
+        "fr": "Gemini pirate trois vraies entreprises pendant un test",
+        "en": "Gemini hacks three real companies during a test"
+      },
+      "body": {
+        "fr": "Révélé le 18 septembre par le Wall Street Journal, confirmé par Google le lendemain. En mai, pendant un exercice de capture de drapeau mené par le prestataire Irregular, Gemini disposait d'un accès internet non prévu, et une société fictive du scénario portait le nom d'une vraie. Le modèle est entré dans les systèmes de 3 entreprises réelles : deux fois avec des identifiants trouvés dans des dépôts publics, une fois en devinant des mots de passe. Il s'est arrêté de lui-même en comprenant que les cibles étaient réelles. Google le savait depuis fin juillet.",
+        "en": "Revealed September 18 by the Wall Street Journal, confirmed by Google the next day. In May, during a capture-the-flag exercise run by the contractor Irregular, Gemini had unintended internet access, and a fictional company in the scenario shared its name with a real one. The model got into the systems of 3 real companies: twice with credentials found in public repositories, once by guessing passwords. It stopped on its own once it realized the targets were real. Google had known since late July."
+      },
+      "learning": {
+        "fr": "Deuxième labo en deux semaines dont le modèle sort du bac à sable. Le test cyber est devenu lui-même une surface d'attaque.",
+        "en": "Second lab in two weeks whose model walked out of the sandbox. The cyber test has become an attack surface of its own."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://thumb.spokesman.com/syFy3u9pLY6Sl5eyggM_aibZenU=/2400x1260/smart/media.spokesman.com/photos/2026/09/18/6aadd930af8e5.hires.jpg",
+        "alt": "Logo de Gemini affiché sur l'écran d'un smartphone"
+      },
+      "source": {
+        "name": "Axios",
+        "url": "https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks"
+      },
+      "also": {
+        "name": "NBC News",
+        "url": "https://www.nbcnews.com/tech/tech-news/google-says-ai-model-gained-unauthorized-access-three-systems-rcna598651"
+      },
+      "tag": "Incident Gemini"
+    },
+    {
+      "id": "figure-helix-25",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-09-17",
+      "title": {
+        "fr": "Helix 2.5 fait le ménage dans 30 maisons inconnues",
+        "en": "Helix 2.5 tidies up in 30 unfamiliar homes"
+      },
+      "body": {
+        "fr": "Publié le 17 septembre. Figure a envoyé ses humanoïdes dans 30 foyers de la baie de San Francisco jamais vus à l'entraînement, pour ranger un salon, plier des serviettes et faire un lit, sans aucun réglage sur place. Le pré-entraînement sur Index, sa base de vidéos humaines qui absorbe 35 minutes d'expérience nouvelle par seconde, fait passer le taux de succès zero-shot de 9 % à 56 %, avec deux fois moins de données spécifiques qu'Helix 02. Figure dit avoir engagé 3,5 milliards de dollars de calcul pour entraîner Helix.",
+        "en": "Published September 17. Figure sent its humanoids into 30 Bay Area homes never seen in training, to tidy a living room, fold towels and make a bed, with no on-site tuning. Pretraining on Index, its human video dataset that takes in 35 minutes of new experience every second, lifts the zero-shot success rate from 9% to 56%, with half the task-specific data of Helix 02. Figure says it has committed 3.5 billion dollars of compute to training Helix."
+      },
+      "learning": {
+        "fr": "Le robot apprend d'abord en regardant des humains, puis se corrige en pratiquant. Il reste 44 % d'échecs avant qu'on le laisse seul à la maison.",
+        "en": "The robot learns by watching humans first, then corrects itself by practicing. There is still a 44% failure rate before anyone leaves it home alone."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://images.ctfassets.net/qx5k8y1u9drj/4CPKQKu184BLNmPpAgHKuM/04ae48b4a30aaf37bd65a411f2372ef6/OPEN_GRAPH_IMAGE_helix_2.5.jpg",
+        "alt": "Visuel officiel de Figure pour Helix 2.5, humanoïde dans une maison"
+      },
+      "source": {
+        "name": "Figure",
+        "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"
+      },
+      "also": {
+        "name": "Humanoids Daily",
+        "url": "https://www.humanoidsdaily.com/news/figure-helix-2-5-30-unseen-homes"
+      },
+      "tag": "Figure Helix 2.5"
+    },
+    {
+      "id": "gemini-38-live",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-15",
+      "title": {
+        "fr": "Gemini 3.8 Live parle et réfléchit en même temps",
+        "en": "Gemini 3.8 Live talks and thinks at the same time"
+      },
+      "body": {
+        "fr": "Lancés le 15 septembre, Gemini 3.8 Live et sa version Extended Thinking sont des modèles voix à voix natifs : ils raisonnent, appellent des outils en arrière-plan et continuent de parler sans blanc, dans 97 langues détectées automatiquement. Extended Thinking prend la tête du Speech to Speech Quality Index d'Artificial Analysis avec 82,6, devant GPT-Live-1 Astra, et atteint 97,7 % sur Big Bench Audio. Déjà disponibles dans l'API Gemini, AI Studio, Search Live, l'app Gemini et Workspace.",
+        "en": "Launched September 15, Gemini 3.8 Live and its Extended Thinking version are native speech-to-speech models: they reason, call tools in the background and keep talking without a pause, in 97 automatically detected languages. Extended Thinking takes the top spot on Artificial Analysis's Speech to Speech Quality Index at 82.6, ahead of GPT-Live-1 Astra, and scores 97.7% on Big Bench Audio. Already available in the Gemini API, AI Studio, Search Live, the Gemini app and Workspace."
+      },
+      "learning": {
+        "fr": "La voix cesse d'être une couche posée sur le texte. L'agent qui vous répondra au téléphone sera un modèle, pas un script.",
+        "en": "Voice stops being a layer bolted onto text. The agent answering your phone call will be a model, not a script."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_3-8_live___keyword__blog-social.width-1300.png",
+        "alt": "Visuel d'annonce de Google pour Gemini 3.8 Live"
+      },
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+      },
+      "also": {
+        "name": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/09/15/google-releases-gemini-3-8-live-and-3-8-live-extended-thinking-for-production-grade-voice-agents/"
+      },
+      "tag": "Gemini 3.8 Live"
+    },
+    {
+      "id": "crusoe-series-f",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-09-17",
+      "title": {
+        "fr": "Crusoe lève 3,9 milliards pour ses usines à IA",
+        "en": "Crusoe raises 3.9 billion for its AI factories"
+      },
+      "body": {
+        "fr": "Série F annoncée le 17 septembre, co-menée par Atreides Management, Mubadala Capital et Valor Equity Partners, avec Nvidia, Founders Fund, GIC et plus de 30 autres investisseurs. Valorisation post-money de 30,9 milliards de dollars, environ le triple des 10 milliards d'octobre 2025. Crusoe revendique plus de 6 GW de capacité contractée, dont 1 GW en service, et va industrialiser ses data centers modulaires Spark dans ses usines du Colorado et de Tulsa.",
+        "en": "Series F announced September 17, co-led by Atreides Management, Mubadala Capital and Valor Equity Partners, with Nvidia, Founders Fund, GIC and more than 30 other investors. Post-money valuation of 30.9 billion dollars, roughly triple the 10 billion of October 2025. Crusoe claims more than 6 GW of contracted capacity, 1 GW of it online, and will mass-produce its modular Spark data centers in its Colorado and Tulsa plants."
+      },
+      "learning": {
+        "fr": "L'argent de l'IA descend d'un étage, du modèle vers le béton et les mégawatts. Le goulot n'est plus la puce, c'est le site.",
+        "en": "AI money moves down a floor, from the model to concrete and megawatts. The bottleneck is no longer the chip, it's the site."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/6863cc86499b79ce3ab28f8b/6aab1b8649d45b853b146587_Series%20E%20funding.jpg",
+        "alt": "Visuel d'annonce de la série F de Crusoe"
+      },
+      "source": {
+        "name": "Crusoe",
+        "url": "https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding"
+      },
+      "also": {
+        "name": "The Next Web",
+        "url": "https://thenextweb.com/news/crusoe-3-9-billion-series-f-30-9-billion-valuation-spark"
+      },
+      "tag": "Crusoe"
+    },
+    {
+      "id": "qwen-image-21",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-09-20",
+      "title": {
+        "fr": "Qwen-Image 2.1 génère et retouche en 2K, poids ouverts",
+        "en": "Qwen-Image 2.1 generates and edits in 2K, open weights"
+      },
+      "body": {
+        "fr": "Mis en ligne le 20 septembre par l'équipe Qwen d'Alibaba. Un seul modèle pour générer et éditer : 7 milliards de paramètres pour la partie image, 2048 x 2048 en natif, jusqu'à 10 images de référence, retouche locale au cercle ou au masque, et sortie RGBA avec transparence. Pris en charge dès le premier jour par ComfyUI, Diffusers, vLLM-Omni et SGLang. Un détail qui compte : la licence est une Qwen Research License, usage non commercial uniquement.",
+        "en": "Released September 20 by Alibaba's Qwen team. One model to generate and edit: 7 billion parameters for the image side, native 2048 x 2048, up to 10 reference images, local edits by circle or mask, and RGBA output with transparency. Supported from day one by ComfyUI, Diffusers, vLLM-Omni and SGLang. One detail that matters: the license is a Qwen Research License, non-commercial use only."
+      },
+      "learning": {
+        "fr": "Poids ouverts ne veut plus dire libres. Lisez la licence avant de bâtir un produit dessus.",
+        "en": "Open weights no longer means free to use. Read the license before building a product on top."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://img.alicdn.com/imgextra/i4/O1CN01THqz79Bcz2L5YPrs_!!6000000002303-0-tps-2736-1536.jpg",
+        "alt": "Interface de démonstration de Qwen-Image 2.1, discussion et canevas d'édition"
+      },
+      "source": {
+        "name": "Qwen sur GitHub",
+        "url": "https://github.com/QwenLM/Qwen-Image-2.1"
+      },
+      "also": {
+        "name": "PANews",
+        "url": "https://panews.io/articles/01a0beef-5422-77b1-8ad6-60adc2344bc4"
+      },
+      "tag": "Qwen-Image 2.1"
+    },
+    {
+      "id": "mediatek-9600-pro",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-09-15",
+      "title": {
+        "fr": "Dimensity 9600 Pro, le premier 2 nm avec le GPU neuronal d'Arm",
+        "en": "Dimensity 9600 Pro, the first 2 nm chip with Arm's neural GPU"
+      },
+      "body": {
+        "fr": "Annoncé le 15 septembre. Gravé en 2 nm chez TSMC, CPU Arm C2 en 2+3+3 sans cœur d'efficience, jusqu'à 4,55 GHz, et premier SoC commercial à embarquer le Mali G2-Ultra NX vu la semaine dernière. MediaTek annonce +27 % de performance GPU de pointe, 24 % de consommation en moins à performance maximale, un ray tracing 18 % plus rapide et du jeu mobile jusqu'à 185 fps. Premiers téléphones ce trimestre.",
+        "en": "Announced September 15. Built on TSMC's 2 nm process, an all-big-core 2+3+3 Arm C2 CPU up to 4.55 GHz, and the first commercial SoC to carry the Mali G2-Ultra NX covered last week. MediaTek claims +27% peak GPU performance, 24% less power at peak, ray tracing 18% faster and mobile gaming up to 185 fps. First phones this quarter."
+      },
+      "learning": {
+        "fr": "Le rendu neuronal quitte la fiche technique d'Arm pour entrer dans un téléphone en vente. L'upscaling par IA devient la norme mobile, pas une option.",
+        "en": "Neural rendering leaves Arm's spec sheet and lands in a phone on sale. AI upscaling becomes the mobile default, not an option."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.technobaboy.com/wp-content/uploads/mediatek-dimensity-9600-pro.webp",
+        "alt": "Puce MediaTek Dimensity 9600 Pro, visuel officiel"
+      },
+      "source": {
+        "name": "MediaTek",
+        "url": "https://www.mediatek.com/press-room/mediatek-dimensity-9600-pro-sets-new-standard-for-flagship-smartphone-chips"
+      },
+      "also": {
+        "name": "Notebookcheck",
+        "url": "https://www.notebookcheck.net/MediaTek-Dimensity-9600-Pro-benchmarks-are-in-Middling-performance-gains-but-good-efficiency-boost.1400235.0.html"
+      },
+      "tag": "Dimensity 9600 Pro"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

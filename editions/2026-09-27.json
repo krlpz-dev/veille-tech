@@ -1,0 +1,238 @@
+{
+  "edition": "04",
+  "date": "2026-09-27",
+  "title": {
+    "fr": "Deux dollars le million",
+    "en": "Two dollars a million"
+  },
+  "deck": {
+    "fr": "OpenAI divise par deux le prix de ses modèles de frontière, Anthropic s'engage sur 11,6 milliards de dollars de calcul chez Akamai, et Hyundai annonce 25 000 humanoïdes Atlas dans ses usines.",
+    "en": "OpenAI halves the price of its frontier models, Anthropic commits to 11.6 billion dollars of compute at Akamai, and Hyundai announces 25,000 Atlas humanoids in its plants."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260927_161621_91996905-a914-49f1-aa4e-c4560c6bcedb.png",
+    "alt": {
+      "fr": "Baie de serveurs seule au milieu d'un hall industriel vide, éclairée par une lumière dure venue du plafond, photographie noir et blanc granuleuse",
+      "en": "A single server rack alone in an empty industrial hall, lit by one hard overhead light, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "91996905-a914-49f1-aa4e-c4560c6bcedb",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single tall server rack cabinet standing alone on the bare concrete floor of a vast empty industrial hall at night, one hard overhead light source directly above it carving its metal edges and a long hard shadow out of the darkness, faint reflection on the polished concrete. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260927_161621_9bcfdc07-6435-4afd-b7e6-faba07ae54aa.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260927_161621_53e858c8-db89-420f-9bed-bbd933d79388.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gpt6-sol-luna",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-22",
+      "title": {
+        "fr": "OpenAI divise par deux le prix de ses modèles",
+        "en": "OpenAI halves the price of its models"
+      },
+      "body": {
+        "fr": "Annoncés le 22 septembre. GPT-6 Sol passe à 2 dollars le million de tokens en entrée et 10 en sortie, contre 4 et 20 pour la génération précédente, et GPT-6 Luna descend à 0,10 et 0,50 dollar. Sur DeepSWE v1.1, Sol atteint 68,8 %, à 1,1 point du meilleur score de Claude Fable 5 pour environ 80 % de coût en moins par tâche, et les tokens déjà en cache profitent de 90 % de remise. Les deux modèles sont dans l'API, dans ChatGPT Work et dans Codex.",
+        "en": "Announced September 22. GPT-6 Sol drops to 2 dollars per million input tokens and 10 per million output, down from 4 and 20 in the previous generation, and GPT-6 Luna falls to 0.10 and 0.50 dollar. On DeepSWE v1.1, Sol reaches 68.8%, within 1.1 points of Claude Fable 5's best score at roughly 80% lower cost per task, and cached tokens get a 90% discount. Both models are in the API, in ChatGPT Work and in Codex."
+      },
+      "learning": {
+        "fr": "Le prix du frontier baisse plus vite que les scores ne montent. La contrainte n'est plus le budget du token, c'est ce qu'on ose lui faire faire.",
+        "en": "Frontier prices fall faster than scores rise. The constraint is no longer the token budget, it is what you dare put it to work on."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://images.ctfassets.net/kftzwdyauwt9/7fvmMcBIvMTXxVJh7NEMt1/48a75e624699bb1e218366c1d3522048/gpt-6-sol-luna-seo.png?w=1600&h=900&fit=fill",
+        "alt": "Visuel d'annonce d'OpenAI pour GPT-6 Sol et Luna"
+      },
+      "source": {
+        "name": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      },
+      "also": {
+        "name": "The New Stack",
+        "url": "https://thenewstack.io/openai-gpt-6-sol-luna-release/"
+      },
+      "tag": "GPT-6 Sol et Luna"
+    },
+    {
+      "id": "claude-opus-55",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-22",
+      "title": {
+        "fr": "Claude Opus 5.5 réfléchit moins pour coûter moins",
+        "en": "Claude Opus 5.5 thinks less to cost less"
+      },
+      "body": {
+        "fr": "Sorti le 22 septembre, le même jour que les nouveaux modèles d'OpenAI. Anthropic facture Opus 5.5 4 dollars le million de tokens en entrée et 20 en sortie, environ 20 % de moins qu'Opus 5, et annonce un coût d'exécution inférieur de 40 % par défaut grâce à un raisonnement adaptatif qui module la longueur de réflexion selon la tâche. Le modèle affiche 66,4 % sur Terminal-Bench 4.0 et 1846 points Elo sur GDPval-AA v2.1. Les limites d'usage montent pour les abonnements Pro, Max et Team.",
+        "en": "Released September 22, the same day as OpenAI's new models. Anthropic prices Opus 5.5 at 4 dollars per million input tokens and 20 per million output, about 20% below Opus 5, and claims a 40% lower cost to run at default settings thanks to adaptive thinking that scales reasoning length to the task. The model posts 66.4% on Terminal-Bench 4.0 and 1846 Elo on GDPval-AA v2.1. Usage limits go up for Pro, Max and Team subscriptions."
+      },
+      "learning": {
+        "fr": "Deux labos majeurs baissent leurs prix le même jour. Le raisonnement long n'est plus un argument de vente, c'est une dépense à optimiser.",
+        "en": "Two major labs cut prices on the same day. Long reasoning is no longer a selling point, it is a cost to optimize."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f4d37a1d1f582f53f4e89440062b649b6273a093-1200x630.jpg",
+        "alt": "Visuel d'annonce d'Anthropic pour Claude Opus 5.5"
+      },
+      "source": {
+        "name": "Anthropic",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      "also": {
+        "name": "BNN Bloomberg",
+        "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/22/anthropic-unveils-claude-opus-55/"
+      },
+      "tag": "Claude Opus 5.5"
+    },
+    {
+      "id": "atlas-metaplant",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-09-21",
+      "title": {
+        "fr": "Hyundai vise 25 000 Atlas dans ses usines",
+        "en": "Hyundai aims for 25,000 Atlas robots in its plants"
+      },
+      "body": {
+        "fr": "Ouvert le 21 septembre dans l'usine Metaplant America de Hyundai, près de Savannah en Géorgie, le Robotics Metaplant Application Center entraîne les humanoïdes Atlas sur de vraies tâches de production. Hyundai Motor Group prévoit de déployer 25 000 Atlas dans les usines Hyundai et Kia du monde entier, alimentées par un site américain dimensionné pour 30 000 robots par an. Les premières missions sont la préparation logistique et le séquencement de pièces, l'assemblage de composants étant visé pour 2030. Le centre doit être agrandi environ dix fois en 2027.",
+        "en": "Opened September 21 inside Hyundai's Metaplant America factory near Savannah, Georgia, the Robotics Metaplant Application Center trains Atlas humanoids on real production tasks. Hyundai Motor Group plans to deploy 25,000 Atlas units across Hyundai and Kia plants worldwide, supplied by a US site sized for 30,000 robots a year. First missions are logistics preparation and parts sequencing, with component assembly targeted for 2030. The center moves to a building about ten times larger in 2027."
+      },
+      "learning": {
+        "fr": "L'humanoïde quitte la vidéo de démonstration pour la chaîne de montage. Il a désormais un carnet de commandes interne et un calendrier.",
+        "en": "The humanoid leaves the demo video for the assembly line. It now has an internal order book and a schedule."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://bostondynamics.com/wp-content/uploads/2026/09/rmac-1440.jpg",
+        "alt": "Humanoïdes Atlas en entraînement dans le centre RMAC de Boston Dynamics"
+      },
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/boston-dynamics-opens-robotics-metaplant-application-center-to-train-humanoid-robots-for-manufacturing-tasks/"
+      },
+      "also": {
+        "name": "Axios",
+        "url": "https://www.axios.com/local/boston/2026/09/21/boston-dynamics-humanoid-robots-hyundai-metaplant"
+      },
+      "tag": "Atlas chez Hyundai"
+    },
+    {
+      "id": "meta-vr-glasses",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-09-23",
+      "title": {
+        "fr": "Meta déporte le calcul pour des lunettes VR de 100 grammes",
+        "en": "Meta moves the compute out for 100-gram VR glasses"
+      },
+      "body": {
+        "fr": "Présentées le 23 septembre à Connect. Deux dalles micro-OLED de 2412 x 2288 pixels par œil à 120 Hz, 70 degrés de champ horizontal par 66, dans un châssis magnésium refroidi passivement de 100 grammes, soit cinq fois moins qu'un Quest 3. Tout le calcul part dans un boîtier de 300 grammes relié par un câble hybride à fibre optique, et le budget de rendu tient grâce au rendu fovéal piloté par un suivi oculaire à quatre caméras. Prix 1 300 dollars, livraison au printemps 2027, 75 jeux compatibles au lancement.",
+        "en": "Unveiled September 23 at Connect. Two micro-OLED panels at 2412 x 2288 pixels per eye and 120 Hz, a 70 by 66 degree field of view, in a passively cooled magnesium frame of 100 grams, five times lighter than a Quest 3. All the compute moves into a 300-gram puck linked by a hybrid fiber optic cable, and the rendering budget holds thanks to foveated rendering driven by four-camera eye tracking. Priced at 1,300 dollars, shipping spring 2027, 75 compatible games at launch."
+      },
+      "learning": {
+        "fr": "Le rendu fovéal cesse d'être une démo de laboratoire. Il devient la condition pour porter un casque sans le sentir.",
+        "en": "Foveated rendering stops being a lab demo. It becomes the condition for wearing a headset without feeling it."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://storage.ghost.io/c/2a/2f/2a2f38f0-4b71-407a-9c7e-18a9e2541980/content/images/size/w1200/2026/09/Meta-VR-Glasses---Lifestyle---Close-Up-1.jpg",
+        "alt": "Gros plan sur les lunettes VR de Meta portées par un utilisateur"
+      },
+      "source": {
+        "name": "UploadVR",
+        "url": "https://www.uploadvr.com/meta-vr-glasses-officially-announced-connect-2026/"
+      },
+      "also": {
+        "name": "Engadget",
+        "url": "https://www.engadget.com/2267230/everything-announced-at-meta-connect-2026/"
+      },
+      "tag": "Meta VR Glasses"
+    },
+    {
+      "id": "anthropic-akamai",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-09-24",
+      "title": {
+        "fr": "Anthropic engage 11,6 milliards de calcul chez Akamai",
+        "en": "Anthropic commits 11.6 billion of compute at Akamai"
+      },
+      "body": {
+        "fr": "Communiqué du 24 septembre. Akamai fournira de la capacité à Anthropic pour 11,6 milliards de dollars sur sept ans, extensible jusqu'à environ 20 milliards, le plus gros contrat de son histoire. En contrepartie, Anthropic reçoit un warrant portant sur près de 5 % des actions ordinaires d'Akamai à 111,33 dollars, dont 2 % acquis dès l'engagement initial et le reste par tranches de 3 milliards. Akamai prévoit environ 5,5 milliards de dollars d'investissement, dont 1,7 milliard dès 2026. La capacité porte sur des CPU, pas des GPU.",
+        "en": "Announced September 24. Akamai will supply Anthropic with capacity worth 11.6 billion dollars over seven years, extensible to roughly 20 billion, the largest contract in its history. In return, Anthropic receives a warrant for close to 5% of Akamai's common stock at 111.33 dollars, 2% vesting with the initial commitment and the rest in 3-billion tranches. Akamai plans about 5.5 billion dollars of capital spending, 1.7 billion of it in 2026. The capacity is CPU, not GPU."
+      },
+      "learning": {
+        "fr": "Le client entre au capital de son fournisseur, la facture de calcul se règle en partie en actions. Et tout le calcul de l'IA n'est pas du GPU.",
+        "en": "The customer takes equity in its supplier, and the compute bill is settled partly in shares. Also, not all AI compute is GPU."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://techcrunch.com/wp-content/uploads/2022/11/GettyImages-1333934328.jpg?resize=1200,703",
+        "alt": "Réseau de fibres lumineuses convergentes, illustration d'infrastructure de calcul"
+      },
+      "source": {
+        "name": "Akamai",
+        "url": "https://www.akamai.com/newsroom/press-release/akamai-announces-11-6-billion-multi-year-agreement-with-anthropic-to-support-growing-demand"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/"
+      },
+      "tag": "Anthropic × Akamai"
+    },
+    {
+      "id": "higgsfield-run-rate",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-09-24",
+      "title": {
+        "fr": "Higgsfield annonce un milliard de dollars de run rate",
+        "en": "Higgsfield claims a one billion dollar run rate"
+      },
+      "body": {
+        "fr": "Rapporté le 24 septembre par Bloomberg. Higgsfield dit dépasser le milliard de dollars de revenus annualisés, après 700 millions en août et 200 millions fin 2025, soit environ vingt fois en un an. La société revendique une trentaine de millions d'utilisateurs créateurs et se dit positive en trésorerie, ce que ne revendiquent ni Runway, ni Pika, ni Luma. Elle avait levé 400 millions de dollars en série B en août, à 5,4 milliards de valorisation, avec environ 150 salariés.",
+        "en": "Reported September 24 by Bloomberg. Higgsfield says it has passed one billion dollars in annualized revenue, after 700 million in August and 200 million at the end of 2025, roughly twenty times in a year. The company claims around thirty million creator users and says it is cash flow positive, which Runway, Pika and Luma do not claim. It raised 400 million dollars in a Series B in August at a 5.4 billion valuation, with about 150 employees."
+      },
+      "learning": {
+        "fr": "La vidéo générative a trouvé son marché avant d'avoir trouvé sa technique définitive. Les créateurs paient déjà, chaque semaine.",
+        "en": "Generative video found its market before it found its final technique. Creators are already paying, every week."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://startupfortune.com/wp-content/uploads/2026/09/runway-higgsfield-alex-mashrabov.jpg",
+        "alt": "Interface de Higgsfield et courbe de croissance des revenus"
+      },
+      "source": {
+        "name": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-24/ai-video-startup-higgsfield-eyes-1-billion-in-12-month-sales"
+      },
+      "also": {
+        "name": "Startup Fortune",
+        "url": "https://startupfortune.com/higgsfield-says-its-on-pace-to-hit-a-1-billion-revenue-run-rate/"
+      },
+      "tag": "Higgsfield"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

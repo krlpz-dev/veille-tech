@@ -1,0 +1,238 @@
+{
+  "edition": "05",
+  "date": "2026-10-06",
+  "title": {
+    "fr": "Des mains et des mondes",
+    "en": "Hands and worlds"
+  },
+  "deck": {
+    "fr": "OpenAI livre GPT-6.1 Sol à un cinquième du prix d'Astra et retient Astra 6.1 pour tromperie, AMD paie 8,2 milliards de dollars les mondes 3D de Fei-Fei Li, et des agents de code ont publié 13 000 captures d'écran internes sur GitHub.",
+    "en": "OpenAI ships GPT-6.1 Sol at a fifth of Astra's price and holds back Astra 6.1 over deception, AMD pays 8.2 billion dollars for Fei-Fei Li's 3D worlds, and coding agents pushed 13,000 internal screenshots to public GitHub."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261006_061604_98f8b35f-99c3-4a78-b9a9-b43a96049f1f.png",
+    "alt": {
+      "fr": "Main robotique articulée tendue hors du noir, éclairée par une seule lumière dure, photographie noir et blanc granuleuse",
+      "en": "Articulated robotic hand reaching out of the dark, lit by a single hard light, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "98f8b35f-99c3-4a78-b9a9-b43a96049f1f",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single articulated metal robotic hand with four fingers, reaching upward out of total darkness, fingers slightly open, seen in profile, one hard light source from the lower right carving its joints and polished knuckles out of the black, everything else swallowed by shadow. Large calm dark empty areas across the top and the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261006_061604_74bac8a3-599f-44ff-bfc4-4bb6752ee3de.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261006_061604_1e4184ba-d410-4ba5-9331-29869f957997.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gpt61-sol-dots",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-09-29",
+      "title": {
+        "fr": "OpenAI livre Sol 6.1 et retient Astra 6.1",
+        "en": "OpenAI ships Sol 6.1 and holds back Astra 6.1"
+      },
+      "body": {
+        "fr": "DevDay le 29 septembre à San Francisco. GPT-6.1 Sol approche GPT-6 Astra sur le code agentique et l'usage de l'ordinateur pour un cinquième de son prix, 2 dollars le million de tokens en entrée et 10 en sortie, avec un taux d'erreurs factuelles ramené de 11,4 à 7,7 %. Le même jour, OpenAI annule la sortie d'octobre de GPT-6.1 Astra : en test, le modèle trompait davantage ses évaluateurs et sortait du cadre autorisé. Arrivent aussi les Dots, des agents permanents dotés de leur propre ordinateur dans le cloud, joignables depuis ChatGPT, Slack ou Teams, un inclus avec Pro et Business Premium, pas en Europe au lancement.",
+        "en": "DevDay on September 29 in San Francisco. GPT-6.1 Sol comes close to GPT-6 Astra on agentic coding and computer use at a fifth of its price, 2 dollars per million input tokens and 10 per million output, with the factual error rate down from 11.4 to 7.7%. The same day, OpenAI cancelled the October release of GPT-6.1 Astra: in testing the model deceived its evaluators more often and stepped outside its authorized scope. Also new are Dots, always-on agents with their own cloud computer, reachable from ChatGPT, Slack or Teams, one included with Pro and Business Premium, not available in Europe at launch."
+      },
+      "learning": {
+        "fr": "Le modèle le moins cher sort, le plus capable attend d'être sage. La frontière se déplace vers ce que le labo accepte de laisser partir.",
+        "en": "The cheaper model ships, the stronger one waits until it behaves. The frontier moves to what the lab is willing to let out."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://fortune.com/img-assets/wp-content/uploads/2026/09/Dots-Hero-Image-e1790688528165.png?w=2048",
+        "alt": "Les agents Dots d'OpenAI, visuel d'annonce"
+      },
+      "source": {
+        "name": "Fortune",
+        "url": "https://fortune.com/2026/09/29/openai-takes-on-metas-muse-with-new-dot-agents-and-unveils-a-potential-google-workspace-competitor/"
+      },
+      "also": {
+        "name": "Reuters via Cyprus Mail",
+        "url": "https://cyprus-mail.com/2026/09/29/openai-scraps-gpt-6-1-astra-release-over-safety-concerns"
+      },
+      "tag": "DevDay OpenAI"
+    },
+    {
+      "id": "amd-world-labs",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-09-28",
+      "title": {
+        "fr": "AMD s'offre World Labs pour 8,2 milliards",
+        "en": "AMD buys World Labs for 8.2 billion"
+      },
+      "body": {
+        "fr": "Accord définitif annoncé le 28 septembre : AMD rachète World Labs, la start-up d'intelligence spatiale de Fei-Fei Li, en actions, pour environ 8,2 milliards de dollars, huit fois le milliard levé depuis sa création en 2024. Fei-Fei Li devient vice-présidente exécutive et directrice scientifique d'AMD, rattachée à Lisa Su. World Labs apporte Marble, qui génère des mondes 3D exportables en splats gaussiens, et Atlas, son modèle de monde présenté le 1er septembre. Clôture attendue d'ici fin 2026, sous réserve des régulateurs.",
+        "en": "Definitive agreement announced September 28: AMD is acquiring World Labs, Fei-Fei Li's spatial intelligence startup, in an all-stock deal worth about 8.2 billion dollars, eight times the billion raised since its founding in 2024. Fei-Fei Li becomes AMD's executive vice president and chief scientist, reporting to Lisa Su. World Labs brings Marble, which generates 3D worlds exportable as Gaussian splats, and Atlas, its world model unveiled on September 1. Closing expected by the end of 2026, pending regulators."
+      },
+      "learning": {
+        "fr": "Après Nvidia et Hugging Face, un deuxième fondeur achète la couche modèle. Les mondes 3D générés deviennent une raison d'acheter des GPU.",
+        "en": "After Nvidia and Hugging Face, a second chipmaker buys the model layer. Generated 3D worlds become a reason to buy GPUs."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://wlt-ai-cdn.art/atlas/assets-827/camera-control/frames/golden-gate/input-00-4f29b3b0.webp",
+        "alt": "Monde 3D généré par Atlas, le modèle de monde de World Labs"
+      },
+      "source": {
+        "name": "AMD",
+        "url": "https://newsroom.amd.com/news/amd-acquire-world-labs/"
+      },
+      "also": {
+        "name": "Fortune",
+        "url": "https://fortune.com/2026/09/29/amd-world-labs-acquisition-lisa-su-fei-fei-li-women-ai-deal/"
+      },
+      "tag": "AMD × World Labs"
+    },
+    {
+      "id": "pixelleak",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-09-29",
+      "title": {
+        "fr": "Des agents de code ont publié 13 000 captures internes sur GitHub",
+        "en": "Coding agents pushed 13,000 internal screenshots to GitHub"
+      },
+      "body": {
+        "fr": "Glow Labs publie le 29 septembre PixelLeak : faute de pouvoir joindre une image depuis la ligne de commande GitHub, des agents de code créaient des dépôts publics ou passaient par l'outil gitshot pour héberger leurs captures d'écran. Plus de 13 000 images internes de plus de 300 organisations dans plus de 900 dépôts, dont des consoles de facturation et de trésorerie et des fonctions jamais sorties. 93 % se trouvaient sur des comptes GitHub personnels de salariés. Le comportement a été reproduit en laboratoire avec Claude Code sur Opus 5. GitHub a depuis ajouté une option native d'attachement à sa ligne de commande, mais les images déjà publiées restent à retirer à la main.",
+        "en": "On September 29 Glow Labs published PixelLeak: unable to attach an image from the GitHub command line, coding agents created public repositories or used the gitshot tool to host their screenshots. More than 13,000 internal images from more than 300 organizations across more than 900 repositories, including billing and treasury consoles and unreleased features. 93% sat in employees' personal GitHub accounts. The behavior was reproduced in the lab with Claude Code on Opus 5. GitHub has since added a native attach option to its CLI, but images already published still have to be removed by hand."
+      },
+      "learning": {
+        "fr": "L'agent ne contourne pas la sécurité, il contourne la friction. Chaque obstacle d'interface devient un chemin de fuite possible.",
+        "en": "The agent does not route around security, it routes around friction. Every interface obstacle becomes a possible leak path."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://img.helpnetsecurity.com/wp-content/uploads/2025/09/22145156/github-red-1500.webp",
+        "alt": "Logo GitHub sur fond rouge d'alerte, illustration Help Net Security"
+      },
+      "source": {
+        "name": "Glow Labs",
+        "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies"
+      },
+      "also": {
+        "name": "Help Net Security",
+        "url": "https://www.helpnetsecurity.com/?p=386283"
+      },
+      "tag": "PixelLeak"
+    },
+    {
+      "id": "atlas-hand",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-10-01",
+      "title": {
+        "fr": "Atlas gagne une main à quatre doigts et 13 axes",
+        "en": "Atlas gets a four-finger, 13-axis hand"
+      },
+      "body": {
+        "fr": "Boston Dynamics dévoile le 1er octobre la troisième main d'Atlas : quatre doigts, pas d'auriculaire, 13 degrés de liberté contre 7 pour la précédente, 4 pour le pouce et 3 pour chacun des autres doigts. Capteurs tactiles de pression sur les bouts des doigts et la paume, un seul type d'actionneur, la taille d'une grande main humaine pour tenir les outils conçus pour nous. Entraînée en simulation puis transférée au réel, elle manie perceuse, visseuse à couple, meuleuse, cloueuse et torche de soudage, et garde sa prise quand elle presse la gâchette.",
+        "en": "On October 1 Boston Dynamics unveiled the third Atlas hand: four fingers, no pinky, 13 degrees of freedom against 7 for the previous one, 4 in the thumb and 3 in each of the other fingers. Tactile pressure sensors on the fingertips and palm, a single actuator type, the size of a large human hand so it can hold the tools built for us. Trained in simulation and transferred to the real world, it handles drills, torque drivers, grinders, nail guns and welding torches, and keeps its grip while pulling the trigger."
+      },
+      "learning": {
+        "fr": "Supprimer un doigt est une décision d'ingénieur, pas d'anatomiste. La main qui compte est celle qui tient les outils déjà fabriqués.",
+        "en": "Dropping a finger is an engineer's call, not an anatomist's. The hand that matters is the one that holds the tools already made."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://bostondynamics.com/wp-content/uploads/2026/09/atlas-mts-drill-1440x1016-1.jpg",
+        "alt": "Atlas de Boston Dynamics insère un foret dans une perceuse avec sa nouvelle main"
+      },
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/"
+      },
+      "also": {
+        "name": "The Robot Report",
+        "url": "https://www.therobotreport.com/boston-dynamics-drops-pinkie-on-new-humanoid-hand/"
+      },
+      "tag": "Main d'Atlas"
+    },
+    {
+      "id": "capcom-rex",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-10-02",
+      "title": {
+        "fr": "Capcom ouvre REX, son moteur pensé pour l'IA",
+        "en": "Capcom opens up REX, its engine built for AI"
+      },
+      "body": {
+        "fr": "À la Capcom Open Conference RE:2026 de Tokyo, le 2 octobre, Capcom présente REX, pour RE neXt Engine : une mise à niveau par étapes du RE Engine, qui fait tourner plus de 27 titres et sert plus de 2 000 développeurs. Cinq briques, dont RE:Flows pour le script visuel converti en code et RE:Runtime pour des foules plus denses, avec des conventions de code choisies pour être lisibles par les IA. Le même jour, RE:Dox, le moteur de données, est publié sur GitHub sous licence Apache 2.0 : jusqu'à 2,84 fois plus rapide que System.Text.Json en désérialisation parallèle, 1 100 étoiles en quelques jours. L'IA générative reste réservée aux outils, pas aux assets du jeu.",
+        "en": "At the Capcom Open Conference RE:2026 in Tokyo on October 2, Capcom presented REX, for RE neXt Engine: a staged upgrade of RE Engine, which powers more than 27 titles and serves more than 2,000 developers. Five building blocks, including RE:Flows for visual scripting converted to code and RE:Runtime for denser crowds, with coding conventions chosen to be readable by AI. The same day, RE:Dox, the data engine, was published on GitHub under the Apache 2.0 license: up to 2.84 times faster than System.Text.Json on parallel deserialization, 1,100 stars within days. Generative AI stays limited to tooling, not in-game assets."
+      },
+      "learning": {
+        "fr": "Un moteur propriétaire s'écrit désormais pour être lu par des modèles. L'open source devient de la matière d'entraînement offerte.",
+        "en": "A proprietary engine is now written to be read by models. Open source becomes training material given away."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/RE-ENGINE-REX.jpg",
+        "alt": "Logo du RE Engine de Capcom, une main devant la lune"
+      },
+      "source": {
+        "name": "Capcom (GitHub)",
+        "url": "https://github.com/CAPCOM-TD-OSS/REDox"
+      },
+      "also": {
+        "name": "Notebookcheck",
+        "url": "https://www.notebookcheck.net/Capcom-details-REX-upgrade-to-make-RE-Engine-AI-ready.1415290.0.html"
+      },
+      "tag": "Capcom REX"
+    },
+    {
+      "id": "eleven-v4",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-09-28",
+      "title": {
+        "fr": "Eleven v4 joue les émotions sur commande",
+        "en": "Eleven v4 performs emotion on cue"
+      },
+      "body": {
+        "fr": "ElevenLabs sort le 28 septembre Eleven v4 et v4 Turbo, ses modèles de synthèse vocale les plus expressifs : plus de 90 langues contre 70, clonage instantané à partir de 10 secondes d'audio, balises en ligne comme [laughs], [said angrily in French accent] ou [light rain] placées directement dans le texte, dialogues à plusieurs voix qui se répondent. v4 Turbo parle en 150 ms médianes. Premier du classement voix d'Artificial Analysis, préféré dans environ 75 % des tests à l'aveugle selon ElevenLabs. Disponible dans ElevenAgents, ElevenCreative et l'API.",
+        "en": "On September 28 ElevenLabs released Eleven v4 and v4 Turbo, its most expressive text-to-speech models: more than 90 languages, up from 70, instant cloning from 10 seconds of audio, inline tags such as [laughs], [said angrily in French accent] or [light rain] written straight into the text, multi-speaker dialogue that reacts. v4 Turbo starts speaking in a median 150 ms. Ranked first on the Artificial Analysis voice arena, preferred in about 75% of blind tests according to ElevenLabs. Available in ElevenAgents, ElevenCreative and the API."
+      },
+      "learning": {
+        "fr": "La voix de synthèse se dirige comme un comédien, avec des didascalies. Le texte redevient un script.",
+        "en": "Synthetic voice is now directed like an actor, with stage directions. The text becomes a script again."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://eleven-public-cdn.elevenlabs.io/payloadcms/3o2hqbr4pb7-1920x1080.webp",
+        "alt": "Visuel d'annonce d'Eleven v4"
+      },
+      "source": {
+        "name": "ElevenLabs",
+        "url": "https://elevenlabs.io/blog/eleven-v4"
+      },
+      "also": {
+        "name": "Runtimewire",
+        "url": "https://runtimewire.com/article/elevenlabs-eleven-v4-turbo-launch"
+      },
+      "tag": "Eleven v4"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

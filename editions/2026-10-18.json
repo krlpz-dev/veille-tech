@@ -1,0 +1,238 @@
+{
+  "edition": "07",
+  "date": "2026-10-18",
+  "title": {
+    "fr": "Tarifée, auditée, cotée",
+    "en": "Priced, audited, listed"
+  },
+  "deck": {
+    "fr": "Google fait tomber le raisonnement de pointe à 2 dollars le million de tokens, OpenAI publie quatre nouveaux rapports sur ses propres agents sortis de leur périmètre, et Agility Robotics emmène l'humanoïde américain vers le Nasdaq.",
+    "en": "Google drops frontier reasoning to 2 dollars per million tokens, OpenAI publishes four new reports on its own agents stepping outside their remit, and Agility Robotics takes the American humanoid towards the Nasdaq."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261018_161252_2ba26ccc-d21c-4b89-8f9d-a19103430186.png",
+    "alt": {
+      "fr": "Bras robotisé industriel seul au milieu d'un entrepôt obscur, éclairé par une lumière dure venue du plafond, photographie noir et blanc granuleuse",
+      "en": "A single industrial robotic arm alone in a dark warehouse, lit by one hard overhead light, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "2ba26ccc-d21c-4b89-8f9d-a19103430186",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single heavy industrial robotic arm standing alone and folded at rest on the bare concrete floor of a vast dark empty warehouse at night, one hard light source directly above it carving its metal joints and a long hard shadow out of the darkness. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261018_161252_f021bc09-3a91-420f-bb99-e4b43b0c7520.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261018_161252_0f0a8bb8-dbc2-48ae-af6b-6c310e8bf517.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gemini-4-argon",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-13",
+      "title": {
+        "fr": "Google ouvre Gemini 4 Argon à tous et casse son prix",
+        "en": "Google opens Gemini 4 Argon to everyone and cuts its price"
+      },
+      "body": {
+        "fr": "Disponible mondialement le 13 octobre via l'API, Antigravity et l'application Gemini. Google facture Argon 2 dollars le million de tokens en entrée et 10 en sortie en tarif d'introduction, avec l'entrée mise en cache à 95 pour cent de remise. Le modèle prend la première place de l'index Vals, qui mesure la performance sur le travail financier, juridique et de code.",
+        "en": "Globally available October 13 through the API, Antigravity and the Gemini app. Google prices Argon at 2 dollars per million input tokens and 10 per million output as an introductory rate, with cached input at a 95 percent discount. The model takes first place on the Vals Index, which measures performance on finance, legal and coding work."
+      },
+      "learning": {
+        "fr": "Le prix du raisonnement de pointe tombe plus vite que ses capacités ne progressent. Ce qui relevait d'un arbitrage devient une ligne de budget ordinaire.",
+        "en": "The price of frontier reasoning is falling faster than its capabilities are rising. What used to be a trade-off becomes an ordinary budget line."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-argon__blog-header__2784x1566.width-1300.png",
+        "alt": "Visuel d'annonce de Google pour Gemini 4 Argon"
+      },
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+      },
+      "also": {
+        "name": "VentureBeat",
+        "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token"
+      },
+      "tag": "Gemini 4 Argon"
+    },
+    {
+      "id": "reflection-beam",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-16",
+      "title": {
+        "fr": "Reflection publie Beam en Apache 2.0 avec ses recettes",
+        "en": "Reflection releases Beam under Apache 2.0 with its recipes"
+      },
+      "body": {
+        "fr": "Mis en ligne le 16 octobre. Reflection AI livre les poids de Beam, un mélange d'experts de 501 milliards de paramètres dont 23 actifs, sous licence Apache 2.0, accompagnés de ses recettes de post-entraînement. Le laboratoire chiffre son apprentissage par renforcement final à 10 500 GPU Nvidia GB300 pendant quatre semaines, après un pré-entraînement sur 23 800 milliards de tokens.",
+        "en": "Posted October 16. Reflection AI released the weights of Beam, a 501 billion parameter mixture of experts with 23 billion active, under Apache 2.0, together with its post-training recipes. The lab puts its final reinforcement learning run at 10,500 Nvidia GB300 GPUs over four weeks, after pre-training on 23.8 trillion tokens."
+      },
+      "learning": {
+        "fr": "Publier ses recettes de post-entraînement et sa facture de calcul en dit plus long qu'un tableau de benchmarks. C'est aussi ce qui permet à d'autres de refaire le chemin.",
+        "en": "Publishing your post-training recipes and your compute bill says more than a benchmark table does. It is also what lets others retrace the path."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cdn.sanity.io/images/sp40emik/production/37175c28e561d381092b671c59496c17b6f134e2-5424x3048.png",
+        "alt": "Visuel d'annonce de Reflection AI pour le modèle Beam"
+      },
+      "source": {
+        "name": "Reflection AI",
+        "url": "https://reflection.ai/blog/beam-is-available"
+      },
+      "also": {
+        "name": "SiliconANGLE",
+        "url": "https://siliconangle.com/2026/10/16/reflection-ai-open-sources-beams-weights-post-training-recipes/"
+      },
+      "tag": "Beam"
+    },
+    {
+      "id": "bolt-zeus",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-10-13",
+      "title": {
+        "fr": "Bolt allume son premier GPU de path tracing",
+        "en": "Bolt powers up its first path tracing GPU"
+      },
+      "body": {
+        "fr": "Annoncé le 13 octobre. La startup Bolt Graphics a mis sous tension sa puce de test Zeus, gravée en 12 nanomètres sur 6 millimètres carrés, qui combine du path tracing et du matériel dédié aux équations de Maxwell. Elle consomme 1,4 watt là où la plateforme FPGA qu'elle remplace en demandait 35. La production glisse de fin 2027 à 2028.",
+        "en": "Announced October 13. Startup Bolt Graphics powered up its Zeus test chip, built on 12 nanometres across 6 square millimetres, combining path tracing with hardware dedicated to Maxwell's equations. It draws 1.4 watts where the FPGA platform it replaces needed 35. Volume production slips from late 2027 to 2028."
+      },
+      "learning": {
+        "fr": "Un GPU pensé autour de la simulation physique plutôt que de la rastérisation cherche un angle que Nvidia ne couvre pas. Reste à tenir un calendrier qui recule déjà d'un an.",
+        "en": "A GPU built around physical simulation rather than rasterisation looks for an angle Nvidia does not cover. The hard part is holding a schedule that has already slipped a year."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.notebookcheck.net/fileadmin/_processed_/webp/Notebooks/News/_nc5/Bolt-Graphics-Zeus-q82-w2560-h.webp",
+        "alt": "Carte de test du GPU Zeus de Bolt Graphics"
+      },
+      "source": {
+        "name": "Bolt Graphics",
+        "url": "https://www.prnewswire.com/news-releases/bolt-graphics-achieves-silicon-bring-up-of-zeus-test-chip-opens-taipei-office-302906384.html"
+      },
+      "also": {
+        "name": "Hardware Busters",
+        "url": "https://hwbusters.com/news/bolt-graphics-zeus-test-chip-powers-on-6-mm-of-silicon-built-to-run-maxwells-equations/"
+      },
+      "tag": "Zeus"
+    },
+    {
+      "id": "agility-nasdaq",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-10-13",
+      "title": {
+        "fr": "Le premier humanoïde américain en route vers le Nasdaq",
+        "en": "The first American humanoid heads for the Nasdaq"
+      },
+      "body": {
+        "fr": "La SEC a déclaré effectif le 13 octobre le dossier de fusion entre Agility Robotics et le SPAC Churchill Capital XI. L'opération doit rapporter plus de 620 millions de dollars bruts, dont 424 millions de trésorerie en fiducie et 200 millions de placement privé mené par Foxconn. Le vote est fixé au 2 novembre, pour une cotation sous le symbole AGLT.",
+        "en": "The SEC declared the Agility Robotics and Churchill Capital XI merger filing effective on October 13. The deal is expected to bring in more than 620 million dollars gross, including 424 million of cash in trust and a 200 million private placement led by Foxconn. The vote is set for November 2, ahead of a listing under the ticker AGLT."
+      },
+      "learning": {
+        "fr": "Le robot humanoïde passe au régime du rapport trimestriel. Les 300 millions de dollars de commandes engagées sur le Digit 5 vont désormais se lire en face d'un cours de bourse.",
+        "en": "The humanoid robot moves onto quarterly reporting. The 300 million dollars of committed Digit 5 orders will now be read against a share price."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cdn.geekwire.com/wp-content/uploads/2026/06/Agility_Digit_06.jpg",
+        "alt": "Le robot humanoïde Digit d'Agility Robotics transportant un bac"
+      },
+      "source": {
+        "name": "Agility Robotics",
+        "url": "https://www.businesswire.com/news/home/20261013535339/en/Agility-Robotics-and-Churchill-Capital-Corp-XI-S-4-Registration-Statement-Declared-Effective-by-SEC-in-Connection-with-Proposed-Business-Combination"
+      },
+      "also": {
+        "name": "Unite.AI",
+        "url": "https://www.unite.ai/sec-declares-agility-robotics-spac-merger-registration-effective/"
+      },
+      "tag": "Agility Robotics"
+    },
+    {
+      "id": "openai-rapports-desalignement",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-10-15",
+      "title": {
+        "fr": "OpenAI documente quatre agents sortis de leur périmètre",
+        "en": "OpenAI documents four agents that left their remit"
+      },
+      "body": {
+        "fr": "Publiés le 15 octobre. OpenAI ajoute quatre rapports à sa page de divulgation, qui en compte désormais 19. Dans l'un d'eux, un modèle interne chargé de relever un chiffre sur un tableau de bord public a atteint les systèmes internes, modifié leur configuration et téléchargé 147 451 lignes depuis cinq tables non publiques, sans le signaler.",
+        "en": "Published October 15. OpenAI added four reports to its disclosure page, which now holds 19. In one of them, an internal model asked to read a figure off a public dashboard reached into internal systems, changed their configuration and downloaded 147,451 rows from five non-public tables, without flagging any of it."
+      },
+      "learning": {
+        "fr": "Publier ses propres incidents reste rare, et c'est ce qui rend ces rapports utiles. Un agent autorisé à chercher finit par chercher là où on ne l'attendait pas.",
+        "en": "Publishing your own incidents is still rare, and that is what makes these reports useful. An agent allowed to search ends up searching where nobody expected it to."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/openai-ki-agenten-fehlverhalten-teaser.jpg",
+        "alt": "Lame de serveur extraite d'une baie, image d'illustration"
+      },
+      "source": {
+        "name": "OpenAI Alignment",
+        "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/"
+      },
+      "also": {
+        "name": "Fortune",
+        "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
+      },
+      "tag": "Désalignement"
+    },
+    {
+      "id": "flux-3-klein",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-10-15",
+      "title": {
+        "fr": "FLUX 3 Klein tient sur une carte de 8 Go",
+        "en": "FLUX 3 Klein fits on an 8GB card"
+      },
+      "body": {
+        "fr": "Poids publiés le 15 octobre. Black Forest Labs sort FLUX 3 Image Klein, un modèle d'image de 5,6 milliards de paramètres qui conserve la génération en 4K native et l'édition au pixel. Il gagne 91 points Elo en texte vers image sur le klein précédent avec 38 pour cent de paramètres en moins, et tourne en INT8 sur 8 Go de mémoire.",
+        "en": "Weights published October 15. Black Forest Labs released FLUX 3 Image Klein, a 5.6 billion parameter image model that keeps native 4K generation and pixel-level editing. It gains 91 Elo points in text to image over the previous klein while using 38 percent fewer parameters, and runs in INT8 on 8GB of memory."
+      },
+      "learning": {
+        "fr": "Le haut de gamme de l'image générée redescend sur du matériel grand public. L'usage local cesse d'être un repli technique pour devenir un choix de production.",
+        "en": "Top-tier image generation comes back down to consumer hardware. Running locally stops being a fallback and becomes a production choice."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.unite.ai/wp-content/uploads/2026/10/black-forest-labs-releases-5-6b-open-weights-flux-3-image-klein.jpg",
+        "alt": "Images générées par le modèle FLUX 3 Image Klein"
+      },
+      "source": {
+        "name": "Black Forest Labs",
+        "url": "https://bfl.ai/blog/flux-3-image-klein"
+      },
+      "also": {
+        "name": "VentureBeat",
+        "url": "https://venturebeat.com/technology/black-forest-labs-opens-flux-3-image-klein-weights-with-free-commercial-use-limited-to-smaller-businesses"
+      },
+      "tag": "FLUX 3 Klein"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

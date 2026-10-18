@@ -278,6 +278,14 @@ def main():
         older = eds[i + 1] if i + 1 < len(eds) else None
         open(os.path.join(OUT, f'edition-{ed["date"]}.html'), 'w', encoding='utf-8').write(edition_page(ed, older, newer))
     print(f"OK · {len(eds)} édition(s) → docs/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
+    # Garde fou de longueur : au delà de 450 signes le bloc de texte devient
+    # une colonne verticale qui déséquilibre la page. Avertissement, pas erreur.
+    longs = [(e['date'], (n.get('title') or {}).get('fr', ''), lg, l)
+             for e in eds[:1] for n in e.get('news', [])
+             for lg in ('fr', 'en')
+             if (l := len((n.get('body') or {}).get(lg, ''))) > 450]
+    for date, titre, lg, l in longs:
+        print(f"   ⚠ {date} · {lg} · {l} signes (max 450) · {titre}")
 
 if __name__ == '__main__':
     main()

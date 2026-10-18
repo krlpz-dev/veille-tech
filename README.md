@@ -65,7 +65,8 @@ Catégories utilisées : IA / AI, Gaming tech, Robotique / Robotics, Business, S
 
 - 4 à 6 news par semaine, publiées le dimanche soir.
 - Tech uniquement : IA, gaming côté technologie (jamais les jeux eux-mêmes), robotique.
-- Texte très bref, lisible en quelques secondes. Un chiffre marquant et vérifiable par news, dans le paragraphe (pas de chiffre géant).
+- Texte très bref, lisible en quelques secondes. Le corps d'une news tient en 2 à 3 phrases, 300 à 420 signes, 450 au maximum, en français comme en anglais. Au delà le bloc devient une colonne verticale qui déséquilibre la page. S'il faut couper, on garde le fait daté et le chiffre, on retire le détail technique secondaire.
+- Un chiffre marquant et vérifiable par news, dans le paragraphe (pas de chiffre géant).
 - Un learning ou un avis sur les implications en une phrase.
 - Images choisies sur le web quand c'est possible (2 à 4 images en diaporama automatique de 2 s, par exemple avant/après pour une techno de rendu, jamais de jeu de sport) ; à défaut, image générée sur Higgsfield Soul 2.0 dans un esprit brut, organique, flou de mouvement. Image d'ouverture d'édition : Higgsfield, 16:9, noir et blanc granuleux, sans texte.
 - Écriture : pas de tiret cadratin, pas de point d'exclamation.

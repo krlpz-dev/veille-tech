@@ -175,13 +175,15 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;margin:0;let
 /* éditions passées : image sur la moitié, contenu à côté */
 .card-past{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);transition:border-color .5s var(--ease)}
 .card-past:hover{border-color:var(--line-strong)}
-.card-past .media{aspect-ratio:16/10;min-height:300px}
+.card-past .media{min-height:300px;align-self:stretch}
+.card-past .media img{position:absolute;inset:0}
 .card-past .content{position:relative;padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;justify-content:center;gap:16px}
 .card-past .num{font-size:clamp(48px,5.6vw,88px);margin-bottom:6px}
 .card-past h3{font-size:clamp(30px,3.4vw,52px)}
 .card-past .cta{margin-top:8px}
 @media (max-width:900px){
   .card-past{grid-template-columns:1fr}
+  .card-past .media{aspect-ratio:16/10;align-self:auto}
   .card-hero .tags{max-width:100%}
 }
 

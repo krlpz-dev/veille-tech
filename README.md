@@ -13,11 +13,24 @@ docs/                      sortie commitée, publiée telle quelle par GitHub Pa
 
 ## Publier une édition
 
-1. Créer `editions/AAAA-MM-JJ.json` (copier la précédente comme gabarit).
-2. `python3 build.py`
-3. `git add -A && git commit -m "Édition NN" && git push`
+Une seule commande, depuis ce dossier :
 
+```
+sh publier.sh
+```
+
+Le script lance `build.py`, puis commit et pousse sur `main` depuis un clone situé
+hors du dossier connecté (`~/.cache/veille-tech-publication`), parce que git ne peut
+pas supprimer ses fichiers de verrou dans un dossier monté par Cowork. Le jeton
+GitHub est lu dans `.secrets/github-token`, qui n'est jamais commité.
 GitHub Pages republie en une à deux minutes.
+
+C'est la même mécanique que la veille créative (`Acolyte/PRO/veille/publier.sh`), et
+c'est ce que la tâche planifiée du dimanche appelle pour mettre l'édition en ligne
+toute seule.
+
+À la main, sans le script : `python3 build.py` puis
+`git add -A && git commit -m "Édition NN" && git push`.
 
 ## Schéma d'une édition
 

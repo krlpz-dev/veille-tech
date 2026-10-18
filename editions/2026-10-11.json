@@ -1,0 +1,238 @@
+{
+  "edition": "06",
+  "date": "2026-10-11",
+  "title": {
+    "fr": "Une adresse e-mail pour les agents",
+    "en": "An email address for the agents"
+  },
+  "deck": {
+    "fr": "Google donne à ses agents un compte Workspace et un siège dans l'annuaire, Waymo emprunte 5 milliards de dollars pour la première fois, et Nvidia fait entrer un GPU RTX dans une puce Arm à mémoire unifiée.",
+    "en": "Google gives its agents a Workspace account and a seat in the company directory, Waymo borrows 5 billion dollars for the first time, and Nvidia moves an RTX GPU into an Arm chip with unified memory."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261011_162348_ffd9d886-213d-4638-90e2-71cc95c84c04.png",
+    "alt": {
+      "fr": "Chaise de bureau vide seule au milieu d'un plateau obscur, éclairée par une lumière dure venue du plafond, photographie noir et blanc granuleuse",
+      "en": "An empty office chair alone in a dark open-plan floor, lit by one hard overhead light, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "ffd9d886-213d-4638-90e2-71cc95c84c04",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single empty office swivel chair standing alone on the bare polished floor of a vast dark empty open-plan office at night, one hard light source directly above it carving the chair's edges and a long hard shadow out of the darkness. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261011_162347_df42c2a2-fa9e-424c-9313-4fdd65e60bb7.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261011_162347_9c87e0fb-98e1-43ee-adb5-44283d11e8be.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gemini-agent-identite",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-08",
+      "title": {
+        "fr": "Google donne une identité d'entreprise à ses agents",
+        "en": "Google gives its agents a corporate identity"
+      },
+      "body": {
+        "fr": "Présenté le 8 octobre à Gemini at Work. Google Cloud réunit questions, travail documentaire, création de médias et exécution de code dans un agent unique, piloté par objectifs, capable de créer des sous-agents et de poursuivre un travail de plusieurs heures dans le cloud. Les agents collaborateurs reçoivent un compte Workspace à part entière, avec une adresse en @agents.company.com, un agenda, un Drive et une entrée dans l'annuaire, et agissent sous leur propre identité. Google indique que près de 500 de ses clients ont chacun dépassé le millier de milliards de tokens traités sur l'année, et que le prix du token a baissé de 98 % depuis 2024. L'agent route les tâches vers les modèles Gemini et vers les modèles Claude d'Anthropic, en private preview.",
+        "en": "Unveiled October 8 at Gemini at Work. Google Cloud folds questions, document work, media creation and code execution into a single agent, driven by goals, able to spawn sub-agents and to keep a job running for hours in the cloud. Coworker agents get a full Workspace account, with an @agents.company.com address, a calendar, a Drive and a listing in the company directory, and act under their own identity. Google says close to 500 of its customers each processed more than a trillion tokens over the past year, and that the price per token has fallen 98% since 2024. The agent routes tasks to the Gemini models and to Anthropic's Claude models, in private preview."
+      },
+      "learning": {
+        "fr": "La question passe de ce que le modèle sait faire à ce qu'on accepte de lui confier. Un agent qui a une boîte mail a aussi une trace, des droits et une responsabilité.",
+        "en": "The question moves from what the model can do to what we agree to hand it. An agent with an inbox also has an audit trail, permissions and accountability."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://storage.googleapis.com/gweb-cloudblog-publish/images/image_3.max-2100x2100_0CYZWqn.jpg",
+        "alt": "Visuel d'annonce de Google Cloud pour Gemini at Work 2026"
+      },
+      "source": {
+        "name": "Google Cloud",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+      },
+      "also": {
+        "name": "9to5Google",
+        "url": "https://9to5google.com/2026/10/08/gemini-agent-google-cloud/"
+      },
+      "tag": "Gemini agent"
+    },
+    {
+      "id": "mistral-large-4",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-06",
+      "title": {
+        "fr": "Mistral Large 4 pèse mille milliards de paramètres",
+        "en": "Mistral Large 4 weighs a trillion parameters"
+      },
+      "body": {
+        "fr": "Mis en preview publique le 6 octobre. Mistral Large 4, surnommé Le Chonk, est un mélange d'experts nativement multimodal de mille milliards de paramètres dont 52 milliards actifs par token, facturé 1,36 dollar le million de tokens en entrée et 4,18 en sortie. Mistral dit l'avoir entraîné de zéro sur 3 800 GPU Nvidia Grace Blackwell installés dans ses propres datacenters européens, et annonce 61,7 % sur DeepSWE v1.1, 93 % sur Cybench et 82 % sur un test de reproduction et correction de vulnérabilités. La publication des poids est promise pour la fin du mois, sans que la licence soit encore nommée.",
+        "en": "Put into public preview on October 6. Mistral Large 4, nicknamed Le Chonk, is a natively multimodal mixture of experts with one trillion parameters, 52 billion of them active per token, priced at 1.36 dollars per million input tokens and 4.18 per million output. Mistral says it trained the model from scratch on 3,800 Nvidia Grace Blackwell GPUs in its own European datacenters, and reports 61.7% on DeepSWE v1.1, 93% on Cybench and 82% on a reproduce-and-patch vulnerability test. The weights are promised by the end of the month, with the license still unnamed."
+      },
+      "learning": {
+        "fr": "L'Europe aligne un modèle à l'échelle du trillion de paramètres, entraîné sur son propre matériel, avec une promesse de poids ouverts. Tant que les poids ne sont pas publiés, c'est une intention, pas un produit.",
+        "en": "Europe lines up a trillion-parameter model trained on its own hardware, with a promise of open weights. Until those weights ship, that is an intention, not a product."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.marktechpost.com/wp-content/uploads/2026/10/WP-BLOG-BANNER-1-4-scaled.png",
+        "alt": "Carte de spécifications de Mistral Large 4, alias Le Chonk"
+      },
+      "source": {
+        "name": "Mistral AI",
+        "url": "https://mistral.ai/news/mistral-large-4"
+      },
+      "also": {
+        "name": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/"
+      },
+      "tag": "Mistral Large 4"
+    },
+    {
+      "id": "rtx-spark",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-10-07",
+      "title": {
+        "fr": "Nvidia met un GPU RTX dans une puce Arm à mémoire unifiée",
+        "en": "Nvidia puts an RTX GPU inside an Arm chip with unified memory"
+      },
+      "body": {
+        "fr": "Annoncé le 7 octobre lors d'un événement Windows commun avec Microsoft, disponible le 16 octobre. RTX Spark associe un GPU Blackwell RTX jusqu'à 6 144 coeurs et un processeur Grace jusqu'à 20 coeurs, reliés à 600 Go par seconde, avec jusqu'à 128 Go de mémoire unifiée et un pétaflop de calcul FP4. Nvidia revendique du jeu AAA en 1440p au-delà de 100 images par seconde avec DLSS 5, Reflex et G-SYNC, sur la même mémoire que les charges IA locales. Acer, ASUS, Dell, HP, Lenovo, Microsoft, MSI et Gigabyte suivent, le Surface Laptop Ultra de Microsoft ouvrant la série.",
+        "en": "Announced October 7 at a joint Windows event with Microsoft, available October 16. RTX Spark pairs a Blackwell RTX GPU with up to 6,144 cores and a Grace CPU with up to 20 cores, linked at 600 GB per second, with up to 128GB of unified memory and one petaflop of FP4 compute. Nvidia claims AAA gaming at 1440p above 100 frames per second with DLSS 5, Reflex and G-SYNC, sharing the same memory as local AI workloads. Acer, ASUS, Dell, HP, Lenovo, Microsoft, MSI and Gigabyte follow, with Microsoft's Surface Laptop Ultra opening the line."
+      },
+      "learning": {
+        "fr": "Le rendu temps réel et l'inférence locale cessent de se disputer la mémoire, ils la partagent. C'est le modèle Apple Silicon attaqué avec un pipeline RTX complet.",
+        "en": "Real-time rendering and local inference stop fighting over memory and start sharing it. That is the Apple Silicon model attacked with a full RTX pipeline."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nvidia-rtx-spark-microsoft-event-3840x2160-1-scaled.png",
+        "alt": "Visuel d'annonce de Nvidia pour RTX Spark et l'événement Windows"
+      },
+      "source": {
+        "name": "Nvidia",
+        "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/"
+      },
+      "also": {
+        "name": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/laptops/microsoft-and-nvidia-launch-surface-laptop-ultra-with-rtx-spark-rtx-spark-preorders-live-now-coinciding-with-major-windows-11-changes-for-agentic-ai"
+      },
+      "tag": "RTX Spark"
+    },
+    {
+      "id": "waymo-dette",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-10-08",
+      "title": {
+        "fr": "Waymo emprunte 5 milliards de dollars, une première",
+        "en": "Waymo borrows 5 billion dollars, a first"
+      },
+      "body": {
+        "fr": "Clôturé le 8 octobre. Waymo boucle un prêt à terme de 5 milliards de dollars, son tout premier financement par la dette après n'avoir levé qu'en capital, dont 16 milliards de dollars plus tôt dans l'année. Le syndicat réunit PIMCO, Blackstone et Sixth Street comme chefs de file, puis Capital Group, Loomis Sayles, T. Rowe Price, Apollo, Blue Owl, Franklin Templeton, Fidelity, HPS et Oaktree, Goldman Sachs étant seul teneur de livre. La filiale d'Alphabet dit avoir ouvert sa quinzième ville américaine le mois précédent et viser l'international, avec des essais en cours à Londres et à Tokyo.",
+        "en": "Closed October 8. Waymo has signed a 5 billion dollar term loan, its very first debt financing after raising only equity, including 16 billion dollars earlier this year. The syndicate brings together PIMCO, Blackstone and Sixth Street as lead lenders, then Capital Group, Loomis Sayles, T. Rowe Price, Apollo, Blue Owl, Franklin Templeton, Fidelity, HPS and Oaktree, with Goldman Sachs as sole bookrunner. The Alphabet subsidiary says it opened its fifteenth US city the previous month and is targeting international growth, with trials under way in London and Tokyo."
+      },
+      "learning": {
+        "fr": "Des prêteurs obligataires acceptent de financer une flotte sans chauffeur. Le robotaxi passe du pari technologique à l'actif industriel, et ce changement de statut vaut plus qu'une démonstration.",
+        "en": "Credit lenders now agree to finance a driverless fleet. The robotaxi moves from technology bet to financeable industrial asset, and that shift in status is worth more than a demo."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-ojai.jpg?resize=1200,675",
+        "alt": "Véhicule autonome Waymo en circulation"
+      },
+      "source": {
+        "name": "Waymo",
+        "url": "https://waymo.com/blog/2026/10/waymo-closes-5-billion-debt-financing"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/08/waymo-locks-in-5b-loan-from-blackstone-pimco-to-fuel-robotaxi-expansion/"
+      },
+      "tag": "Waymo"
+    },
+    {
+      "id": "artex-banques-coreennes",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-10-07",
+      "title": {
+        "fr": "Un pentesteur autonome open source vide sept banques coréennes",
+        "en": "An open source autonomous pentester drains seven Korean banks"
+      },
+      "body": {
+        "fr": "Rapport CrowdStrike du 7 octobre. Entre fin septembre et début octobre, un attaquant a visé la finance sud-coréenne avec ARTEX, un système de pentest autonome multi-agents open source développé en Chine, branché sur DeepSeek v4.1-flash et piloté depuis des sessions Claude Code. Sept établissements ont déclaré une fuite, dont environ 40 000 personnes pour la seule Yegaram Savings Bank et près de 25 700 clients chez Shinhan Bank. CrowdStrike a découvert l'opération parce que l'attaquant avait laissé ses répertoires ouverts, exposant historiques de sessions, configurations et fichiers mémoire. L'acteur n'est pas nommé, l'hypothèse d'un sinophone motivé par l'argent est donnée en confiance modérée.",
+        "en": "CrowdStrike report, October 7. Between late September and early October, an attacker targeted South Korean finance with ARTEX, an open source multi-agent autonomous pentesting system built in China, wired to DeepSeek v4.1-flash and driven from Claude Code sessions. Seven institutions have declared a breach, including around 40,000 people at Yegaram Savings Bank alone and close to 25,700 customers at Shinhan Bank. CrowdStrike found the operation because the attacker had left open directories exposing session histories, configuration files and memory files. The actor is unnamed, and the hypothesis of a financially motivated Chinese speaker is given with moderate confidence."
+      },
+      "learning": {
+        "fr": "Un outil gratuit suffit désormais à un acteur isolé pour enchaîner reconnaissance, exploitation et exfiltration sur tout un secteur. Ce qui a trahi celui-ci, c'est sa propre négligence, pas les défenses des banques.",
+        "en": "A free tool is now enough for a lone actor to chain reconnaissance, exploitation and exfiltration across a whole sector. What gave this one away was his own sloppiness, not the banks' defenses."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://image.koreajoongangdaily.com/12905513.jpg?imageId=12905513&width=1200&height=683",
+        "alt": "Guichets d'une banque sud-coréenne après les fuites de données"
+      },
+      "source": {
+        "name": "CrowdStrike",
+        "url": "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/"
+      },
+      "also": {
+        "name": "Korea JoongAng Daily",
+        "url": "https://www.koreajoongangdaily.com/korea/aidriven-hacks-on-banks-leave-customers-fearing-their-data-is-fair-game/12905416"
+      },
+      "tag": "ARTEX"
+    },
+    {
+      "id": "nano-banana-21",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-10-06",
+      "title": {
+        "fr": "Google divise par deux le prix de l'image générée",
+        "en": "Google halves the price of the generated image"
+      },
+      "body": {
+        "fr": "Passé en disponibilité générale le 6 octobre sur l'API Gemini. Nano Banana 2.1 fait tomber le token d'image en sortie de 60 à 30 dollars le million, soit 0,0336 dollar l'image en 1K contre 0,067 auparavant, 0,0504 en 2K, 0,0756 en 4K, et 0,0168 en traitement par lot. La fiche modèle de DeepMind lui donne 1050 points Elo de préférence humaine en mode raisonnement, contre 990 pour Nano Banana 2 et 935 pour Nano Banana Pro, le haut de gamme précédent. Le prix du token de texte monte en contrepartie, de 0,50 à 1,50 dollar le million en entrée.",
+        "en": "Generally available October 6 on the Gemini API. Nano Banana 2.1 drops the output image token from 60 to 30 dollars per million, meaning 0.0336 dollar per 1K image against 0.067 before, 0.0504 at 2K, 0.0756 at 4K, and 0.0168 in batch mode. DeepMind's model card gives it 1050 Elo of human preference in thinking mode, against 990 for Nano Banana 2 and 935 for Nano Banana Pro, the previous flagship. The text token price rises in exchange, from 0.50 to 1.50 dollar per million on input."
+      },
+      "learning": {
+        "fr": "Google dépasse son propre haut de gamme tout en divisant le prix par deux. La génération d'images en volume devient une ligne de coût négligeable, et la rareté se déplace vers l'idée.",
+        "en": "Google beats its own flagship while halving the price. Generating images at volume becomes a negligible cost line, and scarcity moves to the idea."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://lh3.googleusercontent.com/yrRTC8bSO6wto56LNZX8R0yQmIkRul6J4U_hGCV2jGE7v3u3TWbCNH8pkV07SrTDettBVQ8o3o74k4Xy1ESSPtqmI9NkQt16Ltc0kzCLtOTThAZE=w1200-h630-n-nu-rw",
+        "alt": "Visuel de la fiche modèle Nano Banana 2.1 de Google DeepMind"
+      },
+      "source": {
+        "name": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/nano-banana-2-1/"
+      },
+      "also": {
+        "name": "Android Headlines",
+        "url": "https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html"
+      },
+      "tag": "Nano Banana 2.1"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

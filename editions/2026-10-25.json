@@ -1,0 +1,238 @@
+{
+  "edition": "08",
+  "date": "2026-10-25",
+  "title": {
+    "fr": "Ce qu'on ouvre, ce qu'on retire",
+    "en": "What gets opened, what gets held back"
+  },
+  "deck": {
+    "fr": "Moonshot ouvre Kimi K3.1 Pro après en avoir retiré ses données d'attaque, des affiliés de rançongiciels confient leurs intrusions à des modèles commerciaux, et Tencent publie un monde interactif qui tourne sur une seule carte de joueur.",
+    "en": "Moonshot opens Kimi K3.1 Pro after stripping out its attack data, ransomware affiliates hand their intrusions over to commercial models, and Tencent releases an interactive world that runs on a single gaming card."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261025_161451_3a4d88ff-2a29-4e1f-a4f8-4c1cabdd32de.png",
+    "alt": {
+      "fr": "Porte de chambre forte en acier entrouverte dans une pièce sombre et vide, une lame de lumière s'échappe de l'ouverture, photographie noir et blanc granuleuse",
+      "en": "A steel vault door standing ajar in a dark empty room, a blade of light escaping from the opening, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "3a4d88ff-2a29-4e1f-a4f8-4c1cabdd32de",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single massive steel bank vault door standing slightly ajar in an otherwise empty dark concrete room, its thick locking bolts and circular dial catching one hard raking light from the right, a narrow blade of light escaping from the gap between door and frame. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261025_161451_68760c64-f98d-44f7-b0ba-a4865204d81a.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261025_161451_2b62f2e0-8577-4ee5-84ac-4b978803ea5b.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "kimi-k31-pro",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-23",
+      "title": {
+        "fr": "Moonshot ouvre un Kimi K3.1 Pro expurgé",
+        "en": "Moonshot opens a stripped-down Kimi K3.1 Pro"
+      },
+      "body": {
+        "fr": "Annoncé le 23 octobre, disponible aussitôt par API, poids complets promis pour le 4 novembre. Moonshot dit avoir retiré de l'entraînement les données liées aux attaques informatiques avant cette publication ouverte : son test interne d'exploitation de failles passe de 90,5 à 81 pour cent entre la version non expurgée et celle qui sort.",
+        "en": "Announced October 23, available through the API at once, full weights promised for November 4. Moonshot says it removed cyberattack-related material from training before this open release: its internal software exploitation test falls from 90.5 to 81 percent between the uncut version and the one being shipped."
+      },
+      "learning": {
+        "fr": "Un laboratoire qui dégrade volontairement son propre modèle avant de l'ouvrir, c'est nouveau. Reste que des poids publiés se réentraînent.",
+        "en": "A lab deliberately degrading its own model before opening it is new. Published weights can still be retrained, though."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://media.thenextweb.com/2026/10/kimi-logo-construction-grid-black-background.jpg",
+        "alt": "Le logo Kimi tracé sur une grille de construction typographique, sur fond noir"
+      },
+      "source": {
+        "name": "Moonshot AI",
+        "url": "https://forum.moonshot.ai/t/kimi-k3-1-pro-has-launched-start-exploring-now/629"
+      },
+      "also": {
+        "name": "The Next Web",
+        "url": "https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber"
+      },
+      "tag": "Kimi K3.1 Pro"
+    },
+    {
+      "id": "advanced-shader-delivery",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-10-21",
+      "title": {
+        "fr": "Les shaders précompilés arrivent chez les quatre fondeurs",
+        "en": "Precompiled shaders land across all four vendors"
+      },
+      "body": {
+        "fr": "Annoncé le 21 octobre. Microsoft précompile les shaders dans le cloud et les livre avec le jeu, au lieu de les compiler au premier lancement. La prise en charge couvre désormais AMD du RDNA 1 au RDNA 4, les Intel Arc B, toutes les cartes RTX de Nvidia et le Snapdragon X2. Sur Modern Warfare 4, plusieurs minutes de compilation tombent à quelques secondes.",
+        "en": "Announced October 21. Microsoft precompiles shaders in the cloud and ships them with the game, instead of compiling them at first launch. Support now covers AMD from RDNA 1 to RDNA 4, Intel Arc B series, every Nvidia RTX card and the Snapdragon X2. On Modern Warfare 4, several minutes of compilation drop to a few seconds."
+      },
+      "learning": {
+        "fr": "La compilation des shaders au lancement était la dernière corvée visible du PC. Elle disparaît par le réseau, pas par le matériel.",
+        "en": "Shader compilation at launch was the last visible chore on PC. It goes away over the network, not through hardware."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://media.xenospectrum.com/nvidia_asd_cloud_shader_hero_ebcfef0d7b.webp",
+        "alt": "Visuel sur la livraison des shaders précompilés depuis le cloud"
+      },
+      "source": {
+        "name": "Microsoft DirectX",
+        "url": "https://devblogs.microsoft.com/directx/advanced-shader-delivery-is-available-now-across-hardware/"
+      },
+      "also": {
+        "name": "The FPS Review",
+        "url": "https://www.thefpsreview.com/2026/10/23/advanced-shader-delivery-reaches-every-rtx-gpu-with-geforce-621-01-and-snapdragon-x2-joins-the-party/"
+      },
+      "tag": "Advanced Shader Delivery"
+    },
+    {
+      "id": "hy-nomas",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-10-21",
+      "title": {
+        "fr": "Tencent ouvre un monde interactif qui tient sur une 4090",
+        "en": "Tencent opens an interactive world that fits on a 4090"
+      },
+      "body": {
+        "fr": "Code et poids publiés le 21 octobre sous licence Apache 2.0. Hy-Nomas génère de la vidéo interactive segment par segment, pilotée au fil de l'eau par des prompts et des trajectoires de caméra, avec une mémoire de scène. La version accélérée sort du 720 par 1280 à 24 images par seconde en huit étapes, sur une seule GeForce RTX 4090.",
+        "en": "Code and weights published October 21 under Apache 2.0. Hy-Nomas generates interactive video segment by segment, steered as it runs by text prompts and camera trajectories, with scene memory. The accelerated version outputs 720 by 1280 at 24 frames per second in eight steps, on a single GeForce RTX 4090."
+      },
+      "learning": {
+        "fr": "Un monde génératif qui tient sur une carte de joueur change qui peut expérimenter. Le huis clos des grappes de calcul s'entrouvre.",
+        "en": "A generative world that fits on a gaming card changes who gets to experiment. The cluster-only era opens up a little."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://api.alphasignal.ai/api/news/preview/tencent-opens-hy-nomas-an-interactive-video-world-model-running-on-one-rtx-4090/v2/card.jpg",
+        "alt": "Visuel de présentation du modèle de monde vidéo interactif Hy-Nomas de Tencent Hunyuan"
+      },
+      "source": {
+        "name": "Tencent Hunyuan",
+        "url": "https://github.com/Tencent-Hunyuan/Hy-Nomas"
+      },
+      "also": {
+        "name": "ShiftDelete",
+        "url": "https://en.shiftdelete.net/tencent-unveils-hy-nomas-an-interactive-generative-ai-video-model/"
+      },
+      "tag": "Hy-Nomas"
+    },
+    {
+      "id": "tesla-robotaxi-chiffres",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-10-21",
+      "title": {
+        "fr": "Tesla publie les kilomètres de son Robotaxi",
+        "en": "Tesla publishes its Robotaxi mileage"
+      },
+      "body": {
+        "fr": "Site de données mis en ligne le 21 octobre. Tesla revendique 3 112 541 miles parcourus sans conducteur ni surveillant à bord entre le 22 janvier et le 18 octobre, sans blessé, sans airbag déployé et sans piéton ni cycliste heurté. Austin pèse 2 118 015 miles à elle seule, et quatre villes sont annoncées en plus.",
+        "en": "Data site posted October 21. Tesla claims 3,112,541 miles driven with no driver and no safety monitor on board between January 22 and October 18, with no injuries, no airbag deployments and no pedestrians or cyclists hit. Austin alone accounts for 2,118,015 miles, and four more cities are announced."
+      },
+      "learning": {
+        "fr": "Un constructeur qui publie ses propres kilomètres accepte d'être comparé. Le périmètre reste le sien, et il laisse de côté les trajets surveillés.",
+        "en": "A carmaker publishing its own mileage accepts being compared. The scope stays its own, and it leaves monitored rides out."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.teslaoracle.com/wp-content/uploads/2026/10/Tesla-Robotaxis-Aerial-Austin-Texas.jpg",
+        "alt": "Vue aérienne d'une flotte de Robotaxis Tesla à Austin, au Texas"
+      },
+      "source": {
+        "name": "Tesla North",
+        "url": "https://teslanorth.com/2026/10/21/tesla-robotaxi-safety-report-four-new-cities/"
+      },
+      "also": {
+        "name": "Drive Tesla Canada",
+        "url": "https://driveteslacanada.ca/robotaxi/tesla-robotaxi-safety-report-zero-injuries/"
+      },
+      "tag": "Robotaxi"
+    },
+    {
+      "id": "phantom-rancongiciels",
+      "category": {
+        "fr": "Sécurité",
+        "en": "Security"
+      },
+      "date": "2026-10-20",
+      "title": {
+        "fr": "Des affiliés de rançongiciels pilotent leurs intrusions par IA",
+        "en": "Ransomware affiliates run their intrusions through AI"
+      },
+      "body": {
+        "fr": "Rapport publié le 20 octobre. SOCRadar a trouvé sept serveurs exposés d'affiliés des rançongiciels INC et The Gentlemen, contenant Phantom, un cadre d'intrusion qui exécute les attaques via l'interface OpenCode et des modèles commerciaux appelés par OpenRouter. Les journaux comptent 8 257 messages d'IA sur 133 sessions, pour 23 920 dollars d'API.",
+        "en": "Report published October 20. SOCRadar found seven exposed servers belonging to affiliates of the INC and The Gentlemen ransomware, holding Phantom, an intrusion framework that runs attacks through the OpenCode interface and commercial models called via OpenRouter. The logs hold 8,257 AI messages across 133 sessions, for 23,920 dollars of API spend."
+      },
+      "learning": {
+        "fr": "Le coût d'une campagne d'intrusion se lit désormais sur une facture d'API. Les refus des modèles étaient contournés en présentant le travail comme un test autorisé.",
+        "en": "The cost of an intrusion campaign now reads off an API bill. Model refusals were worked around by framing the work as an authorised test."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://socradar.io/wp-content/uploads/2026/10/socradar-maps-seven-exposed-servers-inc-ransomware-affiliates.jpg",
+        "alt": "Cartographie des sept serveurs exposés des affiliés du rançongiciel INC, par SOCRadar"
+      },
+      "source": {
+        "name": "SOCRadar",
+        "url": "https://socradar.io/blog/inc-gentlemen-ransomware-ai-infrastructure/"
+      },
+      "also": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html"
+      },
+      "tag": "Phantom"
+    },
+    {
+      "id": "higgsfield-nvidia-tcv",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-10-23",
+      "title": {
+        "fr": "NVIDIA et TCV entrent au capital de Higgsfield",
+        "en": "NVIDIA and TCV take a stake in Higgsfield"
+      },
+      "body": {
+        "fr": "Annoncé le 23 octobre. NVIDIA et le fonds TCV rejoignent une extension du Series B de Higgsfield, tour mené par DST Global en août, dont le montant n'est pas divulgué. La plateforme de génération d'images et de vidéos revendique 12 000 milliards de tokens traités par mois pour 150 millions de générations, et plus de 40 millions d'utilisateurs.",
+        "en": "Announced October 23. NVIDIA and the TCV fund joined an extension of Higgsfield's Series B, the round DST Global led in August, with the amount undisclosed. The image and video generation platform claims 12 trillion tokens processed per month for 150 million generations, and more than 40 million users."
+      },
+      "learning": {
+        "fr": "Quand le fournisseur de GPU investit dans l'atelier créatif, il achète surtout de la demande garantie pour ses cartes.",
+        "en": "When the GPU supplier invests in the creative studio, what it mainly buys is guaranteed demand for its cards."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cdn.sanity.io/images/s479xw3z/production/c35735e6c3422d170b03acc90fb9472dafbf16bd-2720x1530.png",
+        "alt": "Visuel d'annonce de Higgsfield pour l'extension de son tour de financement"
+      },
+      "source": {
+        "name": "Higgsfield",
+        "url": "https://higgsfield.ai/blog/higgsfield-series-b-extension-tcv-nvidia"
+      },
+      "also": {
+        "name": "TipRanks",
+        "url": "https://www.tipranks.com/news/nvidia-and-tcv-back-ai-video-startup-higgsfield-as-users-top-40-million"
+      },
+      "tag": "Higgsfield"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

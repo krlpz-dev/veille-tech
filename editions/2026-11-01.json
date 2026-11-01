@@ -1,0 +1,238 @@
+{
+  "edition": "09",
+  "date": "2026-11-01",
+  "title": {
+    "fr": "Ce qui se recalcule, ce qui se fissure",
+    "en": "What gets recomputed, what cracks"
+  },
+  "deck": {
+    "fr": "Google place Gemini 4 Carbon en tête sur la cybersécurité, Microsoft fait tomber la reconstruction d'une scène tracée de 788 à 3 millisecondes, et l'extension officielle de Claude Code a circulé quelques heures avec une porte dérobée.",
+    "en": "Google puts Gemini 4 Carbon on top for cybersecurity, Microsoft drops the rebuild of a ray traced scene from 788 to 3 milliseconds, and the official Claude Code extension circulated for a few hours with a backdoor."
+  },
+  "hero": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261101_162316_6b8d7ab6-725d-42f2-b8f0-491c281fe749.png",
+    "alt": {
+      "fr": "Panneau de verre dressé dans une pièce sombre et vide, une longue fissure le traverse et accroche une lumière rasante, photographie noir et blanc granuleuse",
+      "en": "A pane of glass standing in a dark empty room, a long crack running across it and catching a raking light, grainy black and white photograph"
+    },
+    "generation": {
+      "model": "soul_2 (Higgsfield Soul 2.0)",
+      "job_id": "6b8d7ab6-725d-42f2-b8f0-491c281fe749",
+      "prompt": "Black and white analog photograph, heavy silver-halide film grain, very high contrast, shadows almost pure black. A single thick pane of tempered glass standing upright in an empty dark concrete room, a long jagged crack running across it and catching one hard raking light from the lower right, fractured edges glinting, the rest of the pane dissolving into darkness. Large calm dark empty areas at the top and on the left of the frame. Pure photograph, no text, no letters, no words, no caption, no watermark, no logo, no signage, no people.",
+      "alternates": [
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261101_162315_6821b8c7-4b33-496c-97da-d70bf0b1d688.png",
+        "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261101_162316_9783ae32-dafe-4e09-95c5-38dbcd510a3e.png"
+      ]
+    }
+  },
+  "news": [
+    {
+      "id": "gemini-4-carbon",
+      "category": {
+        "fr": "IA",
+        "en": "AI"
+      },
+      "date": "2026-10-28",
+      "title": {
+        "fr": "Gemini 4 Carbon prend la tête sur la cybersécurité",
+        "en": "Gemini 4 Carbon takes the lead on cybersecurity"
+      },
+      "body": {
+        "fr": "Présenté le 28 octobre, deux semaines après Argon. Google DeepMind oriente Gemini 4 Carbon vers la cybersécurité et les tâches agentiques longues, d'abord entre les mains d'un groupe restreint de défenseurs via le Fairwind Program. Il marque 59 sur l'indice d'Artificial Analysis, un point devant Claude Opus 5.5 et neuf devant Argon.",
+        "en": "Unveiled October 28, two weeks after Argon. Google DeepMind points Gemini 4 Carbon at cybersecurity and long-running agentic tasks, first in the hands of a small group of defenders through the Fairwind Program. It scores 59 on the Artificial Analysis index, one point ahead of Claude Opus 5.5 and nine ahead of Argon."
+      },
+      "learning": {
+        "fr": "Un modèle frontière confié aux défenseurs avant d'être ouvert, c'est un ordre de diffusion inhabituel. Les mêmes capacités servent dans les deux sens.",
+        "en": "A frontier model handed to defenders before it opens up is an unusual release order. The same capabilities cut both ways."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+        "alt": "Visuel d'annonce de Gemini 4 Carbon par Google, cristal irisé sur fond bleu"
+      },
+      "source": {
+        "name": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "also": {
+        "name": "Dealroom",
+        "url": "https://dealroom.co/news/167775-google-deepminds-gemini-4-carbon-takes-the-1-spot-on-artificial-analysis/"
+      },
+      "tag": "Gemini 4 Carbon"
+    },
+    {
+      "id": "dxr-clusters",
+      "category": {
+        "fr": "Gaming tech",
+        "en": "Gaming tech"
+      },
+      "date": "2026-10-28",
+      "title": {
+        "fr": "DirectX ne reconstruit plus que ce qui bouge",
+        "en": "DirectX now rebuilds only what moved"
+      },
+      "body": {
+        "fr": "Preview publiée le 28 octobre dans l'Agility SDK. Microsoft ajoute au ray tracing la géométrie en clusters, un TLAS partitionné qui ne met à jour que les régions modifiées, et la construction des structures d'accélération pilotée par le GPU. Sur son échantillon de forêt, une Radeon RX 9070 passe de 788 à 3,11 millisecondes par image.",
+        "en": "Preview published October 28 in the Agility SDK. Microsoft adds clustered geometry to ray tracing, a partitioned TLAS that only updates the regions that changed, and GPU-driven acceleration structure builds. On its forest sample, a Radeon RX 9070 goes from 788 to 3.11 milliseconds per frame, a factor of roughly 250."
+      },
+      "learning": {
+        "fr": "La plus grosse révision de DXR depuis 2018 vise les mondes vastes et animés, là où la structure d'accélération coûtait plus cher que les rayons.",
+        "en": "The biggest DXR revision since 2018 targets large animated worlds, where the acceleration structure cost more than the rays did."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://devblogs.microsoft.com/directx/wp-content/uploads/sites/42/2026/10/forest_ray_tracing.webp",
+        "alt": "Scène de forêt en vallée rendue en ray tracing, illustration de l'échantillon DirectX"
+      },
+      "source": {
+        "name": "Microsoft DirectX",
+        "url": "https://devblogs.microsoft.com/directx/clas-ptlas-preview/"
+      },
+      "also": {
+        "name": "XenoSpectrum",
+        "url": "https://xenospectrum.com/en/dxr-clustered-geometry-partitioned-tlas-preview/"
+      },
+      "tag": "DXR clusters"
+    },
+    {
+      "id": "genie-4",
+      "category": {
+        "fr": "Outils",
+        "en": "Tools"
+      },
+      "date": "2026-10-27",
+      "title": {
+        "fr": "Genie 4 donne du son à ses mondes générés",
+        "en": "Genie 4 gives its generated worlds a sound"
+      },
+      "body": {
+        "fr": "Annoncé le 27 octobre en aperçu de recherche. Le modèle de monde de DeepMind génère des environnements explorables en temps réel, modifiables en langage naturel, et produit pour la première fois leur audio nativement : ambiances, musique et personnages qui répondent. Selon TechCrunch, une scène tient jusqu'à deux minutes, le double de Genie 3.",
+        "en": "Announced October 27 as a research preview. DeepMind's world model generates explorable real-time environments, steerable in plain language, and for the first time produces their audio natively: ambience, music and characters that answer back. Per TechCrunch, a scene holds for up to two minutes, double Genie 3."
+      },
+      "learning": {
+        "fr": "Le son arrive au moment où ces mondes cessent d'être des démonstrations. C'est ce qui manquait pour en faire des décors utilisables.",
+        "en": "Sound arrives just as these worlds stop being demos. It was the missing piece for using them as actual sets."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://techcrunch.com/wp-content/uploads/2026/10/Genie-4-blog-header.png",
+        "alt": "Visuel d'ouverture de Genie 4, colibri butinant vu à travers une sphère de verre"
+      },
+      "source": {
+        "name": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/"
+      },
+      "tag": "Genie 4"
+    },
+    {
+      "id": "waymo-toyota-bz4x",
+      "category": {
+        "fr": "Robotique",
+        "en": "Robotics"
+      },
+      "date": "2026-10-30",
+      "title": {
+        "fr": "Le prochain robotaxi Waymo sortira d'une usine Toyota",
+        "en": "Waymo's next robotaxi will come off a Toyota line"
+      },
+      "body": {
+        "fr": "Annoncé le 30 octobre. Le Toyota bZ4X devient la prochaine plateforme robotaxi de Waymo, assemblée avec le matériel de conduite autonome directement sur la ligne de l'usine Takaoka, à Toyota City. Une flotte de test roulera au Japon en 2027, deux ans après l'accord préliminaire d'avril 2025, avant le Royaume-Uni.",
+        "en": "Announced October 30. The Toyota bZ4X becomes Waymo's next robotaxi platform, built with the autonomous driving hardware fitted straight onto the line at the Takaoka plant in Toyota City. A test fleet will run in Japan in 2027, two years after the April 2025 preliminary agreement, before the United Kingdom."
+      },
+      "learning": {
+        "fr": "Poser les capteurs sur la chaîne plutôt qu'en atelier, c'est le passage du prototype à la série. Le reste devient une question de volume.",
+        "en": "Fitting the sensors on the assembly line rather than in a workshop is the step from prototype to series. The rest becomes a question of volume."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://techcrunch.com/wp-content/uploads/2026/10/Waymo_Toyota_bZ4X.jpg",
+        "alt": "Toyota bZ4X équipé du matériel de conduite autonome Waymo, roulant sur une voie rapide"
+      },
+      "source": {
+        "name": "Waymo",
+        "url": "https://waymo.com/blog/2026/10/toyota-bz4x-partnership"
+      },
+      "also": {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/30/waymos-next-robotaxi-will-be-a-toyota-bz4x-destined-for-japan-and-the-uk/"
+      },
+      "tag": "Waymo et Toyota"
+    },
+    {
+      "id": "claude-code-extension-piegee",
+      "category": {
+        "fr": "Securite",
+        "en": "Security"
+      },
+      "date": "2026-10-29",
+      "title": {
+        "fr": "L'extension Claude Code a circulé avec une porte dérobée",
+        "en": "The Claude Code extension shipped with a backdoor"
+      },
+      "body": {
+        "fr": "Incident du 29 octobre, documenté le lendemain. Une version piégée de l'extension officielle Claude Code, la 2.1.313, a été distribuée quelques heures par le marketplace de Cursor : un chargeur glissé avant le code légitime ajoutait une clé SSH dans authorized_keys et ouvrait un tunnel inverse. Jusqu'à 5 000 postes l'ont installée selon Cursor.",
+        "en": "Incident of October 29, documented the next day. A trojanised build of the official Claude Code extension, version 2.1.313, was served for a few hours through the Cursor marketplace: a loader slipped in ahead of the legitimate code added an SSH key to authorized_keys and opened a reverse tunnel. Up to 5,000 machines installed it, Cursor estimates."
+      },
+      "learning": {
+        "fr": "L'outil de développement assisté devient une cible de chaîne d'approvisionnement comme une autre, avec un accès bien plus large qu'un paquet ordinaire.",
+        "en": "The assisted development tool is now a supply chain target like any other, with far broader access than an ordinary package."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://www.morphisec.com/wp-content/uploads/2026/10/Morphisec_Blog_Hero_Claude_Code_Advisory.png",
+        "alt": "Avis de sécurité de Morphisec sur l'extension Claude Code trojanisée"
+      },
+      "source": {
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html"
+      },
+      "also": {
+        "name": "Morphisec",
+        "url": "https://www.morphisec.com/blog/trusted-tool-malicious-build-what-the-trojanized-claude-code-extension-means-for-developer-endpoints/"
+      },
+      "tag": "Claude Code 2.1.313"
+    },
+    {
+      "id": "cohere-series-e",
+      "category": {
+        "fr": "Business",
+        "en": "Business"
+      },
+      "date": "2026-10-29",
+      "title": {
+        "fr": "Ottawa entre au capital de Cohere",
+        "en": "Ottawa takes an equity stake in Cohere"
+      },
+      "body": {
+        "fr": "Annoncé le 29 octobre. Cohere boucle une première tranche d'une Series E visant jusqu'à 7 milliards de dollars canadiens, menée par le groupe Schwarz avec Nvidia, sur une valorisation de 35,7 milliards. Le gouvernement du Canada y prend une participation pouvant atteindre 1,6 milliard, contre plus de 4 milliards investis au pays d'ici 2031.",
+        "en": "Announced October 29. Cohere closed a first tranche of a Series E targeting up to 7 billion Canadian dollars, led by the Schwarz Group with Nvidia, at a 35.7 billion valuation. The government of Canada takes a stake of up to 1.6 billion, against more than 4 billion invested in the country by 2031 and over 1,500 Canadian jobs."
+      },
+      "learning": {
+        "fr": "Un État qui achète des parts plutôt que de subventionner change la nature du soutien public. Il devient actionnaire d'un laboratoire.",
+        "en": "A state buying shares rather than handing out grants changes what public support means. It becomes a shareholder in a lab."
+      },
+      "media": {
+        "type": "image",
+        "src": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/6f3e91a2db90382d96ee92b134a8b86b62d94417-3840x2160.png?w=1600&q=80&fit=max&auto=format",
+        "alt": "Visuel d'annonce de Cohere sur son engagement au Canada"
+      },
+      "source": {
+        "name": "Cohere",
+        "url": "https://cohere.com/blog/cohere-canada-commitment"
+      },
+      "also": {
+        "name": "DataStudios",
+        "url": "https://www.datastudios.org/post/canada-commits-up-to-c-1-6-billion-stake-in-cohere-series-e-c-7-billion"
+      },
+      "tag": "Cohere Series E"
+    }
+  ],
+  "background": {
+    "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20260910_113246_6488285b-5bd2-4f28-b43b-5f473bf44674.png",
+    "note": "grain de fond du site, généré sur Higgsfield Soul 2.0, repris de l'édition 01"
+  }
+}

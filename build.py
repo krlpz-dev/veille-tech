@@ -122,8 +122,8 @@ def topbar(home=True):
 def footer():
     y = datetime.date.today().year
     return f'''<footer class="foot">
-  <div><span data-l="fr">ARCHIVE · veille tech hebdomadaire · IA, gaming tech, robotique</span><span data-l="en">ARCHIVE · weekly tech watch · AI, gaming tech, robotics</span></div>
-  <div class="r"><a href="index.html"><span data-l="fr">Éditions</span><span data-l="en">Issues</span></a><span>Karl Petzold · {y}</span></div>
+  <div><span data-l="fr">ARCHIVE, veille tech hebdomadaire, IA, gaming tech, robotique</span><span data-l="en">ARCHIVE, weekly tech watch, AI, gaming tech, robotics</span></div>
+  <div class="r"><a href="index.html"><span data-l="fr">Éditions</span><span data-l="en">Issues</span></a><span>Karl Petzold {y}</span></div>
 </footer>
 <script src="assets/site.js"></script>'''
 
@@ -167,8 +167,8 @@ def edition_page(ed, prev_ed, next_ed):
     def nav(e, label_fr, label_en, cls):
         if not e:
             return f'<span class="dis"><span data-l="fr">{label_fr}</span><span data-l="en">{label_en}</span></span>'
-        return f'<a class="{cls}" href="edition-{e["date"]}.html"><span data-l="fr">{label_fr} · N° {e["edition"]}</span><span data-l="en">{label_en} · No. {e["edition"]}</span></a>'
-    title = f"ARCHIVE N° {ed['edition']} · {ed['title']['fr']}"
+        return f'<a class="{cls}" href="edition-{e["date"]}.html"><span data-l="fr">{label_fr}, N° {e["edition"]}</span><span data-l="en">{label_en}, No. {e["edition"]}</span></a>'
+    title = f"ARCHIVE N° {ed['edition']}, {ed['title']['fr']}"
     return f'''{head(title, ed['deck']['fr'], f"{SITE_URL}/edition-{ed['date']}.html", hero.get('src', ''))}
 {topbar(home=False)}
 <header class="hero-ed">
@@ -228,7 +228,7 @@ def index_page(eds):
 </article>'''
     blocks = '\n'.join(block(e, i == 0) for i, e in enumerate(eds))
     desc = 'ARCHIVE, veille tech hebdomadaire : IA, gaming tech, robotique. Quatre à six news par semaine, lues en trois minutes.'
-    return f'''{head('ARCHIVE · veille tech hebdo', desc, SITE_URL + '/', latest.get('hero', {}).get('src', ''))}
+    return f'''{head('ARCHIVE, veille tech hebdo', desc, SITE_URL + '/', latest.get('hero', {}).get('src', ''))}
 {topbar(home=True)}
 <header class="hero-game" id="hero">
   <canvas id="c-back" aria-hidden="true"></canvas>
@@ -277,7 +277,7 @@ def main():
         newer = eds[i - 1] if i > 0 else None
         older = eds[i + 1] if i + 1 < len(eds) else None
         open(os.path.join(OUT, f'edition-{ed["date"]}.html'), 'w', encoding='utf-8').write(edition_page(ed, older, newer))
-    print(f"OK · {len(eds)} édition(s) → docs/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
+    print(f"OK, {len(eds)} édition(s) → docs/ (index.html + {' '.join('edition-' + e['date'] + '.html' for e in eds)})")
     # Garde fou de longueur : au delà de 450 signes le bloc de texte devient
     # une colonne verticale qui déséquilibre la page. Avertissement, pas erreur.
     longs = [(e['date'], (n.get('title') or {}).get('fr', ''), lg, l)
@@ -285,7 +285,7 @@ def main():
              for lg in ('fr', 'en')
              if (l := len((n.get('body') or {}).get(lg, ''))) > 450]
     for date, titre, lg, l in longs:
-        print(f"   ⚠ {date} · {lg} · {l} signes (max 450) · {titre}")
+        print(f"   ⚠ {date}, {lg}, {l} signes (max 450), {titre}")
 
 if __name__ == '__main__':
     main()

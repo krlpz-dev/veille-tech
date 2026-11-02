@@ -2,12 +2,12 @@
   "edition": "09",
   "date": "2026-11-01",
   "title": {
-    "fr": "Ce qui se recalcule, ce qui se fissure",
-    "en": "What gets recomputed, what cracks"
+    "fr": "Trois millisecondes par image",
+    "en": "Three milliseconds a frame"
   },
   "deck": {
-    "fr": "Google place Gemini 4 Carbon en tête sur la cybersécurité, Microsoft fait tomber la reconstruction d'une scène tracée de 788 à 3 millisecondes, et l'extension officielle de Claude Code a circulé quelques heures avec une porte dérobée.",
-    "en": "Google puts Gemini 4 Carbon on top for cybersecurity, Microsoft drops the rebuild of a ray traced scene from 788 to 3 milliseconds, and the official Claude Code extension circulated for a few hours with a backdoor."
+    "fr": "Microsoft refond le ray tracing de DirectX pour reconstruire seulement les régions modifiées, Google confie son modèle le plus capable en cybersécurité à un groupe de défenseurs, et l'extension officielle de Claude Code a circulé piégée pendant quelques heures.",
+    "en": "Microsoft rebuilds DirectX ray tracing to refresh only the regions that changed, Google hands its most capable cybersecurity model to a group of defenders, and the official Claude Code extension circulated trojanised for a few hours."
   },
   "hero": {
     "src": "https://d8j0ntlcm91z4.cloudfront.net/user_39FfQeMIWqiQLLKAWDtgFuU9Tem/hf_20261101_162316_6b8d7ab6-725d-42f2-b8f0-491c281fe749.png",
@@ -68,8 +68,8 @@
       },
       "date": "2026-10-28",
       "title": {
-        "fr": "DirectX ne reconstruit plus que ce qui bouge",
-        "en": "DirectX now rebuilds only what moved"
+        "fr": "DirectX reconstruit seulement ce qui bouge",
+        "en": "DirectX rebuilds only the parts that move"
       },
       "body": {
         "fr": "Preview publiée le 28 octobre dans l'Agility SDK. Microsoft ajoute au ray tracing la géométrie en clusters, un TLAS partitionné qui ne met à jour que les régions modifiées, et la construction des structures d'accélération pilotée par le GPU. Sur son échantillon de forêt, une Radeon RX 9070 passe de 788 à 3,11 millisecondes par image.",
